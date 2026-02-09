@@ -1,0 +1,92 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    pull_policy: if_not_present
+    tty: true
+    restart: always
+    volumes:
+      - ./Models:/root/.ollama/models
+      - ollama-data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  chunking:
+    container_name: chunking
+    build: .
+    volumes:
+      - ./know_how:/app/know_how
+      - ./Models:/app/Models
+      - ./db:/app/db
+      - ollama-data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - TABLE_NAME=my_table
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: on-failure
+    depends_on:
+      ollama:
+        condition: service_started
+    command: >
+      sh -c "
+        set -e
+        echo '[CHUNK_SERVICE] Indítás...'
+        echo '[CHUNK_SERVICE] Várakozás az Ollama API-ra (http://ollama:11434)...'
+        
+        while ! curl -s http://ollama:11434/api/tags > /dev/null; do
+          echo '[CHUNK_SERVICE] Ollama még nem elérhető, várakozás 5 másodpercet...'
+          sleep 5
+        done
+        
+        echo '[CHUNK_SERVICE] Ollama elérhető. A chunker_full_doc modell létrehozása a TE Modelfile-od alapján...'
+        # Itt nem töltünk le semmit, csak létrehozzuk a modellt a meglévő fájlokból
+        ollama create chunker_full_doc -f /app/Models/chunker_full_doc.Modelfile
+        echo '[CHUNK_SERVICE] Modell (chunker_full_doc) kész.'
+        
+        echo '[CHUNK_SERVICE] A chunking.py script indítása...'
+        python3 chunking.py --input /app/know_how --table $$TABLE_NAME
+        
+        echo '[CHUNK_SERVICE] Feldolgozás kész. A szolgáltatás leáll.'
+      "
+
+  chainlit_ui:
+    container_name: chainlit_ui
+    build: .
+    volumes:
+      - ./db:/app/db
+      - .:/app
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - TABLE_NAME=my_table
+      # A te saját modelledet állítjuk be alapértelmezettnek
+      - RAG_CHAT_MODEL=gemma3:4b-it-qat
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: always
+    command: ["chainlit", "run", "app.py", "--host", "0.0.0.0", "--port", "8000", "-w"]
+    ports:
+      - "8000:8000"
+    depends_on:
+      ollama:
+        condition: service_started
+      chunking:
+        condition: service_completed_successfully
+
+volumes:
+  ollama-data:

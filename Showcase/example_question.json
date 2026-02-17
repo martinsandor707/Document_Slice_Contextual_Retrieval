@@ -1,0 +1,9 @@
+{
+    "question": "What general trade-off regarding the parameter beta was observed across the case studies in terms of Precision and Recall?",
+    "gold_answer": "The studies observed that smaller values of beta lead to aggressive pruning, resulting in high Precision but lower Recall due to the removal of some direct routes. Conversely, larger values of beta result in more conservative pruning, increasing Recall but lowering Precision by retaining more indirect routes. The optimal balance, achieving the highest F1-scores, was generally found with beta values between 0.9 and 0.95.",
+    "document": "s41598-021-90943-8.pdf",
+    "supporting_chunks": [
+        "41bb75886dd57bb8af0401d44014ac56c273e4ff18c457598dd2817a77f7c698",
+        "82a0268dc0ccbef91539326dd5dfddc074935f93f6293d78af8d69262e3e326b"
+    ]
+}

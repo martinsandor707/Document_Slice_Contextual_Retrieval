@@ -1,16 +1,18 @@
 import os
+
 import chainlit as cl
 import lancedb
+import ollama
+import torch
+from chainlit.input_widget import Switch, Select
 from lancedb.embeddings import get_registry
 from lancedb.rerankers import ColbertReranker
-import torch
-import ollama
-from chainlit.input_widget import Switch
+import json
 
-# --- Konfiguráció ---
+# --- Configs ---
 DB_PATH = "./db"
-TABLE_NAME = os.environ.get("TABLE_NAME", "my_table")
-OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://ollama:11434")
+TABLE_NAME = os.environ.get("TABLE_NAME", "my_anthropic_sliding_table")
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 EMBEDDING_MODEL_NAME = "nomic-ai/nomic-embed-text-v1.5"
 RAG_CHAT_MODEL = os.environ.get("RAG_CHAT_MODEL", "gemma3:4b-it-qat")
 
@@ -36,7 +38,6 @@ Context:
 Question: {question}
 """
 
-# --- Adatbázis Kezelő ---
 class DbHandler:
     def __init__(self, db_path, embedding_model_name):
         self.db = lancedb.connect(db_path)
@@ -48,6 +49,14 @@ class DbHandler:
             trust_remote_code=True,
             device=device
         )
+
+    def get_table_names(self):
+        """Returns a list of table names present in the LanceDB instance."""
+        try:
+            return self.db.table_names()
+        except Exception as e:
+            print(f"Error fetching table names: {e}")
+            return []
 
     def query_table(self, table_name, prompt, limit=3):
         try:
@@ -66,28 +75,19 @@ class DbHandler:
             .limit(limit)
             .to_pandas()
         )
-        return results_df["text"].tolist()
+        return results_df["text"].tolist(), results_df["id"].tolist()
 
-# --- Globális változók ---
+# --- Global variables ---
 db_handler = None
 ollama_client = None
 
 @cl.on_chat_start
 async def start():
     global db_handler, ollama_client
-
-    settings = await cl.ChatSettings(
-        [
-            Switch(
-                id="show_cot",
-                label="Gondolatmenet mutatása (Debug)",
-                initial=True,
-            ),
-        ]
-    ).send()
-
-    ollama_client = ollama.AsyncClient(host=OLLAMA_HOST)
-
+    
+    # Fetch tables dynamically
+    available_tables = []
+    
     if db_handler is None:
         try:
             db_handler = DbHandler(
@@ -96,7 +96,32 @@ async def start():
             )
         except Exception:
             pass
+    
+    if db_handler:
+        available_tables = db_handler.get_table_names()
+    
+    # Fallback if no tables are found
+    if not available_tables:
+        available_tables = [TABLE_NAME]
 
+    settings = await cl.ChatSettings(
+        [
+            Switch(
+                id="show_cot",
+                label="Show chain of thought (Debug)",
+                initial=True,
+            ),
+            Select(
+                id="selected_table",
+                label="Knowledge Base (Vector Table)",
+                values=available_tables,
+                initial_index=0,
+            )
+        ]
+    ).send()
+
+    ollama_client = ollama.AsyncClient(host=OLLAMA_HOST)
+        
     await cl.Message(
         content="👋 Hello! I'm ready to answer your questions!"
     ).send()
@@ -130,10 +155,11 @@ async def setup_agent(settings):
 async def main(message: cl.Message):
     user_query = message.content
 
-    settings = cl.user_session.get("chat_settings", {"show_cot": True})
-    show_cot = settings["show_cot"]
+    settings = cl.user_session.get("chat_settings", {})
+    show_cot = settings.get("show_cot", True)
+    selected_table = settings.get("selected_table", TABLE_NAME)
 
-    # --- 1. LÉPÉS: ROUTING (TELJESEN HÁTTÉRBEN, SOHA NEM JELENIK MEG) ---
+    # --- Step 1: ROUTING (Not shown, only in background) ---
     router_decision = "RAG"
 
     try:
@@ -144,50 +170,67 @@ async def main(message: cl.Message):
         decision_text = router_response["response"].strip().upper()
         if "GENERAL" in decision_text:
             router_decision = "GENERAL"
-    except Exception:
+    except Exception as e:
+        print("Routing failed, defaulting to RAG.")
+        print(e)
         pass
 
     final_prompt = user_query
     context_str = ""
 
-    # --- 2. LÉPÉS: Ágválasztás ---
+    # --- Step 2: Branching based on router ---
     if router_decision == "RAG":
 
         async def perform_search():
             if db_handler:
                 return await cl.make_async(
                     db_handler.query_table
-                )(TABLE_NAME, user_query, limit=3)
+                )(selected_table, user_query, limit=3)
             return []
 
         context_chunks = []
 
         if show_cot:
             async with cl.Step(
-                name="Keresés a Tudásbázisban",
+                name=f"Knowledge Base Search (using {selected_table})",
                 type="tool",
             ) as step:
                 step.input = user_query
-                context_chunks = await perform_search()
+                context_chunks, chunk_ids = await perform_search()
 
                 if context_chunks:
-                    details = "\n\n".join(
-                        [
-                            f"📄 **Találat {i+1}:** ...{chunk[:150]}..."
-                            for i, chunk in enumerate(context_chunks)
-                        ]
-                    )
-                    step.output = f"✅ **{len(context_chunks)} találat:**\n{details}"
+                    details = []
+                    eval_message = ""
+                        
+                    with open("example_questions.json", "r", encoding="utf-8") as f:
+                        examples = json.load(f)
+                    
+                    # Find matching question in examples
+                    matching_example = next((ex for ex in examples if ex["question"] == user_query), None)
+                    found_count = 0
+                    if matching_example:
+                        supporting_chunks = matching_example.get("supporting_chunks", [])
+                        found_count = 0
+                        for i, hash in enumerate(chunk_ids):
+                            if hash in supporting_chunks:
+                                details.append(f"🎯 Chunk {i+1} is a bullseye: ...{context_chunks[i][:150]}...")
+                                found_count += 1
+                            else:
+                                details.append(f"❌ Chunk {i+1} is a miss: ...{context_chunks[i][:150]}...")
+                    eval_message = f"🎯 **Evaluation:** Found {found_count} out of {len(supporting_chunks)} expected supporting chunks."
+
+                    details = "\n\n".join(details)
+                    step.output = f"📌 Top **{len(context_chunks)} chunks:**\n{details}\n\n{eval_message}"
                     context_str = "\n\n---\n\n".join(context_chunks)
                 else:
-                    context_str = "Nincs releváns találat az adatbázisban."
-                    step.output = "❌ Nem találtam releváns információt a dokumentumokban."
+                    context_str = "No relevant entry in the database."
+                    step.output = "❌ No relevant information found in the documents."
         else:
             context_chunks = await perform_search()
             if context_chunks:
                 context_str = "\n\n---\n\n".join(context_chunks)
             else:
-                context_str = "Nincs releváns találat az adatbázisban."
+                context_str = "No relevant entry in the database."
 
         final_prompt = RAG_PROMPT_TEMPLATE.format(
             context=context_str,
@@ -197,17 +240,17 @@ async def main(message: cl.Message):
     else:
         if show_cot:
             async with cl.Step(
-                name="Általános csevegés",
+                name="General conversation",
                 type="llm",
             ) as step:
                 step.output = (
-                    "A kérdés általános jellegű, "
-                    "nem szükséges a tudásbázisban keresni."
+                    "The question is general in nature, "
+                    "no need to search the knowledge base."
                 )
 
         final_prompt = user_query
 
-    # --- 3. LÉPÉS: Válaszgenerálás ---
+    # --- Step 3: Generating Answer ---
     msg = cl.Message(content="")
     await msg.send()
 
@@ -222,7 +265,7 @@ async def main(message: cl.Message):
             if "message" in chunk and "content" in chunk["message"]:
                 await msg.stream_token(chunk["message"]["content"])
     except Exception as e:
-        msg.content = f"❌ Hiba: {e}"
+        msg.content = f"❌ Error: {e}"
         await msg.update()
 
     await msg.update()

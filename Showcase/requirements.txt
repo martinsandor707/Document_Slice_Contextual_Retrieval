@@ -9,19 +9,22 @@ httpx
 
 # --- CRITICAL FIXES ---
 # 1. NumPy: Chainlit kompatibilitas
-numpy<2.0.0
+# numpy<2.0.0
+numpy
 # 2. OpenCV: NumPy 1.x kompatibilitas
-opencv-python-headless<4.10.0
+# opencv-python-headless<4.10.0
+opencv-python-headless
 # 3. Pydantic: Chainlit kompatibilis verzio (ez a kulcs!)
-pydantic==2.9.2
+# pydantic==2.9.2
+pydantic
 
 # --- RAG & Database ---
-lancedb==0.24.2
+lancedb
 tantivy
 pyarrow
 
 # --- Document Processing ---
-docling==2.43.0
+docling
 docling-core
 docling-parse
 docling-ibm-models

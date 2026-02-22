@@ -11,11 +11,12 @@ import json
 
 # --- Configs ---
 DB_PATH = "./db"
-TABLE_NAME = os.environ.get("TABLE_NAME", "my_anthropic_sliding_table")
+CONTEXTUAL_TABLE_NAME = os.environ.get("TABLE_NAME", "my_anthropic_sliding_table")
+TRADITIONAL_TABLE_NAME = "semantic_table"
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 EMBEDDING_MODEL_NAME = "nomic-ai/nomic-embed-text-v1.5"
-RAG_CHAT_MODEL = os.environ.get("RAG_CHAT_MODEL", "gemma3:4b-it-qat")
-
+# RAG_CHAT_MODEL = os.environ.get("RAG_CHAT_MODEL", "gemma3:4b-it-qat")
+RAG_CHAT_MODEL = "qwen3-vl:8b-instruct-q4_K_M"
 # --- Prompt Templates ---
 ROUTER_PROMPT = """
 You are an intelligent classification system.
@@ -30,7 +31,8 @@ Output ONLY one word:
 
 RAG_PROMPT_TEMPLATE = """
 You are a helpful expert assistant. Answer the question using ONLY the provided context.
-If the answer is not in the context, politely say that you don't have information about that in the documents.
+If the answer is not in the context, politely say that you don't have information about that in the documents. 
+CRITICAL: ONLY ANSWER IN ENGLISH.  
 
 Context:
 {context}
@@ -58,24 +60,36 @@ class DbHandler:
             print(f"Error fetching table names: {e}")
             return []
 
-    def query_table(self, table_name, prompt, limit=3):
+    def query_table(self, prompt, use_contextual_rag, limit=3):
         try:
+            table_name = CONTEXTUAL_TABLE_NAME if use_contextual_rag else TRADITIONAL_TABLE_NAME
             table = self.db.open_table(table_name)
         except Exception:
             return []
 
-        results_df = (
-            table.search(
-                prompt,
-                query_type="hybrid",
-                vector_column_name="vector",
-                fts_columns="text",
+        if use_contextual_rag:
+            results_df = (
+                table.search(
+                    prompt,
+                    query_type="hybrid",
+                    vector_column_name="vector",
+                    fts_columns="text",
+                )
+                .rerank(reranker=self.reranker)
+                .limit(limit)
+                .to_pandas()
             )
-            .rerank(reranker=self.reranker)
-            .limit(limit)
-            .to_pandas()
-        )
-        return results_df["text"].tolist(), results_df["id"].tolist()
+        else:
+            results_df = (
+                table.search(
+                    prompt,
+                    query_type="vector",
+                )
+                .limit(limit)
+                .to_pandas()
+            )
+        
+        return results_df["original_text"].tolist(), results_df["id"].tolist(), results_df["document"].tolist()
 
 # --- Global variables ---
 db_handler = None
@@ -84,9 +98,6 @@ ollama_client = None
 @cl.on_chat_start
 async def start():
     global db_handler, ollama_client
-    
-    # Fetch tables dynamically
-    available_tables = []
     
     if db_handler is None:
         try:
@@ -100,10 +111,6 @@ async def start():
     if db_handler:
         available_tables = db_handler.get_table_names()
     
-    # Fallback if no tables are found
-    if not available_tables:
-        available_tables = [TABLE_NAME]
-
     settings = await cl.ChatSettings(
         [
             Switch(
@@ -111,11 +118,11 @@ async def start():
                 label="Show chain of thought (Debug)",
                 initial=True,
             ),
-            Select(
-                id="selected_table",
-                label="Knowledge Base (Vector Table)",
+            Switch(
+                id="use_contextual_rag",
+                label="Use contextual RAG",
                 values=available_tables,
-                initial_index=0,
+                initial=True,
             )
         ]
     ).send()
@@ -157,7 +164,7 @@ async def main(message: cl.Message):
 
     settings = cl.user_session.get("chat_settings", {})
     show_cot = settings.get("show_cot", True)
-    selected_table = settings.get("selected_table", TABLE_NAME)
+    use_contextual_rag = settings.get("use_contextual_rag", True)
 
     # --- Step 1: ROUTING (Not shown, only in background) ---
     router_decision = "RAG"
@@ -185,18 +192,18 @@ async def main(message: cl.Message):
             if db_handler:
                 return await cl.make_async(
                     db_handler.query_table
-                )(selected_table, user_query, limit=3)
+                )(user_query, use_contextual_rag, limit=3)
             return []
 
         context_chunks = []
 
         if show_cot:
             async with cl.Step(
-                name=f"Knowledge Base Search (using {selected_table})",
+                name=f"Knowledge Base Search (using {'Contextual RAG' if use_contextual_rag else 'Traditional RAG'})",
                 type="tool",
             ) as step:
                 step.input = user_query
-                context_chunks, chunk_ids = await perform_search()
+                context_chunks, chunk_ids, source_documents = await perform_search()
 
                 if context_chunks:
                     details = []
@@ -210,17 +217,19 @@ async def main(message: cl.Message):
                     found_count = 0
                     if matching_example:
                         supporting_chunks = matching_example.get("supporting_chunks", [])
+                        expected_document = matching_example.get("document", "N/A")
+                        expected_answer = matching_example.get("gold_answer", "N/A")
                         found_count = 0
                         for i, hash in enumerate(chunk_ids):
                             if hash in supporting_chunks:
-                                details.append(f"🎯 Chunk {i+1} is a bullseye: ...{context_chunks[i][:150]}...")
+                                details.append(f"✅ Chunk {i+1} is a bullseye: ...{context_chunks[i][:150]}...\nSource Document: {source_documents[i][:50]}...")
                                 found_count += 1
                             else:
-                                details.append(f"❌ Chunk {i+1} is a miss: ...{context_chunks[i][:150]}...")
-                    eval_message = f"🎯 **Evaluation:** Found {found_count} out of {len(supporting_chunks)} expected supporting chunks."
+                                details.append(f"❌ Chunk {i+1} is a miss: ...{context_chunks[i][:150]}...\nSource Document: {source_documents[i][:50]}...")
+                    eval_message = f"📊 **Evaluation:** Found {found_count} out of {len(supporting_chunks)} expected supporting chunks."
 
                     details = "\n\n".join(details)
-                    step.output = f"📌 Top **{len(context_chunks)} chunks:**\n{details}\n\n{eval_message}"
+                    step.output = f"Question recognized from dataset! Expected document: {expected_document[:50]}...\n\n📌 Top **{len(context_chunks)} chunks:**\n{details}\n\n{eval_message}\n\n🏆 Expected 'Golden' answer:\n{expected_answer}"
                     context_str = "\n\n---\n\n".join(context_chunks)
                 else:
                     context_str = "No relevant entry in the database."

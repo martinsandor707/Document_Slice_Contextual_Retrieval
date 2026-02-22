@@ -1,0 +1,1004 @@
+[
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page2_1.png",
+    "description": "This image is a line graph showing a declining trend in probability values over a series of dates from January 2016 to January 2017. The graph's horizontal axis represents dates, and the vertical axis indicates “Probability”.\n\nThe graph begins with a high probability value around 0.648. Over the following dates, the probability steadily decreases, reaching a low of approximately 0.532.  The graph appears to show a series of events related to securities margin trading, RMB speculation, and a commercial draft. The slope of the line suggests a consistent downward movement, indicating a decline in whatever is being measured by the probability values. The graph doesn't represent a logo or brand.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page5_6.png",
+    "description": "This is the logo of the Institute of Electrical and Electronics Engineers (IEEE).\n\nThe logo features the word \"IEEE\" in a bold, sans-serif typeface. The letters are colored in a gradient, transitioning from a deep blue at the top to a lighter blue towards the bottom. This creates a subtle depth effect. The overall design is clean, modern, and recognizable as the symbol of a major professional organization in the field of engineering and computer science.  It is commonly used to identify IEEE publications, conferences, and member resources.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page5_7.png",
+    "description": "Yes, this image is a logo/brand for the company “RBM”. The text “RBM” is centrally positioned and significantly larger than the other text elements. Below “RBM”, there’s a layered, hierarchical diagram. This diagram is a visual representation of the company’s core product: “Sentence2Vec.”\n\nThe diagram breaks down “Sentence2Vec” into a sequence of processing steps, suggesting a complex algorithm or technology. The layers start with “event representation” and progress downwards through “RBM,” “sentence2vec”, and finally “event representation.” Each layer is connected to the one below it, visually indicating a pipeline or workflow.\n\nThe design is minimalistic, focusing on clear hierarchy and a clean, modern aesthetic. The use of connected boxes suggests interconnectedness and a structured approach to data processing. It’s likely intended to convey the idea of intelligent text analysis or natural language processing.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_9.png",
+    "description": "The image displays the text \"IEEE\" in a bold, dark blue font. \"IEEE\" stands for the Institute of Electrical and Electronics Engineers. It’s a professional organization for engineers and scientists. \n\nThe font appears to be a sans-serif style. The lettering has a subtle, slightly blurred shadow effect, giving it a 3D appearance. The overall style is modern and professional, reflecting the institute's longstanding presence in the fields of electrical engineering, computer science, and related disciplines.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_10.png",
+    "description": "This image is a line graph showing the F1-score of different machine learning models (SVM, TeSIA, nMIL, O-MI, WoR-MI, WoH-MI, and M-MI) over five days of historical data. Each line represents a different model’s performance, demonstrating how the F1-score changes as the number of days increases. The X-axis represents the number of days (from 1 to 5), and the Y-axis represents the F1-score.\n\nThe data suggests a slight initial improvement in F1-score for most models during the first two days, followed by a gradual decline. The specific values and the shape of the curves indicate different levels of performance for each model. Without further context, it is hard to assess the significance of the performance changes or the models' characteristics.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_11.png",
+    "description": "The image is a line graph displaying the F1-score over five days for different machine learning models: SVM, TeSIA, nMIL, O-MI, WoR-MI, WoH-MI, and M-MI. The horizontal axis represents the number of days of history, and the vertical axis represents the F1-score. Each line corresponds to a different model, showing how their performance changes as the number of history days increases.  The graph clearly visualizes the relative performance of each model – the trend lines are somewhat similar, with all models demonstrating a slight increase in F1-score, but at different rates.\n\nThis is not a logo or brand image. It's a visualization of machine learning model performance data.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page8_12.png",
+    "description": "This image consists of two stacked bar charts, one for 2015 and one for 2016. Each bar is divided into three colored segments:\n\n*   **Black:** Represents \"Sentiment\". Both bars show approximately 80% black, suggesting a predominantly negative sentiment for both years.\n*   **Blue:** Represents \"Quantitative Data\". The 2015 bar has a higher blue segment than the 2016 bar, indicating a greater degree of quantitative data availability or reported for 2015.\n*   **White:** Represents “News”. The 2016 bar has a notable white segment, showing a higher degree of news coverage or reporting in 2016.\n\nEssentially, it’s a visual representation comparing sentiment, quantifiable data, and news coverage for two consecutive years.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_14.png",
+    "description": "This image displays the logo of the IEEE (Institute of Electrical and Electronics Engineers). It's a stylized wordmark, with \"IEEE\" rendered in a bold, dark blue typeface. The letters are slightly rounded and have a subtle shadow effect, giving them a modern and professional appearance. The shadow effect adds depth and a three-dimensional look to the text.\n\nThe blue color is a standard color used by the IEEE, representing innovation, technology, and global reach. The logo is a recognizable and widely used symbol representing the organization's commitment to advancing technology and electrical engineering. The overall design is clean, simple, and easily identifiable.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_15.png",
+    "description": "The image is a portrait of a man. He is wearing a dark grey or black suit jacket and a white shirt. The shirt collar is slightly open, revealing part of a white tie. He has dark hair, and appears to be looking straight ahead. The background is plain and out of focus, suggesting a studio portrait. It seems to be a professional headshot, likely used for identification or a business profile. There’s nothing to suggest it’s a logo or brand.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_17.png",
+    "description": "This image is a portrait of a young Asian woman. She has long, dark hair parted down the middle. She is wearing a light-colored shirt with a crisp white collar and a gray sweater or cardigan over it. Her expression is neutral, and she appears to be looking slightly upwards.\n\nThe image is in black and white and appears to be a straightforward photograph of a person. It doesn’t appear to be a logo, branding, or any kind of stylized graphic. It’s simply a headshot of an individual.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf_page1_0.png",
+    "description": "The image depicts a stylized icon consisting of a circle with the letters “CC” inside it. Below the circle is the word “BY”.\n\nThe “CC” most likely represents the Creative Commons licenses. Creative Commons is a non-profit organization that provides licenses for reusing copyrighted material. The “CC” symbol is widely used to indicate that works are available under these licenses. The “BY” indicates that if the work is reused, attribution to the original author must be given. \n\nTherefore, the image is a visual representation of a Creative Commons license and the requirement for attribution.",
+    "document": "A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf_page4_1.png",
+    "description": "This image appears to be a snippet of JavaScript code. It defines a class named `Bird`. Inside this class, there’s an attempt to define several variables: `width`, `height`, `yvel`, and `yvel`. The code seems to be related to a visual element, possibly a bird graphic, and includes likely attempts to calculate its position and potentially animate it based on its speed (yvel).\n\nThe code suggests a visual component with width, height, and a velocity variable. The line \"// yvel\" indicates the variable `yvel` which likely represents the bird's vertical speed.\n\nIt doesn't appear to be a logo or brand identifier. It's code – likely part of a larger JavaScript application.",
+    "document": "A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf_page5_2.png",
+    "description": "This image appears to be a diagram outlining a software development pipeline. It's centered around the concept of “generalization for continued development”. The core elements depicted are:\n\n1.  **Data Cleaning:**  The process of tidying and preparing data.\n2.  **Data Exploration & Visualization:** Examining the data to understand its characteristics and presenting it visually.\n3.  **Model Building:** Constructing predictive models based on the analyzed data.\n4.  **Analysis:**  The entire process of data analysis, including metrics like p-values.\n\nFurthermore, the diagram features steps relating to data distribution, reproducibility, and open licenses. It's structured to support a systematic and documented approach to software development, emphasizing transparency and ease of reuse.  The overall theme is about taking raw data and converting it into a usable and reproducible artifact.",
+    "document": "A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page1_0.png",
+    "description": "The image displays the title of a journal: \"Access\". The text is rendered in a bold, dark blue font and stacked vertically. Below the title, smaller text reads “Multidisciplinary: Rapid Review: Open Access Journal”. \n\nThe overall impression is that of a scientific journal title, likely for a publication that emphasizes rapid review and open access. The use of \"Access\" suggests an emphasis on freely available research.  It's a simple and straightforward presentation of the journal's name and focus.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page2_2.png",
+    "description": "This image appears to be a composite of several visual elements, likely representing a system for gaze tracking and depth mapping. \n\nThe main portion of the image shows a room interior, likely captured by a camera system.  There are multiple RGB images visible, possibly from different cameras or viewpoints.  Alongside these, there are images of eyes, suggesting the system focuses on human eye tracking.\n\nThe diagram on the right illustrates the concepts of vergence angle (θ) and pupillary distance (d), which are key measurements in understanding depth perception. The angle is represented by the angle between the pupils, while the distance between the pupils is the pupillary distance.\n\nThe image conveys the idea of a system that analyzes human eye movements to determine depth or 3D information.  It is not a clear logo of a particular brand.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page3_4.png",
+    "description": "The image depicts a complex block diagram representing an eye-tracking system. It is not a logo or brand.\n\nThe diagram outlines a hybrid gaze distance estimation pipeline. It consists of multiple interconnected modules, each processing gaze information to refine the final gaze estimation. Key components include:\n\n*   **Blur:** Processing to reduce noise.\n*   **Depth:** Estimating depth from disparity.\n*   **Accommodation:** Measuring eye accommodation.\n*   **Panum’s area:** Detecting Panum’s area.\n*   **Vergence:** Estimating vergence.\n*   **Vergence refinement:** Correcting vergence errors.\n*   **Disparity:** Processing disparity information.\n*   **Gaze Distance from Vergence:**  Estimating gaze distance based on vergence changes.\n*   **Gaze Distance from Vergence Refinement:** Final gaze distance estimation.\n*   **Gaze distance from gaze-mapped depth:** This section uses depth mapping data to further refine the gaze estimate.\n\nThe overall structure suggests a sophisticated system leveraging multiple cues – disparity, vergence, and accommodation – to achieve accurate gaze tracking. The diagram is part of a technical illustration, likely for an eye-tracking research project or a related technical document.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page4_6.png",
+    "description": "This is a line graph. The graph shows a target depth, measured in meters, plotted against its gaze distance from the convergence point. The x-axis represents gaze distance from convergence (in meters), while the y-axis indicates target depth (also in meters).\n\nThere are three data points plotted on the graph:\n\n*   A point at approximately 170 meters\n*   A point at approximately 210 meters\n*   A point at approximately 250 meters\n\nThese points likely represent the target depth observed at those specific gaze distances from the convergence point. It’s a standard graphical representation used to illustrate depth perception studies and visual perception research.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page4_7.png",
+    "description": "The image presents a graph showing three lines representing different measurements related to eye movements and visual focus. The lines are labeled as \"gaze distance from vergence\", \"ground truth\", and \"pupil diameter\".\n\nThe \"gaze distance from vergence\" line shows a fluctuating pattern, trending upwards and then downwards over the range of the x-axis (approximately 550ms). The \"ground truth\" line, which is a horizontal line at approximately 1.0mm, likely represents a reference value or baseline for the ground truth. The “pupil diameter” line depicts a similar fluctuating pattern, with a minimum value at the beginning and a peak.\n\nThe graph appears to be tracking eye movements and pupil dilation, potentially as part of an eye-tracking experiment or study. It might be related to researching visual perception, attention, or visual processing.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page5_9.png",
+    "description": "The image shows a workstation setup, likely for a dental or orthodontic practice. Here's a breakdown of the contents:\n\n*   **Laptop:** A black Dell laptop is positioned on the table, likely for displaying software or patient information.\n*   **Chin Holder:** A silver, adjustable chin holder is mounted on a stand. This is used to stabilize the patient’s head during dental procedures.\n*   **Table Surface:** The surface is covered in a dotted mat, indicating a treatment or examination area.\n*   **Background:** There’s a blurred background suggesting other equipment or objects, but the main focus is the workstation setup.\n\nThere is no easily recognizable logo or brand element present in the image. It appears to be a clinical workstation.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page7_14.png",
+    "description": "This image appears to be a graph or chart visualizing data, likely related to depth perception or 3D scene reconstruction. The orange line represents \"gaze distance,\" a measurement of how far the viewer's gaze was directed from a point of interest. The green line denotes \"ground truth depth,\" and the dashed line represents \"disocclusion,\" indicating areas that are obscured or not visible.\n\nThe graph shows a series of peaks and troughs, suggesting variations in depth and occlusion across different frames. The plot likely demonstrates how accurately the depth perception model estimates the depth of objects in a scene compared to the actual depth. The data is presented over a range of values, indicating measurements taken at various points in time or across different scenes. It's a technical visualization used in computer graphics or perception research.\n\nGiven the technical nature and lack of recognizable imagery, it’s safe to say that this is not a logo or brand.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page7_15.png",
+    "description": "This image is a depth map visualization. It depicts a 3D scene represented as a grayscale image, where lighter shades indicate greater depth. The colors overlayed on the image represent the depth estimation from gaze mapping, the ground truth depth, and the reflected depth.\n\nThe scene appears to be a corridor or a hallway with a set of large, rectangular doors along the left side. The depth estimation (in orange) and the ground truth (in green) show a generally consistent depiction of the scene, with the reflected depth (in blue) adding another layer of detail, likely representing reflections from surfaces like the walls or the doors.\n\nThe image’s purpose is to illustrate how a depth estimation model performs compared to known ground truth depths. It showcases the discrepancy and potential areas for improvement in the depth assessment. The visual representation effectively conveys the 3D structure of the environment.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf_page8_17.png",
+    "description": "The image depicts a room with multiple elements. The primary focus is a dark blue, possibly black, office space. There are several green plants strategically placed around the room, suggesting an attempt to create a biophilic design. A large desk dominates the center, with a computer monitor visible on its surface.\n\nAlongside the desk are some seating arrangements, consisting of chairs and tables.  A distinct element is a standing desk with a blue and white chair. Further details suggest a professional or workspace environment. The image also contains some lighting fixtures and decorative elements contributing to the overall atmosphere.\nIt appears to be a rendering or visualization of a modern office interior.",
+    "document": "A_Hybrid_Gaze_Distance_Estimation_via_Cross-Reference_of_Vergence_and_Depth.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf_page4_4.png",
+    "description": "This image appears to be a logo for a computational library or algorithm related to Neural Networks. Specifically, it’s a visual representation of a “Fusion” algorithm likely named NAS (Neural Architecture Search). \n\nThe image showcases a diagram illustrating the core components of this algorithm: multiple blocks labeled with \"W1\", \"W2\", \"W3\", and \"W4\" representing weights, a \"bias\" element, and operations such as addition and multiplication. The central element is labeled “Fusion”, suggesting the combining or integrating of these components. \n\nThe labels like “skip”, “NAS”, “W”s, and “Addition/Multiplication” strongly indicate it’s a diagram of a neural network search algorithm.  It's designed to optimize neural network architectures efficiently. The color gradients probably visualize a loss function.",
+    "document": "A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf_page6_7.png",
+    "description": "This image is a collection of ROC curves. Each curve represents the performance (specifically, the Receiver Operating Characteristic – ROC curve) of a machine learning model for a classification task. The x-axis represents the True Positive Rate (sensitivity), and the y-axis represents the False Positive Rate (1 - specificity).  The slope of the curve indicates the model's ability to discriminate between the classes. \n\nThe curves are labeled with \"KROCC\" (KROCC stands for Convolutional Residual Classifier). There are multiple KROCC curves, each likely trained on a different dataset or configuration. Each KROCC curve shows how well the model classifies data in a given dataset, based on its performance characteristics.",
+    "document": "A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf_page7_8.png",
+    "description": "The image displays the text \"IEEE\".\n\nIEEE stands for the Institute of Electrical and Electronics Engineers. It's a professional organization dedicated to advancing technology in electrical engineering, computer science, and related fields. The organization provides publications, technical standards, and educational resources. \n\nThe text is presented in a bold, blue font and has a slight blur effect, likely indicating it's a digital representation of a logo or brand identifier. The logo is associated with the Institute and signifies their presence and activities within these technological domains.",
+    "document": "A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf_page7_10.png",
+    "description": "This image is a line graph. It displays the averaged test accuracy of different neural network models (likely related to Natural Language Processing) plotted against the number of evaluated networks.\n\nHere's a breakdown of the graph's components:\n\n*   **X-axis:** Represents the \"Number of Evaluated Networks.\"\n*   **Y-axis:** Represents \"Average Test Acc (%)\" (average accuracy on a test dataset).\n*   **Colored Lines:** Four colored lines represent the performance of four different models:\n    *   Red:  JNLL (likely a model variation)\n    *   Green: NLLR (Natural Language Learning Rate)\n    *   Yellow: CNNTK\n    *   Blue: OS (likely a specific OS or a model abbreviation)\n*   **Horizontal line at 73.51%:** Indicates the average accuracy across all models.\n\nThe graph shows that the accuracy increases as the number of evaluated networks grows. It provides a comparative performance assessment of the four models.",
+    "document": "A_Feature_Fusion_Based_Indicator_for_Training-Free_Neural_Architecture_Search.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page2_1.png",
+    "description": "The image is a blue-colored text block containing the letters \"IEEE\".  \"IEEE\" stands for the Institute of Electrical and Electronics Engineers. It is a professional organization for engineers and scientists. \n\nThe text appears to be in a sans-serif font and is slightly shadowed, giving it a subtle 3D effect. The color is a dark, saturated blue, providing a clear contrast against a light background (though the background isn’t fully visible). The style suggests a modern and professional look, typical of organizations focused on technology and engineering.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page4_4.png",
+    "description": "The image depicts a diagram illustrating a multi-attribute objective termed \"Trust.\" It’s essentially a weighted sum of several key quality attributes. The diagram is divided into two main sections: \"Traditional focus\" and \"Our focus.\"\n\n**Traditional focus** lists attributes like “Availability,” “Reliability,” “Data integrity,” “Efficiency,” and “Average execution time.” These represent standard metrics used in IT service management (ITSM) to measure service performance.\n\n**Our focus** introduces a weighted sum approach to calculating Trust.  The attributes from the traditional section (Wav, Wre, Wdi, Wef) are connected to a central “Trust” node, suggesting their contribution to overall trust. The absence of explicit weights makes it difficult to define a precise calculation method. \n\nOverall, the diagram represents a structured framework for evaluating and prioritizing service quality attributes, likely intended to be used in a system design or service management context.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page5_6.png",
+    "description": "The image represents a simplified diagram of a distributed system, likely a cloud-based service. Here's a breakdown:\n\nAt the center is a \"Broker.\" The Broker acts as a central point for routing requests and distributing resources. Four users (represented by blue avatars) are initiating requests. These requests flow through the Broker.\n\nThe Broker then distributes these requests to several Distributed Computing Points (DC) labeled \"DC1 of CSP1,\" \"DC1 of CSP2,\" and \"DC1 of CSPN.\"  Each CSP (Cloud Service Provider) has its own DC. The arrows indicate the flow of information and requests between the Broker and the different CSP DCs.\n\nThe diagram emphasizes the goal of optimizing the system, highlighting the need to maximize trust and minimize delay. It suggests a distributed architecture where requests are handled across multiple providers to achieve these performance goals.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page7_9.png",
+    "description": "The image is a line graph depicting availability over four scenarios, likely representing different levels of load. The x-axis shows the scenarios (1, 2, 3, 4), and the y-axis represents availability, ranging from approximately 0.75 to 0.87.\n\nThere are three distinct lines:\n\n*   **Blue:** Represents \"Heavy Load\" and shows a nearly consistent availability of around 0.82.\n*   **Green:** Represents \"Medium Load\" and demonstrates a slight dip in availability, fluctuating slightly around 0.83.\n*   **Red:** Represents \"Small Load,\" exhibiting a more substantial decline in availability, reaching a low of around 0.77.\n\nThe graph suggests that increasing load leads to a decrease in availability. It’s a performance metric visualization, likely used to demonstrate the impact of different load conditions on a system or service.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page8_11.png",
+    "description": "The image is a line graph showing reliability scores across four different scenarios, labeled as \"Scenario 1,\" \"Scenario 2,\" \"Scenario 3,\" and \"Scenario 4.\" Each scenario represents a different load level – likely referring to the size or intensity of a problem. \n\nThree lines represent reliability scores, colored blue, green, and red. The blue line consistently maintains a reliability score near 0.8, while the green line starts at a slightly higher score but gradually declines to about 0.75. The red line demonstrates the most significant decrease in reliability, dropping from approximately 0.85 to around 0.65 across the four scenarios. \n\nThe x-axis of the graph represents the scenario progression, and the y-axis represents the reliability score. The graph likely illustrates the performance of a system or process under varying loads, suggesting that heavier loads lead to decreased reliability. It could be part of a report or presentation analyzing system performance.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page8_12.png",
+    "description": "The image is a line graph depicting data integrity levels across four scenarios: heavy load, medium load, small load, and none (implicitly scenario 0). The x-axis represents the scenario, and the y-axis represents data integrity. \n\nEach scenario is represented by a line, colored differently. The heavy load scenario (green) starts at approximately 0.87 and decreases to 0.78. The medium load scenario (blue) starts at 0.87 and decreases to 0.79. The small load scenario (red) starts at 0.87 and decreases to 0.79. No data integrity is shown for the scenario “none”.\n\nThe graph suggests a trend of declining data integrity as the load increases. It’s a simple representation of how load affects the reliability of data. The image is not a logo or brand.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page8_13.png",
+    "description": "This image is a line graph showing the efficiency of a process or algorithm under different load conditions. The x-axis represents \"Scenario\" (likely referring to different problem sizes or load levels), and the y-axis represents “Time Efficiency” (presumably as a percentage or ratio).\n\nThere are four lines representing different scenarios:\n\n*   **Blue:** “Heavy Load” – Starts at approximately 0.88 and decreases to around 0.78.\n*   **Green:** “Medium Load” – Starts at approximately 0.85 and decreases to around 0.79.\n*   **Red:** “Small Load” - Starts at approximately 0.88 and decreases to around 0.82.\n\nThe graph illustrates a general trend of decreasing efficiency as the load increases. Each line indicates how the time efficiency changes as the problem size or load grows, showcasing a noticeable performance drop across all scenarios. The graph would be useful for visualizing the impact of different load conditions on an algorithm’s performance.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page8_14.png",
+    "description": "The image is a line graph showing a decreasing trend in “trust” values across four scenarios (labeled as Scenario 1, 2, 3, and 4). Each scenario corresponds to a different value of a parameter labeled “tr”.\n\nSpecifically, the graph represents four lines:\n\n*   **Blue line (tr=0):** Starting at 0.85, this line declines to 0.78.\n*   **Green line (tr=0.5):** Begins at 0.85 and decreases to 0.8.\n*   **Red line (tr=1):** Starts at 0.85 and drops to 0.77.\n\nThe x-axis likely represents the parameter value “tr”, while the y-axis represents the “trust” score.  The graph likely illustrates how a parameter value \"tr\" impacts a trust score across different scenarios. Without further context, it's difficult to determine the specific domain this graph represents. However, it appears to be a visual representation of a performance or reliability measurement.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page8_15.png",
+    "description": "The image is a line graph. It depicts four separate lines, each representing a different scenario. Each line shows a trend of increasing values over a horizontal axis (likely representing time or some other variable).\n\nHere’s a breakdown of each line:\n\n*   **Blue Line (W=0.25):** This line starts at approximately 2.1 and increases to 2.4.\n*   **Green Line (W=0.5):** This line starts at approximately 2.1 and increases to 2.3.\n*   **Red Line (W=0.75):** This line starts at approximately 2.1 and increases to 2.3.\n\nThe horizontal axis is not labeled, but based on the graph, it appears to be increasing. The graph likely illustrates a phenomenon where the delay (represented by the Y-axis) changes with a parameter ‘W’ which likely refers to the weight. There are no indications of logos or branding.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page9_16.png",
+    "description": "The image is a bar graph. Each bar represents a scenario, divided into two colored sections: blue and green. The blue portion represents the \"Optimal solution\" and the green portion represents the \"GA solution.\"\n\nThe x-axis labels the scenarios as 1, 2, 3, and 4. The y-axis represents a numerical value, possibly measuring some performance or result. The specific numerical values vary for each scenario. \n\nScenario 1 shows an optimal solution value of approximately 6 and a GA solution of around 5. Scenario 2 displays an optimal value of roughly 6 and a GA solution of approximately 7. For Scenario 3, the optimal solution is around 8, while the GA solution is around 7. Finally, in Scenario 4, the optimal solution is approximately 10, and the GA solution is around 9. \n\nIt's a visualization comparing two different solution approaches for whatever problem is being modeled.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf_page9_17.png",
+    "description": "The image is a line graph illustrating the execution time versus problem size for two different algorithms: \"Optimal Solution\" (represented by a blue dashed line) and \"GA Solution\" (represented by a red dotted line). The x-axis represents \"Problem Size,\" and the y-axis represents \"Execution Time (s).\"\n\nThe graph shows a steep, almost vertical decline in execution time as problem size increases for the Optimal Solution. This indicates that the optimal solution becomes significantly faster as the problem scales up.  Conversely, the GA Solution exhibits a much slower rate of improvement—as problem size increases, the execution time still increases, albeit at a reduced rate.\n\nThe graph suggests the Optimal Solution is significantly more efficient than the Genetic Algorithm Solution, particularly for larger problems. The line illustrates a trade-off; while the GA Solution might perform reasonably well for smaller problems, it quickly becomes less efficient as the problem size increases.",
+    "document": "A_Resource_Allocation_Model_Based_on_Trust_Evaluation_in_Multi-Cloud_Environments.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page2_3.png",
+    "description": "This image is a current-voltage (I-V) characteristic curve of a transistor, most likely a MOSFET (Metal-Oxide-Semiconductor Field-Effect Transistor). The graph shows the relationship between the drain current (I_D) and the gate voltage (V_G).\n\nThe x-axis represents the gate voltage (V_G) in volts, and the y-axis represents the drain current (I_D) in amperes. The curve depicts the transistor's behavior as the gate voltage changes. \n\nThe graph includes various parameters defined along the curve:\n\n*   **L_g:** Gate length = 20 nm\n*   **W_fin:** Fin width = 7 nm\n*   **V_th:** Threshold voltage = 42 nm\n*   **σ:** Standard deviation = 0.5 nm\n*   **ξ_x:** Early voltage = 20 nm\n*   **ξ_y:** Channel length modulation = 50 nm\n*   **α:** Transconductance = 1\n\nThe curve is a common representation used in semiconductor device design and analysis.  It illustrates the transistor’s on-state and off-state characteristics, providing valuable information for circuit design and performance evaluation.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page3_5.png",
+    "description": "The image shows two probability density curves. One is blue and labeled “Horseshoe Distribution,” while the other is yellow and labeled “Gaussian Distribution.” Both curves are symmetrical bell curves, characteristic of normal distributions. The blue curve is slightly wider and has a more pronounced tail extending towards negative values. The yellow curve, representing the Gaussian distribution, is a standard normal distribution, centered around zero.\n\nThe graph illustrates the concept of two different probability distributions.  The horseshoe distribution is a variant of the Gaussian distribution, specifically designed to handle skewness, often observed in real-world data.  It’s useful when data is significantly skewed to the left (negative values). This graphical representation is commonly used to educate about statistical concepts.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page3_6.png",
+    "description": "The image is a complex network diagram, and it appears to represent a logo or branding visual. It’s difficult to definitively identify the specific brand due to the abstract nature of the design. \n\nThe diagram consists of a central, stylized arrangement of circles and connecting lines. The circles are colored differently (black, blue, orange, and grey), which could represent different elements of a brand identity or product categories. The arrangement creates a recognizable, if somewhat ambiguous, shape.  The layering and color scheme are typical of brand visuals, suggesting an attempt to create a memorable and stylized design. \n\nWithout additional context, it’s impossible to say with certainty what the brand represents. However, it's highly likely that this is a logo design, attempting to convey a specific identity through interconnected shapes and colors.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page3_7.png",
+    "description": "This image is a repeating pattern of grey rectangles, each containing the text “MAPE,” “RMSE,” and a number representing an iteration (k). The pattern repeats across multiple columns. \n\nThe text “MAPE” likely stands for Mean Absolute Percentage Error, a metric used in statistical analysis to measure the accuracy of a prediction compared to the actual value. \"RMSE\" stands for Root Mean Squared Error, another common error metric. \n\nThe numbers following each term (like k) represent the iteration number – it's a sequence of results or calculations. The repeating blocks might represent a data visualization or a table showing how the error metric changes over different iterations. It’s a stylized way to display data and results.\n\nTherefore, it is not a logo or brand, but rather a representation of a numerical process, likely showing error calculations across different iterations.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page4_10.png",
+    "description": "The image appears to be a set of logarithmic plots, most likely depicting relative performance metrics over time. The plots are colored red and blue and show a decreasing trend, suggesting a performance decline over time. The axes are labeled with “log(Loff)” (likely log of offset), \"time\", and \"relative error”. The graphs show a decline over time, representing something like performance degradation.\n\nIt’s difficult to identify the specific context or brand represented. Without further information, it's difficult to assign a logo or brand. The plots are generic representations of performance data.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page5_12.png",
+    "description": "This image appears to be a logo or brand identity for a company called “Wfin”. It consists of two distinct curves, both in a reddish hue, displayed within a dark gray background. The curves are roughly symmetrical, with one curve representing \"σfin\" (possibly related to financial stability or forecasting) and the other “σfin”, with both curves peaking around 0.437. \n\nThe curves’ shapes suggest they might depict some kind of data visualization or representation of a metric. It’s possible that these curves relate to performance measurements, perhaps a financial indicator or statistical analysis. The text “Wfin” is prominently displayed at the top, in a stylized, sans-serif font. The overall impression is of a modern and professional brand identity, with a focus on finance and data.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page7_15.png",
+    "description": "This image is a headshot of a young man. He has dark hair styled with a slight wave, and he is wearing round, wire-framed glasses. He is wearing a black shirt with a collar. The photo is in black and white. It appears to be a portrait, simply capturing a person's face and appearance. It’s not a logo or brand image; it’s a photograph of an individual.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf_page7_16.png",
+    "description": "This is a portrait photograph of a young Asian man. He is wearing a black suit jacket, white shirt, and a dark tie. The background is a plain white, suggesting it's a standard studio portrait. The man has short, slightly messy dark hair and a neutral expression. His eyes are open and looking directly at the camera. It’s a typical formal headshot, likely used for professional purposes such as a resume or LinkedIn profile.",
+    "document": "Quantitative_Evaluation_of_Line-Edge_Roughness_in_Various_FinFET_Structures_Bayesian_Neural_Network_With_Automatic_Model_Selection.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page2_2.png",
+    "description": "This image depicts a 3D surface plot representing a silicon wafer with a complex doping concentration profile. The color gradient indicates varying concentrations of dopants (likely boron and phosphorus, though the exact types are not specified) within the material.\n\nThe plot shows a significant variation in doping across the wafer's surface. There’s a noticeable dark blue region in the bottom-left corner, representing the lowest doping concentration. The color gradually transitions to red, signifying the highest doping concentration, particularly in the upper right corner of the image. The surfaces are heavily textured, suggesting a patterned or etched design, possibly for integrated circuit fabrication or some other micro-device construction. The shape and pattern are irregular, which implies a specific manufacturing process. \n\nThe image doesn't appear to be a logo or brand. It's a technical visualization of a semiconductor material's doping characteristics.",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page2_3.png",
+    "description": "(a)\n\nThis image consists of three distinct lines representing roughness amplitude versus distance. Each line is a graph showing how the roughness (a measure of unevenness or texture) of a surface changes as the distance from a reference point increases. The lines demonstrate varying degrees of roughness—one with a relatively smooth surface, another with moderate roughness, and the last with high roughness.\n\n(b)\n\nThe image is a line graph depicting roughness amplitude versus distance. There's no discernible logo or brand. It simply illustrates a visualization of the surface roughness, showing how the amount of unevenness changes with increasing distance. The three lines represent three different levels of roughness.",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page4_6.png",
+    "description": "The image displays the text \"IEEE\".  \"IEEE\" stands for the Institute of Electrical and Electronics Engineers, a professional organization for engineers and scientists. The text is in a dark blue color with a slight blurred or frosted effect around the edges, possibly a stylistic choice for the logo.\n\nThe prominent \"I\" and \"E\" are large, while the \"E\" is smaller. The font appears to be a sans-serif style, likely designed for clarity and readability. The blurred edges suggest a visual effect rather than a literal shadow. It is very likely this is the IEEE logo.",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page4_7.png",
+    "description": "This image is a line plot representing the validation loss curve of a machine learning model during training. It displays how the loss (a measure of error) decreased over successive epochs (training iterations).\n\nThe plot shows four lines, each representing the validation loss for a model with a different number of distinct layers (9, 10, 11, and 12). As the number of layers increases, the validation loss generally decreases, indicating the model is learning and reducing its errors.  However, there's a slight increase in loss at the later stages of training for the models with 10, 11, and 12 layers, possibly indicating overfitting. The plot provides insights into the training process and helps in assessing the performance and potential overfitting of the model. It does not represent a logo or brand.",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page4_8.png",
+    "description": "The image is a flowchart illustrating a process for building and evaluating an Artificial Neural Network (ANN) model, likely for time series forecasting or similar predictive tasks. It’s a visual representation of a data science workflow.\n\nHere's a breakdown of the steps:\n\n1. **Data Preparation:** The process begins with input datasets – a training set (50 data points), a validation set (250 data points), and a test dataset (another 250).\n2. **Data Preprocessing:** This stage involves normalizing the variables (Δ, λ, γ) to a standard scale.\n3. **ANN Model Building:** A model is constructed and trained.\n4. **Validation:** The model is evaluated using the validation set.\n5. **Evaluation & Recovery to Original Scale:** This final stage evaluates the model’s performance and adjusts the output back to its original scale.\n\nThe diagram emphasizes the iterative nature of model building and evaluation, including data preparation, model construction, validation, and final output adjustment. The whole process is for making predictions.",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page6_12.png",
+    "description": "This image appears to be a scatter plot visualizing data from a test set. It's a set of 6 plots, each showing the relationship between two variables: `Idhi` (likely indicating diode current) and `Idlo` (likely indicating low-side current), with `Vtsat` and `Vtin` as additional dimensions.\n\nEach plot displays a histogram-like distribution. The x-axis represents `Idhi` (diode current) in microamperes (µA), and the y-axis represents `Idlo` (low-side current). The color intensity within each plot corresponds to the `Vtsat` (voltage saturation) and `Vtin` (voltage tin) values.\n\nThe plots appear to be showing data from a current-voltage (I-V) characteristic, likely of a diode or similar semiconductor device. The different plots might represent measurements taken under various conditions or with different devices, showcasing variations in the I-V curves. The data suggests a strong correlation between current and voltage, with distinct peaks and valleys indicating the device’s behavior.",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page7_14.png",
+    "description": "The image displays a set of six bivariate histograms, likely representing data from a scientific instrument or experiment. Each panel shows the distribution of two variables: Idsat (in microamperes) and Vtsat (in volts). \n\nThe x-axis represents Idsat, and the y-axis represents Vtsat. Each panel indicates a specific range of Idsat values, with the distribution of corresponding Vtsat values shown as a density plot. The color gradient within each plot indicates the density of data points at a given (Idsat, Vtsat) combination. There appears to be a relatively narrow peak in the lower-left panels corresponding to lower Idsat and lower Vtsat values. The panels have different ranges for Idsat, indicating varying experiment conditions or data segments. Overall, it appears to be a dataset visualization.\n\nGiven that there are no prominent elements or recognizable brand identity, I would output \"skip\".",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf_page9_17.png",
+    "description": "This is a black and white portrait of a young man. He has dark, straight hair styled in a modern, slightly voluminous cut. He’s wearing a white shirt and a dark suit jacket, with a dark tie. The background is a solid gray. It appears to be a formal portrait, possibly a yearbook photo or a professional headshot. There are no logos or branding elements visible within the image itself.",
+    "document": "Probabilistic_Artificial_Neural_Network_for_Line-Edge-Roughness-Induced_Random_Variation_in_FinFET.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page1_0.png",
+    "description": "The image is a logo for the “IEEE Access” journal. The text “IEEE Access” is prominently displayed in a blue, sans-serif font. Beneath it, in a smaller font, it reads “Multidisciplinary: Rapid Review Open Access Journal.”\n\n“IEEE” stands for the Institute of Electrical and Electronics Engineers, a professional organization for engineers and scientists. “Access” signifies that the journal publishes open access articles, making them freely available to anyone with an internet connection. The inclusion of “Multidisciplinary” indicates that the journal covers a broad range of subjects across various fields.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page2_2.png",
+    "description": "The image consists of a radial pattern of colored stars. Each star is a different color – green, blue, red, orange, purple, teal, pink, yellow, cyan, magenta, olive, and black.\n\nIt's difficult to interpret this as a specific logo or brand. It appears to be a visualization, possibly representing a starburst or radial pattern. The distribution of colors and their arrangement suggests a scattered, almost random, arrangement, rather than a deliberate logo design. It looks like a display of overlapping or potentially fragmented visuals, perhaps intended to illustrate a particular data representation or visualization technique.  Without additional context, it's impossible to identify the source or purpose of the pattern.\n\nskip",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page3_3.png",
+    "description": "This is the logo of the International Engineering Education Board (IEEE). It’s a stylized, blue-colored rendition of the letters \"IEEE\".  The font is bold and sans-serif.\n\nThe IEEE is a global professional organization for engineers, scientists, and technologists. They are involved in promoting standards, conducting research, and fostering collaboration across various engineering disciplines. The logo is recognizable worldwide as a symbol of engineering excellence and innovation.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page3_4.png",
+    "description": "The image depicts a flow chart illustrating a data processing pipeline, likely related to signal processing or dimensionality reduction. It's not a logo or brand.\n\nThe flow chart shows a series of stages:\n\n1.  **CNN:** An initial Convolutional Neural Network processes the input image.\n2.  **Removing Discontinuity:** This stage suggests the removal of irregularities or abrupt changes in the data.\n3.  **Randomness Removal:** This step indicates the reduction of random or noisy elements.\n4.  **Dimension Reduction:** The final step focuses on decreasing the number of features or variables in the data.\n\nThe image utilizes color-coded spheres or points to represent data points in a multi-dimensional space. The flowchart indicates that these points are being processed through a series of stages designed to enhance data quality and simplify the representation of the input signal.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page4_5.png",
+    "description": "The image appears to be a 3D rendering of a sphere with concentric circles and lines drawn on it.\n\n(a) The circles are overlaid on a spherical grid. The words \"Discontinuity\" and coordinates (XN, XN-1, XN-2) are present, suggesting a geometric or mathematical visualization.\n\n(b) This image zooms in on a section of the sphere, highlighting a single set of lines (SP1, SP2) and a point (v). The lines appear to be forming an angle, and the point “v” sits within that angle. It seems to be a section of a complex diagram involving geometric relationships.\n\n(c) This image similarly focuses on a section of the sphere. It contains a circular line and a point labeled “v.” It’s part of a similar visualization of geometric objects on a sphere, including a line that seems to intersect the circle.\n\nTherefore, it is not a logo or brand. It is a 3D illustration depicting geometric arrangements on a spherical grid, and visualizing spatial relationships between points and lines.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page5_8.png",
+    "description": "The image is a scatter plot of data points. It appears to be a visualization of a dataset, likely related to a statistical or data analysis context.\n\nThe x-axis and y-axis represent two variables, potentially representing features or attributes of the data. The points are scattered across this plane, with each point’s position indicating the combination of values for these two variables. The points are colored according to a variable, denoted as φN−1 (φN-1). This suggests a coloring scheme based on a categorical or ordinal variable.\n\nThere's a density estimation curve overlaid on the scatter plot, possibly representing a kernel density estimation or a similar technique to visualize the distribution of the data. The curve is colored by the same variable (φN−1) as the points, further reinforcing the association between the data points and the color scheme.\n\nOverall, the image serves as a visual representation of a dataset, illustrating its distribution and potential relationships between its variables. It does not appear to be a logo or brand.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page6_10.png",
+    "description": "This image is a schematic diagram representing a convolutional neural network (CNN) architecture, specifically a ResNet-32 or similar architecture. It's not a logo or brand.\n\nThe diagram illustrates a deep neural network composed of a series of convolutional layers (Conv), max pooling layers (Max Pool), residual blocks (ResBlock), and fully connected layers (FC).\n\nHere's a breakdown of the components:\n\n*   **Conv:** Convolutional layers perform feature extraction by applying filters to the input data.\n*   **Max Pool:** Max pooling reduces the spatial dimensions of the feature maps.\n*   **ResBlock:** Residual blocks help alleviate the vanishing gradient problem, allowing for the training of very deep networks.\n*   **FC:** Fully connected layers perform classification based on the extracted features.\n\nThe diagram shows a network with multiple blocks, starting with convolutional layers, followed by pooling, and culminating in fully connected layers for the final classification. The specific number of layers and parameters varies based on the architecture. It illustrates how a neural network is built from smaller components to learn patterns and make predictions.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page9_17.png",
+    "description": "This image is a graph showing the validation accuracy of different steps during a machine learning training process, likely for a Support Vector Pattern (SVM) model. The x-axis represents the epoch number (number of training iterations), and the y-axis shows the validation accuracy achieved at each epoch.\n\nFour lines represent the accuracy of four different steps/configurations:\n\n*   **Blue:** Represents the SVM model without step 1.\n*   **Green:** Represents the SVM model without step 1 and step 2.\n*   **Red:** Represents the SVM model without step 1 and step 2.\n*   **Yellow:** Represents the SVM model without step 1, step 2 and step 3.\n\nEach line shows a generally increasing trend with the training progress, indicating that the model’s accuracy improves as it is trained. However, each line also exhibits fluctuations, suggesting that the training process isn't entirely smooth, and the model might be prone to overfitting or encountering unstable gradients. The yellow line is the most volatile, potentially indicating that step 3 is sensitive to training parameters.\n\nThe image doesn’t depict any recognizable brand logo or graphic.  It’s simply a plot visualizing the training progress of a machine learning model.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf_page10_19.png",
+    "description": "The image is a portrait of a young Asian man. He is wearing a dark suit, a white shirt, and a blue tie. His hair is styled in a neat, slightly textured manner. The background is a gradient blue, which is a standard feature in professional headshots.\n\nIt appears to be a standard, professional headshot – likely used for a resume, corporate website, or other business-related purpose. There are no identifying logos or branding elements present within the image itself.",
+    "document": "Transformation_of_Non-Euclidean_Space_to_Euclidean_Space_for_Efficient_Learning_of_Singular_Vectors.pdf",
+    "page": 10
+  },
+  {
+    "image_uri": "images/Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf_page2_0.png",
+    "description": "The image shows a complex optical setup, likely for a laser system. Here's a breakdown of the components:\n\n*   **SLD:** A small, rectangular component labeled \"SLD\" sits at the top, likely a solid-state laser diode.\n*   **Laser System Components:** The main structure appears to be an optical table or housing containing a series of optical elements.\n*   **Laser and Beam Splitter:** A laser source (not explicitly shown but indicated by the setup) interacts with a beam splitter (BS).\n*   **Lenses:** Multiple lenses (L1, L2, L3) are present, suggesting beam shaping and focusing.\n*   **Filters:** Filters (C1, C2, C3) are included to select specific wavelengths.\n*   **Beam Combiner:** A beam combiner is present, likely for combining multiple laser beams.\n*   **Filters:** Filters (C1, C2, C3) are included to select specific wavelengths.\n\nThe system seems designed for manipulating laser beams, potentially for spectroscopy, metrology, or other research applications.\n\nThe image is not a logo/brand.",
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf_page3_1.png",
+    "description": "This image is a schematic diagram representing a workflow related to image processing, particularly focused on capturing and analyzing video frames. It’s not a logo or brand.\n\nThe diagram outlines a series of steps involved in a video acquisition and processing pipeline.  It shows a cyclical process with two \"Frame Grabber\" components (#1 and #2) alternating between \"forward scanning\" and \"backward scanning\" phases. \n\nKey elements include:\n\n*   **Frame Grabbers:** The core of the system, responsible for acquiring frames.  The alternating scanning suggests a method for potentially improved data capture or analysis.\n*   **Galvanometer Axes:**  The Y-axis represents Galvanometer data, likely used for calibration or data referencing. \n*   **Processing Stages:** The diagram points to processes like initialization, memory allocation,  log scaling, and FFT (Fast Fourier Transform). \n*   **Callback Function:** Likely used for managing event handling in the system. \n\nThe overall process likely involves capturing video frames, performing signal processing operations like FFT to analyze the frame's frequency content, and potentially scaling the processed data for display or further use. It’s a simplified representation of a video processing workflow.",
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf_page4_2.png",
+    "description": "This image is a stylized, slightly distorted representation of a logo. It appears to be a brand logo, specifically for a company named “Saffron.”\n\nThe core visual element is a swirling pattern composed of multiple, thick lines, resembling saffron threads or strands. These lines are densely packed and create a sense of movement and energy. The lines are predominantly arranged in a semi-circular or spiral fashion, suggesting a circular or mandala-like design. The lines vary in thickness, contributing to the visual complexity.\n\nThe background is a muted, earthy orange, evoking the color of saffron. The overall impression is one of warmth, richness, and a hint of elegance.  The design effectively utilizes repetition and line density to create a recognizable and memorable emblem. \n\n**Therefore, the answer is “skip”.**",
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf_page4_3.png",
+    "description": "The image presents a grayscale image with faint, overlapping text. The visible text appears to be the word \"FRARE,\" followed by additional words and numbers that are largely obscured by the dominant grayscale pattern. It's difficult to decipher the complete text due to the image quality and the blending of tones. \n\nThe grayscale pattern suggests it may be a spectrogram—a visual representation of sound frequencies over time. However, without knowing the original sound source, it’s impossible to confirm this definitively. \n\nTherefore, it isn’t a logo or brand, but rather a display of a grayscale image with text, possibly a spectrogram.",
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf_page5_4.png",
+    "description": "This image consists of two distinct graphs and a photograph.\n\n**Graphs:**\nThe first graph (blue) shows a sensitivity roll-off curve, trending downwards towards a minimum value and then rising again. The second graph (red) presents a similar, but inverted, sensitivity roll-off curve. Both curves are typically associated with optical measurement devices, particularly those used in laser scanning or interferometry. The shape of the curves suggests a specific measurement system or instrument configuration.\n\n**Photograph:**\nThe photograph displays an underwater scene, likely a coral reef. The image is dark, exhibiting significant contrast variations. We can see shapes and textures indicating coral formations, sand, and possibly marine life. The lighting conditions are subdued, creating an overall hazy and shadowy appearance. Overall, it's a visual representation of an underwater ecosystem.\n\nGiven the unusual graphs, it's likely that the image is part of a technical document showcasing a specific optical measurement system and its underwater applications. \n\nTherefore, skip.",
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf_page5_5.png",
+    "description": "skip\n\nThe image is a series of overlapping, slightly skewed, monochromatic radar or sonar images. Each panel represents a scan, presumably of an object or surface. The scans are overlaid, creating a complex pattern of lines and contours.  The lines are horizontal and vertical, indicating the scan lines and the coordinate system used for the scans. The “L1”, “L2”, “L3”, and “L4” labels likely correspond to different scan positions or angles. The overall appearance suggests a radar or sonar mapping system is being used to create a 3D representation of the scanned object. There’s a faint, horizontal gradient in the intensity of the images. The intensity variation across each scan appears relatively uniform with minor variations.",
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page2_2.png",
+    "description": "This is the logo for the IEEE (Institute of Electrical and Electronics Engineers). The word \"IEEE\" is written in a bold, blue sans-serif font. There is a slight blur effect to the letters, giving a soft, diffused appearance. The logo is a recognizable symbol for the global professional organization for engineers and scientists in the fields of electrical engineering, electronics, and computer science. It's used to denote membership, publications, and professional activities within these disciplines. The simple, clean design and blue color are consistently used across the organization's various materials and communications.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page4_6.png",
+    "description": "The image depicts a complex diagram representing a distributed power system, likely a smart grid. It’s not a simple logo or brand. Here’s a breakdown of the elements:\n\nThe central element is a blue box representing a \"GridLAB-D\" system, which is a software simulation tool for power grid research. Radiating outward from this box are various points labeled with data streams and indicators. These represent:\n\n*   **Tr:** Transmission lines.\n*   **NPilas:** Protection relays.\n*   **WPilas:** Weak protection relays.\n*   **Tr Airport:** Airport transmission.\n*   **N Stations:** Station Service.\n*   **Boiler:** Boiler services.\n\nThe lines connecting these points represent data flows indicating monitoring of transmission lines, protection systems, and station services.\n\nThe diagram visually portrays a distributed system with multiple elements interconnected via data streams, highlighting the need for monitoring, control and overall resilience.  It’s a schematic illustrating the architecture of a smart grid, emphasizing data exchange for effective management and operation.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page5_8.png",
+    "description": "This image doesn't appear to be a logo or brand. It’s a schematic diagram, likely representing a complex industrial or infrastructure network. The prominent element is a large, stylized \"G\" – likely representing a core operational center. Below it, there’s a series of interconnected lines and nodes, labeled with abbreviated terms like “Tr”, “N”, “Boiler”, “Station Service”, “Mission”, and “Airport”.\n\nThe diagram seems to illustrate a hierarchical system, possibly denoting connections between different components within a system. The labeled nodes could represent facilities, services, or stages in a process.  The lines denote communication or flow, indicating how these entities interact. The numbers (0.05 km, 0.75 km, 0.1 km) could represent distances or ranges within the network. \n\nWithout more context, it's difficult to definitively interpret the diagram’s purpose, but it visually presents a network of interconnected operations.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page6_9.png",
+    "description": "**skip**\n\nThe image displays the stylized letters \"IEEE\" in a dark blue color with a subtle blue glow effect. “IEEE” stands for the Institute of Electrical and Electronics Engineers, a professional organization for engineers and scientists. The font is a bold, sans-serif typeface. The blue glow creates a modern and slightly ethereal aesthetic. The logo is a recognizable symbol for the Institute, representing its mission and activities in the fields of electrical engineering, electronics, and computer science.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page6_10.png",
+    "description": "The image appears to be a complex data visualization, likely representing a monitoring dashboard or a system performance overview. It's not a clear logo or brand identity. \n\nThe central elements suggest a monitoring system tracking various metrics.  Key indicators include “Mtr_dg1,” likely representing power consumption or data throughput. There are also flags for “Wind_Pref”,  “dg1_out”, and “dg2_out” which probably indicate wind speed, or power consumption, and power output from the DG (Distributed Generation) units.\n\nThe visualization utilizes a grid-like structure, with data points connected across a network. The presence of various labels and indicators suggests real-time data collection and presentation, possibly from a renewable energy or industrial monitoring setup. The color scheme (though not clearly visible) probably indicates different states or conditions. Essentially, it’s a graphical representation of a complex system’s activity.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page7_12.png",
+    "description": "The image shows a graph displaying power output over time. Three lines represent the power output of three different components: a blue line indicates the power output of “DG1”, a green line represents the power output of “DG2,” and a red line shows the power output of “DG3.” The x-axis represents time in seconds (0-350s), and the y-axis displays power in kilowatts (kW). \n\nThe graph illustrates a fluctuating power output for each component.  “DG1” exhibits a relatively stable, lower power level throughout the duration of the graph.  “DG2”’s power fluctuates, starting at a higher value and decreasing over time. “DG3”’s output also varies, with a noticeable increase followed by a significant drop in power. It seems like a monitoring system, potentially for a combined power generation setup where these are contributing elements.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page7_13.png",
+    "description": "This is a line graph displaying a relatively stable frequency around 60 Hz. The graph shows the frequency fluctuating very slightly, primarily around the 60 Hz mark, with small deviations. There are four separate lines displayed which represent different labels: \"DG1,\" \"DG2,\" \"DG3,\" and \"WTG.\" The fluctuations in frequency are minimal and appear random. The graph’s purpose seems to track frequency over time, likely representing a data log or measurement recording. It doesn’t appear to be a logo or brand graphic; rather, it's a standard data visualization showing a periodic signal.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page7_14.png",
+    "description": "The image is a graph depicting inertia (in MWs) over time (in seconds). There are four lines, each representing a different entity:\n\n*   **DGI:** A blue line.\n*   **WTG:** A red dashed line.\n*   **DG2:** An orange dashed line.\n*   **St. Mary's:** A green dotted line.\n\nThe graph appears to show the inertia of these entities over a period of approximately 350 seconds. The inertia values fluctuate and appear to vary over time.  It's a technical graph likely related to power system stability or generator control. Without more context, it's difficult to determine the specific meaning of the axes or the data points.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page7_15.png",
+    "description": "The image is a line graph showing fuel consumption over time. There are three lines representing different types of engines, labeled “DG1,” “DG2,” and “DG3.” \n\nEach line represents a different engine type (likely diesel generators - DG). The x-axis represents time in days, and the y-axis represents fuel consumption in gallons. \n\nAs the days progress, the fuel consumption for each engine decreases linearly. \"DG1\" is represented by a blue line, \"DG2\" by a red line, and \"DG3\" by a green line. The y-axis values range roughly from 0 to 10,000 gallons. It appears to be a graph depicting performance monitoring of these different diesel generators.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page7_16.png",
+    "description": "This image shows a time series graph of disturbance, likely measured in kilovolt-amperes (kVA). The graph appears to display fluctuating electrical disturbance over a period of approximately 350 seconds.  \n\nThe disturbance values oscillate around 215 kVA, with a fairly consistent pattern of peaks and troughs. There is a noticeable rise and fall in the disturbance level from approximately 20 seconds to 150 seconds. Following this, the disturbance value tends to stabilize around 215 kVA until around 325 seconds, where it shows another small drop before returning to the initial level.\n\nIt’s difficult to determine if the data represents a specific brand logo, but the graph’s format suggests it could be visualizing electrical grid data, equipment performance, or a power quality monitoring display. It does not appear to be a recognizable logo.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page7_17.png",
+    "description": "This image is a line graph showing the energy output (in MWh) over time (in days). It appears to represent the performance of three different energy sources:\n\n*   **DG1:** Represented by a dark blue line, this energy source shows a decreasing trend over the 14-day period.\n*   **DG2:** Shown by a red dashed line, this source also exhibits a declining output.\n*   **DG3:** A green dotted line illustrates a similar, downward sloping trend.\n\nThe x-axis represents time in days, and the y-axis represents energy output in MWh. The lines show a general decline in energy production over the observed timeframe. The graph likely depicts the output of three different energy generation systems.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_19.png",
+    "description": "The image displays a time-series graph representing power output in kilowatts (kW). There are three distinct lines:\n\n*   **Blue line (DG1):** Shows a fluctuating power output, generally ranging from approximately 60 kW to 170 kW over the duration of the graph.\n*   **Red line (DG2):**  Displays a similar fluctuating pattern, with power levels generally between 50kW and 190kW.\n*   **Orange line (DG3):** Exhibits the most erratic fluctuations, typically between 60kW and 220kW.\n\nThe graph appears to depict the operation of three distinct generators - DG1, DG2, and DG3. The fluctuating nature suggests intermittent power generation or load variations. The time scale is from 0 to 350 seconds.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_20.png",
+    "description": "This image is a line graph representing a time series data. It appears to be a recording of vibrations or some oscillating signal, likely from a machine or sensor. \n\nThe graph shows a relatively stable baseline frequency around 59.5 Hz (represented by the blue line, DG1).  Then, around t = 250s, a significant, sharp, and sudden spike in frequency occurs, reaching approximately 60.8Hz (represented by the red line, WTG). This spike is the dominant feature of the graph, indicating a sudden change or event causing the signal to shift abruptly.  \n\nThe other lines, DG2 and DG3, show minimal changes or fluctuation around the baseline frequency. It is a simple visualization of a transient event in a sustained, regular signal.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_21.png",
+    "description": "The image depicts a graph showing inertia (in MW) plotted against time (in seconds). The graph consists of four distinct lines representing different entities, likely reactors or components within a nuclear power plant:\n\n*   **DG1 (Blue):** This line shows a relatively stable inertia value, hovering around 2.4 MW. It remains fairly constant throughout the duration of the graph.\n*   **DG2 (Red):** Similar to DG1, this line also displays a stable inertia value, approximately 2.4 MW.\n*   **DG3 (Orange):** This line exhibits a fluctuating inertia level, dipping down to approximately 1.7 MW before returning to its typical range of around 2.4 MW.\n*   **WTG (Pink):** This line demonstrates a fluctuating inertia level as well, but with an initial dip to approximately 1.6 MW before returning to its typical range of around 2.4 MW.\n\nOverall, the graph illustrates the dynamic inertia of several nuclear reactor components over time. The varying inertia values suggest different operating states or reactor conditions.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_22.png",
+    "description": "The image is a line graph displaying the consumption of fuel (likely in gallons) over time (in days). There are three lines:\n\n*   **Blue Line (DG1):** Shows a steadily decreasing fuel consumption over time.  It starts at approximately 10 gallons and decreases to around 2 gallons by day 12.\n\n*   **Red Line (DG2):**  A straight line starting at 8 gallons and decreasing linearly to 0 gallons over the time period.\n\n*   **Green Line (DG3):** Starts at a point above 0 gallons, and steadily decreases to approximately 0 gallons. \n\nThe graph appears to represent a tracking of fuel usage, possibly in a technical context such as machinery or transportation. It is not a logo or brand; it's a data visualization.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_23.png",
+    "description": "This image is a graph depicting a fluctuating power disturbance, likely measured in kilowatts (kW) over time in seconds. The graph shows a distinct, sharp drop in power around 250 seconds, followed by a gradual return to a roughly stable level of around 60-70kW.\n\nBefore the drop, the power level stays relatively consistent, fluctuating between approximately 100 kW and 180 kW. The sharp drop suggests a sudden event, such as a power failure or a significant load change. The graph’s clear y-axis labels and x-axis representing time (seconds) indicate it is a time-series data visualization. There’s no indication of a logo or brand associated with this visualization.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_24.png",
+    "description": "The image is a line graph depicting energy output (in MWh) over time (in days). Three lines are shown:\n\n*   **Blue Line (DG1):** A downward sloping line representing the energy output of a \"DG1\" system. It starts at approximately 360 MWh and decreases linearly over the 14-day period.\n\n*   **Green Line (DG2):** A downward sloping line representing the energy output of a \"DG2\" system. It starts at approximately 240 MWh and decreases linearly over the 14-day period.\n\n*   **Red Line (DG3):** A downward sloping line representing the energy output of a \"DG3\" system. It starts at approximately 120 MWh and decreases linearly over the 14-day period.\n\nThe graph illustrates the decay of energy production (likely from a renewable source) over a 14-day period for three different systems (DG1, DG2, and DG3), each with a different initial power output.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_25.png",
+    "description": "The image is a line graph displaying two scenarios of disturbance (likely related to power or electrical systems). \n\nScenario 1 is represented by a solid blue line, showing a fluctuating disturbance level that starts at approximately 200 kW, decreases to around 100 kW, then increases back up to 200 kW over time.\n\nScenario 2 is shown by a dashed red line. This disturbance starts around 100 kW, then decreases to a relatively low value (around 30 kW), and then increases back up to a slightly lower value than the initial.\n\nThe x-axis represents time in seconds (0-350s), and the y-axis displays the disturbance level in kW. The graph suggests an oscillating disturbance pattern for both scenarios, with slight differences in their magnitudes and timing.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page8_26.png",
+    "description": "This is a line graph showing a decreasing trend in energy output over time. The blue line represents \"Scenario 1\", indicating a decreasing energy output over time. The orange dashed line, labeled \"Scenario 2,\" also illustrates a similar decreasing trend. Both lines start at a relatively high energy output around 750MW, then steadily decrease to nearly zero energy by the end of the 14-day period. The x-axis represents time in days, and the y-axis represents energy output in megawatt-hours (MWh).  The graph is likely visualizing an energy production or consumption pattern – potentially for a solar panel system, a battery, or some other energy system where output diminishes over time.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf_page10_30.png",
+    "description": "This is a portrait photograph of a man. He has short, dark hair and is wearing a white dress shirt with a red tie. The background is a solid dark grey. His expression is neutral, and he appears to be looking slightly upwards and to the left. The photo appears to be a professionally taken headshot, likely for a business or personal profile. There is nothing to indicate it’s a logo or brand image; it’s simply a picture of a person.",
+    "document": "Scalable_Resilience_Analysis_Through_Power_Systems_Co-Simulation.pdf",
+    "page": 10
+  },
+  {
+    "image_uri": "images/s41598-017-06108-z.pdf_page1_0.png",
+    "description": "skip.\n\nThe image presents the word \"Scientific Reports\" in a bold, sans-serif font. The text is black against a white background. To the right of the text is a stylized representation of a cog or gear, rendered in a red color with a segmented pattern. The gear appears to be slightly distressed or eroded, suggesting a worn or industrial aesthetic. The overall design is clean and professional, potentially representing a scientific publication or journal. It combines modern typography with a mechanical visual element.",
+    "document": "s41598-017-06108-z.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/s41598-017-06108-z.pdf_page3_1.png",
+    "description": "This image presents a set of scatter plots, each depicting a different logarithmic scale (α).  The x-axis represents a logarithmic scale, while the y-axis also utilizes a logarithmic scale. Each plot shows a collection of points, with the position and density of the points varying based on the particular logarithmic scale (α) applied.\n\nAt α = 0, the points appear to be fairly randomly distributed with a somewhat uniform density. As α increases, particularly at α = 1 and α = 3, the points become more clustered and concentrated in the upper-right quadrants. This indicates that the logarithmic scales are being used to highlight certain regions of the data, and the data seems to show a tendency toward greater concentrations at higher scales.\n\nThe visual appearance doesn't immediately suggest a recognized logo or brand identity. It’s likely a data visualization demonstrating the effect of different logarithmic scaling methods on a dataset. There is no immediate discernible logo or brand associated with the image.",
+    "document": "s41598-017-06108-z.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/s41598-017-06108-z.pdf_page4_2.png",
+    "description": "The image depicts a stylized, branching diagram that resembles a tree or network structure. It’s highly suggestive of a diagram representing a network, data flow, or a connected system. The central vertical line is broken into multiple branches, each with interconnected circles (“o”) and small dots. The branching pattern creates a recursive, fractal-like appearance. The lines connecting the circles and dots suggest relationships and dependencies within the network.\n\nIt’s likely intended to visually represent a complex system – perhaps a software architecture, a biological pathway, or a flow diagram. The repetitive branching creates a sense of complexity and interconnection. While it doesn’t immediately identify a specific brand or logo, it suggests a diagrammatic style frequently used in technical illustrations and flowcharts.  The image could be a visualization of data, connections, or a conceptual representation of a system’s structure. Without more context, it’s difficult to determine a specific meaning.",
+    "document": "s41598-017-06108-z.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/s41598-017-06108-z.pdf_page5_4.png",
+    "description": "This is not a logo or brand. It’s a line graph. The graph consists of two line segments, one dark gray and the other light gray.  The light gray line is a straight line with a positive slope, and the dark gray line appears to be a curve. Both lines have a positive slope. The axes are labeled \"log<sub>10</sub> G\" on the x-axis and \"log<sub>10</sub> r\" on the y-axis.  The graph likely represents a relationship between two variables, possibly growth or performance metrics.  Without further context, it’s difficult to definitively interpret the specific meaning of the axes or the data points represented by the lines.  The graph's scale suggests a wide range of values for both variables.",
+    "document": "s41598-017-06108-z.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/s41598-017-06108-z.pdf_page6_5.png",
+    "description": "This image shows three probability density functions (PDFs) plotted on a log scale. The x-axis represents a variable, likely related to time or some other continuous quantity, and the y-axis represents the probability density.  Three curves are displayed:\n\n*   **Curve 1 (α = 0.6):** A shaded curve, representing a probability density.\n*   **Curve 2 (α = 1.5):** A dark gray curve with higher peak in the middle.\n*   **Curve 3 (α = 1.9):** A light gray curve, the highest at the start, then decreases at the end.\n\nThe curves are visualized with different probability densities. It's difficult to discern specific shapes or patterns beyond the general representation of probability distributions.  It's not immediately recognizable as a logo or brand element without additional context.  The curves illustrate varying distributions, likely representing different types of data or processes.",
+    "document": "s41598-017-06108-z.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/s41598-017-06108-z.pdf_page8_7.png",
+    "description": "The image displays a Creative Commons logo. The logo consists of a circle with the letters “CC” inside, enclosed by a larger circle.  Below the main logo, the word “BY” is written.\n\n\"CC\" stands for Creative Commons, and these logos are used to indicate the licensing terms applied to a work. The \"BY\" indicates that the work is licensed under a Creative Commons license that requires attribution. This means that if someone uses the work, they must give credit to the original author or copyright holder.\n\nCreative Commons licenses offer various levels of permissions, allowing creators to share their work while retaining certain rights. This image specifically indicates the \"BY\" (Attribution) license type.",
+    "document": "s41598-017-06108-z.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/s41467-020-15356-z.pdf_page3_2.png",
+    "description": "This image appears to display time-series plots, likely related to financial data. The plots show a fluctuating line for four different indicators: LTM (likely representing a long-term moving average), Rest (possibly representing a simple moving average), LTM (again, a moving average), and DFA (Dynamic Factor Analysis – a statistical technique). \n\nEach line represents a different time series plotted against a horizontal axis indicating time, spanning from approximately mid-2013 to mid-2017. The values on the y-axis appear to represent an autocorrelation or variance measure, likely showing how strongly correlated the data points are. The lines demonstrate variation over time, hinting at shifts in market conditions or volatility. It's difficult to discern precise patterns without additional context.\n\nSince the graphs are not a recognizable logo, it's not a branded image.",
+    "document": "s41467-020-15356-z.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/s41467-020-15356-z.pdf_page4_4.png",
+    "description": "This image is a probability density function (PDF) plot. It depicts three curves representing probability distributions.\n\n*   The blue curve represents the distribution for values where the probability is greater than or equal to 0.2 (represented as \"Both >=0.2\").\n*   The green curve represents the distribution for values where the probability is less than 0.2 (represented as \"Both <0.2\").\n*   The red curve is the total probability distribution, combining the blue and green curves.\n\nThe plot shows a skewness, with the blue curve dominating in the left part of the range and the green curve dominating in the right part. The total distribution is centered around 0.  The x-axis appears to represent Principal Component Coefficients (PCC), and the y-axis represents probability density. There is no discernible logo or brand associated with this visualization.",
+    "document": "s41467-020-15356-z.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/s41467-020-15356-z.pdf_page9_6.png",
+    "description": "This image shows a simplified version of the Creative Commons logo. The central element is a stylized circle with the letters “CC” inside. Below the circle is the text \"BY.\"\n\n“CC” stands for Creative Commons, a non-profit organization that provides licenses for creative works. The \"BY\" indicates that the work can be freely distributed and remixed, but with the condition that attribution to the original creator must be given. \n\nIt's a widely used symbol indicating that a work is licensed under one of Creative Commons’ various copyright licenses. The license specifies the types of use allowed and any necessary acknowledgements.",
+    "document": "s41467-020-15356-z.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/s41598-021-90943-8.pdf_page5_1.png",
+    "description": "Yes, this image is a logo/brand. It represents the logo for the company \"Dovetail\".\n\nThe logo consists of stylized, circular elements arranged in a continuous loop.  A large, prominent circle labeled \"A\" is at the bottom center. Connected to it is a smaller circle labeled \"B\". Above these two circles is a slightly larger circle labeled “C.” Finally, connected to “C” is another circle, “D”. \n\nThe arrangement creates a cyclical visual, suggesting a continuous process or cycle. The design is simple and clean, with a modern feel. The use of the same size circles and the lack of gradients lend it a professional and approachable aesthetic.  It is likely meant to convey reliability, completeness, and a cyclical nature of a product or service.",
+    "document": "s41598-021-90943-8.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/s41598-021-90943-8.pdf_page5_2.png",
+    "description": "Yes, this image is a logo for the brand \"Aptitude\".\n\nThe logo features a circular design with five interconnected circles. The central circle, labeled \"A,\" is the primary element. It’s followed by circles labeled \"B,\" \"C,\" \"D,\" and \"A\" in a clockwise direction. The circles are relatively simple and stylized, with a slightly rounded appearance. \n\nThe overall design is clean and modern, likely intended to convey a sense of continuous learning, growth, and the iterative process of skill development.  The circular flow represents a cycle or loop, suggesting a process of improvement. The name “Aptitude” is likely referring to the company’s focus on developing skills or assessing intelligence. The image is visually appealing and memorable, typical of branding design.",
+    "document": "s41598-021-90943-8.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/s41598-021-90943-8.pdf_page5_3.png",
+    "description": "This image appears to be a stylized logo or brand mark. The circular design with interconnected circles suggests a cyclical or continuous process, possibly representing a loop, cycle, or network.\n\nThe letters \"A\", \"B\", \"C\", and \"D\" are positioned within the circles. While not immediately recognizable as a specific brand name, the arrangement could represent interconnected elements or stages within a process. The dotted line reinforces the circular theme.\n\nWithout additional context or information about the brand, it's difficult to identify a specific company or product. The design is somewhat abstract, typical of many modern brand identities. It could be for a service that involves feedback loops, ongoing development, or a system that is constantly evolving. The design is simple and memorable.",
+    "document": "s41598-021-90943-8.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/s41598-021-90943-8.pdf_page5_4.png",
+    "description": "This image appears to be a road network map of the region around Freiburg im Breisgau, Germany. The main town highlighted is Freiburg. The yellow lines represent road connections, and the dashed lines are presumably additional routes or connections.\n\nThe prominent locations shown include:\n\n*   **Freiburg im Breisgau:** The central town, clearly marked.\n*   **Titisee:** A lake and nearby village is indicated.\n*   **Fernwald:** A town to the west.\n*   **Rinteln:** A town to the north.\n*   **Weiltingen:** A village to the west.\n*   **Strasberg:** A town to the north.\n*   **Mittelheid:** A town to the west.\n*   **Weiltingen:** A village to the west.\n*   **Karlsruhe:** Located towards the south.\n*   **Heilbronn:** Located towards the south.\n*   **Ulm:** Located towards the south.\n*   **Heilbronn:** Located towards the south.\n*   **Konstanz:** Located towards the north.\n*   **Weissenau:** Located towards the north.\n*   **Konstanz:** Located towards the north.\n\nIt's a detailed, albeit simplified, geographical representation, likely intended to show the road connections within the area. It’s not a logo or brand.",
+    "document": "s41598-021-90943-8.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/s41598-021-90943-8.pdf_page6_5.png",
+    "description": "This image appears to be a stylized map highlighting driving routes between various towns and villages in Germany. The dominant feature is a network of dotted black lines representing direct driving connections. These connections are clustered and relatively dense, indicating a comprehensive road network.\n\nSeveral towns are clearly labeled: Abling, Breitenfeld, Ettenberg, Hof, Helmstädterode, Helmhofen, Hofgeismar, Kirn, Kleinbarten, Meisenheim, Mörfelden-Walldorf, Neuhofen, Oftersheim, and others. The color coding suggests that some routes are more frequent or important than others, although the specific significance isn't obvious without more context.\n\nThe image probably represents a transportation map, possibly focusing on a specific region within Germany. The dense network could be used to show connectivity within a transportation or logistics system, though the purpose of the map is not entirely clear without additional information.",
+    "document": "s41598-021-90943-8.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/s41598-021-90943-8.pdf_page6_6.png",
+    "description": "The image depicts a map with a network of interconnected points and lines. The primary feature is a dense web of lines (yellow) representing routes or connections between locations. These locations are indicated by points, which are likely cities, towns, or other geographical features.\n\nThe blue lines seem to be designating connections between the main points, suggesting transportation routes—possibly roads or waterways. The overall style suggests a detailed map intended to show a network of interconnected points and their relative positions. The image appears to represent a regional map.\n\nThe yellow lines probably denote a specific type of connection, such as tourist routes, or a way to distinguish routes on the map.",
+    "document": "s41598-021-90943-8.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/s41598-021-90943-8.pdf_page11_7.png",
+    "description": "This image displays a Creative Commons (CC) license symbol and the \"BY\" designation.\n\nThe central element is the CC logo, a stylized circle with the letters \"CC\" inside.  The “CC” is surrounded by a white circle, and a darker gray circle contains the letters “BY.”\n\nThe “BY” indicates that the work is licensed under the \"Attribution\" license. This means that anyone is free to copy, distribute, and adapt the work, but they must provide appropriate credit to the original author or copyright holder.\n\nEssentially, it’s a visual indicator of a specific type of copyright license, promoting sharing and reuse of creative works while ensuring proper recognition of the original creator.",
+    "document": "s41598-021-90943-8.pdf",
+    "page": 11
+  },
+  {
+    "image_uri": "images/srep45325.pdf_page2_1.png",
+    "description": "This image depicts a complex optical setup, likely used for projection or demonstration purposes. It’s not a logo or brand. \n\nThe central component is a laptop, from which a laser beam originates. This beam passes through a series of lenses: LI, L2, and L3. These lenses manipulate the beam's path, creating a focused spot on a screen (BS). The screen is covered in a dense grid pattern, suggesting a projection surface.\n\nSeveral other components are present, including PD (probably a polarizer), GMI (likely a measuring device for light intensity), and DMD (probably a digital micromirror device). The setup seems intended to show how light is controlled and projected, possibly demonstrating technologies related to display systems. There are also measuring devices and light sensors that work in conjunction with the laser.",
+    "document": "srep45325.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/srep45325.pdf_page4_6.png",
+    "description": "The image is a line graph showing a fluctuating signal. It consists of two lines, one in red and one in blue. Both lines exhibit a sawtooth-like pattern, starting near zero, rising to a peak, then decreasing back to near zero, and repeating.\n\nThe lines do not visually form a recognizable logo or brand. It is likely a representation of a sensor reading, an oscilloscope display, or a graph illustrating a repeating process like an oscillator or a mechanical device. The pattern is consistent, suggesting a data stream, a voltage output, or a simple mechanical movement. Without further context, it's difficult to determine the exact source of the data.",
+    "document": "srep45325.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/srep45325.pdf_page4_8.png",
+    "description": "The image is not a recognizable logo or brand. It appears to be a graph displaying a line with dashed markers. The line’s value fluctuates between approximately 0 and 150. The dashed markers (red) visually represent the data points on the line. It is a very simple line graph, possibly depicting a function, data series, or a result of a calculation. Without further context or accompanying information, it’s difficult to determine the specific meaning or domain of this data. It does not appear to be related to any specific company or brand.",
+    "document": "srep45325.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/srep45325.pdf_page7_16.png",
+    "description": "This image depicts a complex schematic diagram related to a scanning beam system, likely for imaging or metrology. It's not a logo or brand.\n\nHere’s a breakdown of the elements:\n\n*   **Scanning Beam:** The central focus is a scanning beam, indicated by the blue line.\n*   **Components:** Various components are shown, including:\n    *   **DMD (Digital Micromirror Device):** A white box representing a DMD, a key component for spatial light modulation.\n    *   **GMI and GMI2:** These likely represent two different devices for measuring or controlling the beam position.\n    *   **SA (Sample Alignment):** A small element indicating a sample alignment system.\n    *   **CL (Collimator):** A device for shaping the beam.\n*   **Schematic:** There's a diagram with angles (θ, Δθ, χ, d), distances (l, d), and positions (x), suggesting a system for precise beam control and positioning.\n*   **Waveform (d):** The bottom graph (d) displays a waveform representing a voltage output from the GMI device. This likely shows the voltage variation over time as the beam is scanned.\n\nIn summary, the image is a detailed technical diagram of a scanning beam system, centered around a DMD and utilizing GMI/GMI2 for beam positioning control.",
+    "document": "srep45325.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/srep05215.pdf_page1_0.png",
+    "description": "The image is a text-based design featuring the word “REPORTS” in large, bold, black capital letters. Below the text, there's a red gear icon.\n\nIt appears to be a stylized presentation of the word “Reports”, likely as a title or heading. The gear represents mechanics, engineering, or possibly technology and industry, suggesting a context related to reports in those fields. The overall design is simple and functional, prioritizing readability and visual impact. It's a design commonly seen in professional settings, particularly where data, technical information, or project updates are involved.",
+    "document": "srep05215.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/srep05215.pdf_page4_5.png",
+    "description": "This image is a graph illustrating **Time Dependent Capacity Curves**. It depicts a three-dimensional graph where:\n\n*   **X-axis:** Represents Time\n*   **Y-axis:** Represents Demand (D)\n*   **Z-axis:** Represents Capacity (τ)\n\nSeveral curves are shown, each representing a different capacity level over time. The curves gradually change as time progresses. These curves visually represent how demand and capacity fluctuate over time, showing how the available capacity varies at different points in time.  The graph is a standard representation used in supply chain management and logistics to model capacity constraints and demand patterns.",
+    "document": "srep05215.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/srep05215.pdf_page5_7.png",
+    "description": "This image depicts a stylized graph representing time-dependent capacity curves. The primary elements are:\n\n*   **Axes:** A vertical axis labeled \"Demand\" (D) and a horizontal axis labeled \"Time\" (t).\n*   **Curves:** Several dashed lines, labeled c1, c2, c3, c4 and c5, represent capacity curves. These curves illustrate how capacity (likely of a resource or service) changes over time. The curves don't represent a standard bell curve.\n*   **Stylized Appearance:** The image appears to be a diagram illustrating how demand or resource utilization changes with time, presenting a possible bottleneck or constraint on a system.\n\nIt's not recognizable as a logo or brand. It's a visualization of a concept from operations research, logistics, or perhaps a supply chain management context.",
+    "document": "srep05215.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/srep05215.pdf_page8_11.png",
+    "description": "This image contains the Creative Commons Attribution (CC BY) logo. The logo consists of a circular frame with \"CC\" inside, followed by \"BY\" below.  The CC stands for Creative Commons, a movement that provides a standardized way for creators to share their work while retaining copyright. The \"BY\" indicates that if the work is shared, the original creator must be given attribution. \n\nThis logo is commonly used to indicate that a work is licensed under the Creative Commons Attribution license, which permits others to copy, distribute, and adapt the work as long as they give appropriate credit to the original author and include a link to the original license. It's a widely recognized symbol for open and collaborative content sharing.",
+    "document": "srep05215.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page1_0.png",
+    "description": "The image consists of the word \"REPORTS\" in black text arranged horizontally across the top portion of the frame. Below the text, there is a single red gear.\n\nThe gear is a simple, stylized representation of a mechanical gear. The gear has teeth and a central hub. The overall composition is clean and minimalistic.\n\nIt appears to be a simple graphic design, possibly used to represent a topic related to reports and mechanics – such as engineering, manufacturing, or data analysis. It could be part of a larger design or branding effort. It's not immediately identifiable as a known brand logo.",
+    "document": "srep04487.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page5_10.png",
+    "description": "The image presents a graph of error bars. The graph displays several data points connected by error bars. The error bars extend above and below the data points, indicating the range of uncertainty or variation for each measurement. The x-axis appears to represent time, potentially measured in seconds or milliseconds, while the y-axis represents a value (likely a measurement or quantity) against which the error bars are plotted. The error bars are relatively small, suggesting the data points are closely clustered around a central value. \n\nIt's not immediately clear what the data represents without additional context. It could be representing results from an experiment, measurements in a process, or a similar type of data collection. Because it does not appear to contain a branding element or logo, I would not classify it as such.",
+    "document": "srep04487.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page5_11.png",
+    "description": "This image appears to be a graph displaying a scatter plot with error bars. The data points seem to trend slightly upwards, suggesting a positive correlation, though it's a very weak one. The data range spans from approximately 1 to 180, with the x-axis possibly representing a time-series or some kind of measurement scale.\n\nThe error bars indicate uncertainty in the measurement of each point. They are quite small, suggesting that the measurements are relatively precise.  The overall plot is minimalist and appears to be showing data related to a scientific or engineering context, perhaps related to measurements or process optimization.\n\nIt isn't immediately clear if this represents a brand logo. It’s a simple dataset visualization.",
+    "document": "srep04487.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page5_12.png",
+    "description": "This image is a histogram representing a set of readings, likely from a sensor or instrument that measures some fluctuating quantity. The x-axis represents “Price (ticks)” and the y-axis shows the frequency (number of occurrences) at each “tick” value. \n\nThe red bars denote the main frequency, showing a prominent peak around the 100-120 tick range.  The gray bars represent a second, less dominant frequency, and generally lower than the red bar’s prominence. The pattern suggests a cyclical or periodic behavior, with the primary peak repeated multiple times. \n\nWithout more context, it's impossible to determine the exact meaning of the “Price” and “ticks”, but it could represent readings from a mechanical device, or perhaps an electrical circuit, or data recording. The distinct peaks indicate recurring values.",
+    "document": "srep04487.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page5_13.png",
+    "description": "skip)",
+    "document": "srep04487.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page5_14.png",
+    "description": "This image is a histogram showing the frequency distribution of price levels, likely in a dataset related to sales or transactions. \n\nThe red bars represent the frequency of price levels falling within specific bins. As the price increases, the frequency of those price levels tends to decrease. There appears to be a peak around 100-120 price units. The grey bars represent a second set of frequency data, possibly representing another set of price bins. \n\nWithout further context, it's difficult to determine the specific product or industry this represents. However, the visual style and format strongly suggest it’s a distribution graph, probably used to visualize data and understand price ranges within a particular dataset.",
+    "document": "srep04487.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page7_20.png",
+    "description": "This image is a scatter plot. It appears to be a logarithmic scale plot of data. The x-axis represents the log of δ (delta) and the y-axis represents the log of N (where N likely stands for a quantity).\n\nThe plot shows a clear downward trend, indicating a decreasing relationship between log(δ) and log(N). The points appear to roughly follow a straight line, suggesting a linear relationship on a logarithmic scale. A line of best fit could be drawn through these points.\n\nWithout additional context, it’s difficult to determine precisely what δ and N represent. However, the visualization strongly suggests a monotonic decrease between them. The plot's format suggests it is likely part of a data analysis or scientific presentation.",
+    "document": "srep04487.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page8_22.png",
+    "description": "c)\n\nThe image contains a graph depicting time-series data, likely representing a fluctuating “price” or some other measured value over time. The x-axis is labeled “time (ticks)” and the y-axis is labeled “Price (ticks)”.  The graph displays a cyclical pattern with peaks and troughs.\n\nThe data shows an oscillating trend with approximately a sinusoidal shape.  The graph has distinct local maxima and minima. The overall trend suggests a periodic fluctuation, possibly representing a cyclical process or a signal with repeating patterns.  There are also some irregularities and noise within the data. The use of different colored lines (blue, red, black) suggests multiple data streams, potentially representing different underlying factors or measurements linked together.",
+    "document": "srep04487.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/srep04487.pdf_page9_24.png",
+    "description": "This image displays a set of icons commonly associated with Creative Commons licenses. Let's break down each element:\n\n*   **CC:** This represents the Creative Commons logo.\n*   **BY:** Stands for \"Attribution,\" meaning the work must be credited to the original author.\n*   **NC:** Stands for \"NonCommercial,\" indicating the work cannot be used for commercial purposes.\n*   **SA:** Stands for \"ShareAlike,\" meaning if the work is modified, the license must remain the same.\n\nThe icons are arranged in a visually appealing linear pattern, with the Creative Commons logo at the left. Together, these elements define a particular Creative Commons license type. They represent a license that allows for sharing and adaptation, but restricts commercial use and requires attribution and the same license terms for any derivative works.",
+    "document": "srep04487.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/srep03578.pdf_page3_5.png",
+    "description": "The image displays a correlation chart, likely referencing stock market data. It shows a series of blue bars, each representing a stock listed on the Financial Times (FT). The length of each bar indicates the correlation between that stock and a common index, presumably the S&P 500 or similar.\n\nThe stocks listed include: BAC (Bank of America), MCD (McDonald's), IBM, KO (Coca-Cola), AXP, HPQ, CSCO, CVX, HD, INTC, MSFT, MRK, GE, BA, TRV, XOM, VZ, DIS, WMT, DD, JPM, CAT, T, PG, AA, UNH, and MCD.\n\nThe chart's horizontal axis probably represents these stocks, while the vertical axis indicates the correlation coefficient. It is a visual representation of how closely the stock's price movements are linked to a broader market trend.",
+    "document": "srep03578.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/srep01684.pdf_page1_0.png",
+    "description": "The image is a text-based graphic. It consists of the word \"REPORTS\" in large, bold, black letters. Below the text is a red gear icon. The background is a light gray color. \n\nIt appears to be a simple, stylized design likely used for branding or to visually represent a topic related to reports and mechanics, possibly indicating a report system or an engineering context. It's a minimalist design with clear typography and a recognizable industrial symbol.",
+    "document": "srep01684.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/srep01684.pdf_page2_3.png",
+    "description": "This image is a line graph showing the relative search volume (p(t)) over time, indexed by year (t) from 2004 to 2011. The graph's y-axis represents the relative search volume, ranging from approximately 500 to 1400. The x-axis represents time in years.\n\nThe line itself depicts a generally upward trend, suggesting increasing search volume over the observed period. However, the line is not smooth but rather has fluctuations, indicating variability in the search volume. There are periods of significant increases and decreases, representing peaks and troughs in search demand. The graph uses a color gradient to visually represent the relative search volume, with red indicating higher search volumes and blue indicating lower ones.",
+    "document": "srep01684.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/srep01684.pdf_page2_4.png",
+    "description": "This image is a line graph illustrating the performance of two investment strategies – “Google Trends Strategy” (blue line) and “Buy and Hold Strategy” (red line) – over a period from 2004 to 2011.  The graph shows the change in profit and loss (percentage) over time.\n\nThe “Google Trends Strategy” initially shows a relatively flat line, then experiences a significant upward trend, reaching a peak of approximately 326% by 2011. The “Buy and Hold Strategy” demonstrates a more consistent, moderate upward trajectory, peaking around 16% during the same period. \n\nThe graph suggests that the “Google Trends Strategy” was significantly more volatile and generated substantial gains, albeit with greater risk, compared to the more stable “Buy and Hold Strategy”. The difference in performance between the two strategies is clearly evident throughout the time frame displayed.",
+    "document": "srep01684.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/srep01684.pdf_page3_6.png",
+    "description": "This image presents a stacked bar chart visualizing the standard deviations of returns for various investment strategies. The strategies include:\n\n*   **Stocks:** Displays a high standard deviation, indicating significant volatility.\n*   **Real Estate:** Shows a moderate standard deviation, suggesting moderate volatility.\n*   **Commodities:** Indicates a high standard deviation, similar to stocks.\n*   **Bonds:**  Represents a low standard deviation, showing low volatility.\n*   **Options:** Displays a very high standard deviation, reflecting significant risk.\n*   **Forex:** Represents a high standard deviation.\n*   **Futures:** Shows a high standard deviation.\n*   **Small Cap:** Displays a high standard deviation.\n*   **Large Cap:** Shows a moderate standard deviation.\n*   **Value:** Represents a high standard deviation.\n*   **Growth:** Displays a high standard deviation.\n*   **Small Cap:** Displays a high standard deviation.\n*   **Large Cap:** Displays a moderate standard deviation.\n*   **Value:** Displays a high standard deviation.\n*   **Growth:** Displays a high standard deviation.\n\nThe chart provides a comparison of risk levels associated with different investment approaches.",
+    "document": "srep01684.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/s41586-019-1138-y.pdf_page3_3.png",
+    "description": "This image is a screenshot of a smartphone interface. The screen displays a simple graphic: two overlapping triangles with a small circle positioned within them. It’s reminiscent of a basic geometric diagram, possibly illustrating a conceptual design.\n\nBelow the graphic, there are standard smartphone UI elements: a microphone icon (likely for voice recording), a slider for volume control, and a user profile icon.\n\nThe overall aesthetic suggests a minimalist or tutorial-style application. The presentation looks like a simple demonstration or example – possibly related to graphic design or diagrams. The black and white color scheme contributes to the clean, straightforward appearance.",
+    "document": "s41586-019-1138-y.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/s41586-019-1138-y.pdf_page4_13.png",
+    "description": "The image depicts a network of six hexagons, resembling a mind map or a diagram for visualizing interconnected concepts. Each hexagon is labeled with a distinct phrase: \"Scientific study of behavior,\" \"Machine behavior,\" \"New scientific questions,\" \"New quantitative evidence,\" \"New scientific questions,\" and \"New quantitative evidence.\"\n\nThe hexagons are connected by arrows, suggesting a flow of information or ideas between them. The central theme appears to be related to the study and understanding of complex systems, potentially encompassing aspects of artificial intelligence, behavioral science, and data analysis. The use of \"quantitative evidence\" and \"new scientific questions\" indicates an emphasis on data-driven research and exploration of novel research avenues.\n\nIt’s unlikely to be a logo or brand as it lacks any recognizable brand identity. Instead, it’s a visual representation of a structured conceptual framework.",
+    "document": "s41586-019-1138-y.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/s41586-019-1138-y.pdf_page5_15.png",
+    "description": "This image presents a complex, multi-layered inquiry into the behavior of a machine. It’s not a logo or brand. The image is a schematic diagram outlining various perspectives for understanding how a machine develops and maintains its behavior.\n\nIt explores the origins of the behavior—how it’s elicited, whether through programming, learning (specifically, supervised and reinforcement learning), or external stimuli. It delves into the engineering considerations and constraints involved in creating the machine's actions. The image investigates the propagation and persistence of this behavior, considering factors such as institutional and programming restrictions.\n\nCrucially, it also looks at the consequences of this behavior, asking how it might affect stakeholders – users or companies – and whether it's adaptable to different environments. The diagram aims to comprehensively analyze the machine’s function, its evolutionary factors, and its impact on its context.",
+    "document": "s41586-019-1138-y.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/s41598-020-77823-3.pdf_page4_1.png",
+    "description": "This image depicts a flowchart illustrating a predictive modeling process, likely related to financial analysis or stock market prediction. It outlines a system that gathers data from various sources and transforms it into a predictive model.\n\nHere’s a breakdown of the process:\n\n1.  **Web Crawler:** Starts with a web crawler retrieving data from the internet.\n2.  **Online Securities Research & Reports:** Data is sourced from online securities research and reports.\n3.  **Preprocessor:** This component handles data cleaning and preparation. This includes Word Segmentation and Word Cleaning.\n4.  **Keyword Vector Selection & Building Dictionary:** Key concepts are identified, and a keyword vector is built.\n5.  **Report Representation & Construction of Text Network:** A representation of reports and text networks is created.\n6.  **Predictive Model (Sparse Laplace & Logistic):**  The process culminates in a predictive model utilizing Sparse Laplace and Logistic Regression techniques.\n7.  **Trading:** The prediction is ultimately used for trading decisions.\n\nThe image represents a pipeline for collecting, processing, and analyzing data to generate predictions, which are then applied for trading.",
+    "document": "s41598-020-77823-3.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf_page1_0.png",
+    "description": "The image shows three distinct 3D crystal structures. Each is a representation of a crystal lattice with varying defects.\n\n**Normal Structure:** The first image displays a simple cubic crystal structure with blue spheres representing atoms arranged in a regular cubic pattern. Red lines indicate the bonds between the atoms. It represents a normal, defect-free crystal lattice.\n\n**Monovacancy Defect:** The second image illustrates a monoclinic vacancy defect. This is represented by a single missing atom in the lattice. The red sphere highlights this absence, disrupting the regular pattern.\n\n**Substitutional Impurity Defect:** The third image depicts a substitutional impurity defect. A red sphere represents an atom that has taken the place of a normal atom in the crystal lattice. This introduces a foreign element, altering the material's properties.\n\nIn essence, the image is a visual representation of different types of imperfections or defects that can occur in crystalline materials, impacting their structure and properties.",
+    "document": "Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf_page4_2.png",
+    "description": "The image depicts a stylized, slightly angled rectangular prism. The prism has dimensions approximately 10.4 mm high, 3.4 mm wide, and 1.8 mm deep. It appears to be a solid dark grey or black color. Notably, there are three sets of parallel lines etched onto the top face of the prism, representing crystallographic directions: [011], [100], and [011]. These lines are likely used to indicate the orientation of the material or object within a crystallographic context, such as in materials science or engineering. \n\nIt’s not a logo or brand. The image is a representation intended to show how a material might be oriented within a 3D space using these crystallographic axes.",
+    "document": "Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf_page8_4.png",
+    "description": "This is a portrait photograph of a man. He is wearing a black suit jacket over a white shirt. The photo is a standard headshot, with a neutral expression. He has short, dark hair and a light complexion. The background is a plain, off-white color.\n\nIt's not a logo or brand image.  The image is simply a photograph of an individual in professional attire.",
+    "document": "Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page4_1.png",
+    "description": "The image depicts a setup likely used for thermal imaging. It consists of a rectangular container, possibly a test chamber or enclosure, with three rectangular surfaces inside. These surfaces are illuminated by what appears to be a light source, creating a visual contrast between the lit and unlit areas.\n\nA mini PC is connected to a thermal camera through a cable. The thermal camera is positioned above the illuminated surfaces.  The red lines indicate the area where the thermal camera is capturing data. The presence of the PC suggests that the thermal data is being processed and displayed, likely as a thermal map or heat distribution analysis. The device seems to be used for analyzing the heat transfer properties of the items on the test surfaces.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page5_2.png",
+    "description": "This image is a flowchart representing a process for measuring thermal inertia of soil. It appears to be related to experimental methods for soil science, potentially within a geotechnical or environmental research context.\n\nThe flowchart outlines a sequence of steps aimed at establishing a controlled environment for soil measurements. Initially, the process involves selecting soil samples with known properties. These samples are then placed onto thermally isolated plates within a vacuum chamber. The chamber is evacuated to achieve a low temperature, likely below 0°C. A thermal camera is mounted to monitor the temperature within the chamber. Heaters are set to reach a desired temperature, and the process iterates until a stable temperature is achieved. A final step involves calculating the thermal inertia (ΔG<sub>t</sub>) of the soil sample. The entire sequence is designed to simulate conditions at Earth's surface, focusing on evaluating how quickly the soil temperature changes.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page5_3.png",
+    "description": "This image depicts a close-up of a tire's inner sidewall. The dominant feature is a dark gray or black tire with a light gray or beige inner lining. A prominent circular cut-out reveals a red inner core within the tire. The tread pattern is blurred and difficult to discern. The image focuses primarily on the tire's structure and its internal components. \n\nIt does not appear to be a logo or brand, but rather a detailed representation of a tire's cross-section, showcasing the separation between the outer rubber and the inner reinforced material.  The image likely serves as a technical illustration or an example of tire construction.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page6_6.png",
+    "description": "The image is a graph showing the particle size distribution, specifically the percentage of material passing each sieve size. It depicts three soil samples (labeled as Soil A, Soil B, and Soil C) plotted against sieve diameter in millimeters.\n\nEach line represents the percentage of soil particles that pass through the corresponding sieve size. Soil A demonstrates a relatively uniform particle size distribution, passing a larger percentage of material through smaller sieve sizes and a smaller percentage through larger ones. Soil B has a more pronounced drop in the percentage of material passing with increasing sieve size. Soil C exhibits a rapid decline in the percentage passing as the sieve size decreases.\n\nThe graph is a common representation in geotechnical engineering for characterizing soil composition and its suitability for various applications. The data provides insight into the gradation of the soil, which is crucial for understanding its engineering properties such as permeability and drainage characteristics.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 6
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page7_7.png",
+    "description": "This image is a time-series graph showing temperature fluctuations over time. It plots four different layers, represented by different colored lines:\n\n*   **Bedrock** (blue): Shows a relatively stable temperature, fluctuating around 20°C.\n*   **Soil A** (red): Exhibits a higher initial temperature, peaking around 40°C, then decreasing.\n*   **Soil B** (orange):  Similar to Soil A, with a high initial temperature, dropping to around 25°C.\n*   **Soil C** (purple):  The temperature rises to a peak of approximately 38°C and then declines.\n*   **Air** (dotted line):  Displays a consistent temperature of around 21°C.\n\nThe x-axis represents time (Hours:Minutes), and the y-axis represents temperature in degrees Celsius (°C).  The graph illustrates how each layer responds to changes in temperature.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page7_8.png",
+    "description": "This image is a temperature graph showing the temperature changes over time in four different soil types – Bedrock, Soil A, Soil B, and Soil C. Each line represents a different soil type, plotted against time (HH:MM). The y-axis indicates temperature in degrees Celsius (°C), and the x-axis represents the time.\n\nThe graph depicts a typical thermal response curve for each soil.  All four lines show an initial rise in temperature, followed by a period of stabilization and a subsequent drop in temperature.  The specific shapes of the curves – the initial rate of temperature increase, the peak temperature reached, and the rate of cooling – likely indicate the thermal properties of each soil type.  Analyzing the curves could provide insights into soil moisture content, thermal conductivity, and heat capacity.  Without additional context, it’s difficult to determine the precise purpose or application of this graph.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page7_9.png",
+    "description": "The image is a time series graph showing temperature variations over time. It appears to represent a thermal monitoring or control system. Four distinct lines depict the temperature changes of four different materials or zones:\n\n*   **Red:** Likely represents \"Bedrock\" or a similar stable, foundational element.\n*   **Blue:** Indicates \"Soil A.\"\n*   **Green:** Represents \"Soil B.\"\n*   **Purple:** Represents \"Soil C.\"\n\nThe y-axis displays temperature in degrees Celsius (°C), and the x-axis shows time in hours and minutes (HH:MM).  A dashed line indicates the \"heater\" temperature, while another dashed line represents the \"setpoint\" temperature. A final dashed line represents the \"air\" temperature. The graph suggests a heating and cooling cycle, with the temperature initially low, rising to a peak, and then descending back to a lower level. The graph is designed to visualize the thermal characteristics of these various materials over time.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page7_10.png",
+    "description": "The image shows four lines representing temperature changes over time. Each line represents the temperature of a different material: \"Bedrock,\" \"Soil A,\" \"Soil B,\" and \"Soil C.\" The x-axis represents time, likely in hours and minutes (HH:MM). The y-axis represents temperature in degrees Celsius (°C).\n\nEach line starts at a relatively low temperature and then gradually increases over time, reaching a peak temperature before decreasing again. The \"Bedrock\" line has the highest peak temperature, followed by \"Soil A,\" then \"Soil B,\" and finally \"Soil C,\" which shows the lowest peak temperature. The lines illustrate different thermal behavior between the materials, possibly reflecting different heat capacities or thermal conductivity. The graph provides a visual representation of temperature trends over the measured time period.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page7_11.png",
+    "description": "This image is a time-series graph depicting temperature variations over time. It shows four lines representing different components or zones:\n\n*   **Bedrock:** A dark blue line, representing the bedrock temperature. It generally stays around 20-30°C.\n*   **Soil A:** A red line shows the temperature of Soil A, which initially starts low and rises to around 60°C before leveling off.\n*   **Soil B:** A dark red line displays the temperature of Soil B, starting at a similar low point as Soil A but rising slightly higher and showing a more gradual increase.\n*   **Soil C:** A brown line illustrates the temperature of Soil C, also beginning at a low temperature, peaking at about 55°C, and then declining.\n*   **Heater:** A dashed red line represents the temperature influence of a heater, which creates a rapid increase in the temperature to an approximately 60°C.\n*   **Setpoint:** A dashed line denotes the target setpoint temperature, which is around 55°C.\n*   **Air:** A black line shows the air temperature, remaining consistently at around 20-30°C.\n\nThe graph illustrates the temperature fluctuations in different soil types, and the impact of a heater.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page7_12.png",
+    "description": "This image is a graph showing temperature fluctuations over time. It presents four lines, each representing a different soil type:\n\n*   **Bedrock:** Shown in dark red, this line displays a consistently high temperature, starting at approximately 0.8°C and peaking around 1.5°C.\n*   **Soil A:** Illustrated in orange, this line starts at a lower temperature (around 0.6°C) and rises to a peak near 1.2°C.\n*   **Soil B:** Depicted in light blue, this line starts at a slightly lower temperature than Soil A (around 0.4°C) and reaches a peak close to 1.0°C.\n*   **Soil C:** Represented by a purple line, this exhibits a similar pattern to Soil B, starting around 0.4°C and reaching a peak at approximately 1.0°C.\n\nThe x-axis indicates time (HH:MM), likely representing hours and minutes. The y-axis represents temperature in degrees Celsius (°C). The graph shows an initial rise in temperature for all soil types, followed by a return to a lower stable temperature.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page8_13.png",
+    "description": "This image is a graph showing temperature fluctuations over time, likely related to a heating system. It displays four lines, each representing a different element:\n\n*   **Bedrock:** A dark brown line representing the temperature of bedrock.\n*   **Soil A:** A lighter green line indicates the temperature of Soil A.\n*   **Soil B:** A light blue line illustrates the temperature of Soil B.\n*   **Soil C:** A dark blue line shows the temperature of Soil C.\n*   **Heater:** A dashed red line indicates the heater's temperature.\n*   **Setpoint:** A dashed dotted line represents the desired temperature setpoint.\n*   **Air:** A dashed dotted grey line shows the ambient air temperature.\n\nThe graph illustrates how the temperature of each component changes over time, with the heater attempting to reach the setpoint while being influenced by the ambient air temperature and the inherent temperatures of the soil layers. The lines show a similar trajectory, initially staying at a low temperature and then rising to a peak before slowly descending.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page8_14.png",
+    "description": "This image is a graph displaying temperature readings over time. It’s a line graph with four distinct lines representing different soil types, labeled \"Soil A\" (green), \"Soil B\" (blue), and \"Soil C\" (red).\n\nThe x-axis represents time, measured in HH:MM (likely hours and minutes). The y-axis represents temperature in degrees Celsius (°C). Each line shows a temperature curve rising, peaking, and then gradually declining. The lines show a similar pattern of rise and fall, but with slightly different peak temperatures. The peaks of the graph appear to occur around 01:32 and 03:48.\n\nThe graph appears to be documenting temperature changes in different soil samples over a specific period. It’s a data visualization, rather than a logo or brand.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page8_15.png",
+    "description": "This image is a graph depicting temperature changes over time. It appears to represent a heating system, likely for subsurface applications, such as ground temperature control.\n\nThe graph shows four lines:\n\n*   **Green Line (Soil):** Represents the temperature of the soil. It starts low, rises steadily, peaks around 32°C, and then decreases, suggesting a heating and cooling cycle.\n*   **Orange Line (Subsurface):**  Likely represents the subsurface temperature, closely mirroring the soil temperature fluctuation.\n*   **Red Line (Heater):** Shows the temperature change related to the heating system.\n*   **Pink Line (Setpoint):** Indicates the desired temperature (setpoint) - in this case around 32°C.\n*   **Blue Line (Air):** Possibly displays the ambient air temperature, which appears to remain relatively stable around 20°C.\n\nThe graph illustrates how a subsurface heating system interacts with soil temperature, maintaining a target temperature (setpoint).",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page8_16.png",
+    "description": "The image is a line graph depicting temperature changes over time. The graph shows four distinct lines, each representing a different parameter related to temperature control.\n\n*   **Soil A (Green):** Displays the temperature changes of soil A over time. It starts at approximately 18°C, rises to a peak around 60°C, and then gradually decreases.\n*   **Subsurface (Yellow):** Illustrates the temperature of the subsurface layer, also exhibiting a similar trend to Soil A.\n*   **Heater (Dark Brown):** Shows the temperature output of a heater, likely indicating the heating effect.\n*   **Setpoint (Red dashed line):** Represents the target temperature. The lines fluctuate around this setpoint.\n*   **Air (Light Brown):**  May be indicating ambient air temperature.\n\nThe graph appears to be a visualization of a temperature control system, possibly related to agriculture or environmental monitoring, displaying how soil, subsurface, heater, setpoint, and ambient temperature change over a period of time.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page8_17.png",
+    "description": "The image is a time series graph displaying temperature readings over time. It shows four different lines representing the temperature fluctuations of:\n\n*   **Soil C:** A purple line, depicting the temperature of soil C. It starts at a relatively low temperature, rises quickly, and then plateaus.\n*   **Subsurface:** A yellow line, indicating the temperature of the subsurface. It mirrors the pattern of Soil C, though initially it starts higher.\n*   **Heater:** Another yellow line, representing the temperature of a heater system. It generally follows the same pattern as the Subsurface line but lags slightly behind.\n*   **Setpoint:** A dashed pink line, representing the setpoint temperature.\n*   **Air:** A dashed blue line representing the air temperature.\n\nThe graph appears to be illustrating a thermal response, potentially related to heating or cooling processes. The lines show how the temperature of the soil, subsurface, heater, air and setpoint change over time.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page8_18.png",
+    "description": "This image is a graph depicting temperature changes over time. It shows four lines representing different thermal elements:\n\n*   **Soil C:** A blue line fluctuating between approximately 10°C and 60°C.\n*   **Subsurface:** An orange line mirroring the fluctuation of the Soil C line, also ranging from around 10°C to 60°C.\n*   **Heater:** A purple line starting at 10°C and rising to approximately 60°C, then falling back down.\n*   **Air:** A dashed red line showing a relatively constant temperature around 10°C.\n\nThe graph represents the temperature changes over time, most likely in a ground temperature monitoring system. The x-axis represents time (hours:minutes) and the y-axis represents temperature in degrees Celsius.  The distinct colors and lines denote the temperature readings from different sensors, presumably used to manage and monitor soil temperature in an agricultural or environmental context.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page12_26.png",
+    "description": "This image is a portrait of a man. He is a middle-aged Caucasian male with graying brown hair, a beard, and a mustache. He’s wearing a light blue button-down shirt with a collar visible. The background is a plain, somewhat dark, neutral color, possibly a wall. The lighting is somewhat soft and diffuse.\n\nIt’s not a logo or brand image. It's a simple, straightforward photograph of a person. There are no distinctive brand elements or visual cues that would suggest it's a logo.",
+    "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
+    "page": 12
+  },
+  {
+    "image_uri": "images/The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf_page1_0.png",
+    "description": "The image is a graphic representing a database, specifically a graph database. It’s overlaid with a dense, dark blue hexagonal grid pattern, reminiscent of a circuit board or a network topology.  Central to the image is a stylized blue circular node, possibly representing a core data point or entity within the database.  Several interconnected lines or nodes extend outward from this central point, suggesting relationships between different data elements.\n\nThe text overlay reads “The Graph Database - Jack of All Trades.” This hints at the database's ability to handle a wide variety of interconnected data, aligning with the nature of graph databases which excel at visualizing and analyzing relationships. The visual style – the hexagonal grid and the network connections – is commonly used to represent data models and relationships.",
+    "document": "The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf_page5_3.png",
+    "description": "This image is not a logo or brand. It’s a digital illustration combining several elements representing connectivity and global reach. \n\nThe primary focus is a silver laptop, positioned prominently within a dashed circle. The laptop screen displays a stylized map of the world, suggesting global communication or data transfer. Surrounding the laptop are three icons: stylized figures representing people (likely indicating collaboration), a blueprint icon (representing design or development), and a globe icon (representing location or geography).\n\nThe overall composition suggests a visual representation of a technology company or service focused on connecting people and data on a worldwide scale. It's a common design trope used to evoke ideas of networking, communication, and global reach.",
+    "document": "The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page3_4.png",
+    "description": "The image is a flowchart representing a process for land remediation and revitalization, likely within a geographical or environmental context. It depicts a series of interconnected steps, suggesting a systematic approach to assessing and improving degraded land.\n\nThe process begins with a \"SOFM Neural Network\" - likely referring to Self-Organizing Feature Maps - used for identifying key attributes or features of the area. These attributes are then used to delineate the project area for land improvement.  The subsequent steps involve various techniques: ecological risk assessment, urgency determination, and suitability analysis. These contribute to defining parameters and measuring distances.\n\nThe workflow then incorporates elements such as spatial distance, neighborhood function, and learning rate. These are geared towards the analysis and potentially modelling of land characteristics. Finally, the process concludes with clustering partitioning, suggesting an attempt to divide the project area into segments for targeted interventions.\n\nWhile the specific context isn’t immediately clear, the image showcases a comprehensive, data-driven process for strategically addressing land degradation.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page4_6.png",
+    "description": "This image appears to be a stylized, schematic representation of a neural network diagram. It’s not a logo or brand. The central element is a grid-like pattern, resembling a stylized topographic map or a very abstracted representation of a circuit board.\n\nThree circles labeled “X1,” “X2,” and “Xn” are connected to this grid-like structure with lines, indicating connections or input/output pathways. The lines form a somewhat complex network, suggesting a layered architecture.\n\nThe overall aesthetic leans toward a technical or scientific visualization. It doesn’t represent a recognizable brand or logo, but rather a simplified visual metaphor for a complex processing system. The diagram’s simplicity allows for a general interpretation relating to information flow and processing within a network.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page5_9.png",
+    "description": "This image is a line graph presenting data related to risk areas. The graph shows five data points (labeled A through F) plotted along the x-axis, each representing a different area. Above each point is a colored line (dark grey, light blue, and green) representing risk scores. The y-axis represents the risk score, ranging from 0 to approximately 0.8.  \n\nThe graph appears to be used to visualize and compare the risk levels associated with different zones. Without more context, it's difficult to determine the specific nature of these zones or what constitutes the risk being measured. The different colors likely represent different risk categories or sources.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page5_11.png",
+    "description": "This image is a line graph illustrating habitat abundance across six distinct areas labeled A through F. Each line represents a different habitat type:\n\n*   **Arable land** (represented by dark gray) shows the highest initial abundance, decreasing significantly by area F.\n*   **Woodland** (represented by red) has a low initial abundance that rises slightly to a peak near area C before decreasing consistently.\n*   **Residential area** (represented by blue) begins with a low abundance and exhibits a small rise to a peak near area C before steadily decreasing.\n*   **Mining land** (represented by teal) shows the lowest initial abundance, increasing slightly to a peak near area C and then consistently decreasing.\n\nThe graph doesn't represent a logo or brand, it simply presents a comparative visualization of habitat abundance across these six areas. The scale on the y-axis is likely indicating habitat abundance, while the x-axis represents the sequential area labels.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page7_13.png",
+    "description": "This image is a line graph visualizing three categories: \"Number of administrative villages,\" \"Portion (%)\", and \"Area (hm²)\". \n\nThe graph shows a clear trend for each category.  The \"Number of administrative villages\" exhibits a dramatic decrease, starting around 20 and dropping to approximately 15. The \"Portion (%)\" also shows a significant decline, reducing from about 20% to roughly 17%. The \"Area (hm²)\" demonstrates a steady decrease, from about 20 to 17.  \n\nThe graph appears to be presenting data representing changes over time or across different scenarios. It could be illustrating the reduction of administrative areas, the decrease in a particular percentage, or some other related metric. Without additional context, it's hard to say precisely what the data represents, but the line graph clearly demonstrates a downward trend for each of the three variables.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page8_15.png",
+    "description": "The image shows the text “IEEE” in a bold, blue font. “IEEE” stands for the Institute of Electrical and Electronics Engineers, a professional organization for engineers and scientists. \n\nThe text is presented in a slightly shaded, almost 3D effect, suggesting it might be part of a logo or brand identity. It appears to be a digital representation, possibly a screenshot or a digital rendering of a printed logo. Without more context, it’s difficult to determine the specific application or usage of this text.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page2_0.png",
+    "description": "This image is a block diagram representing a signal processing chain. It appears to be part of a radio communication or signal modulation system. Let's break down the components:\n\n*   **VCXO (Voltage Controlled Oscillator):** Generates a time-varying oscillating signal, likely providing the carrier frequency.\n*   **Integrator:** Likely used to shape or stabilize the output of the VCXO.\n*   **PSD (Possibly Phase-Locked Loop):** Used to keep a frequency locked.\n*   **Synthesizer:** Creates a specific signal, possibly the modulation signal.\n*   **PreAMP:** A pre-amplifier, boosting the signal strength.\n\nThe diagram highlights a radio frequency (RF) chain, where a VCXO generates a frequency, which is then processed through an integrator, a PSD, a synthesizer and a preamplifier. The 'correction voltage' is used to control the VCXO frequency, indicating feedback for frequency stability or synchronization. The output is then modulated at 6.835 GHz.\n\nOverall, it depicts a system for generating and modulating a radio frequency signal.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page2_1.png",
+    "description": "This image depicts a schematic diagram of a microwave component, likely a resonant cavity or waveguide. It’s not a logo or brand.\n\nThe primary components shown are:\n\n*   **Slotted Tube:** A cylindrical structure with slots along its length, likely used to shape the microwave field and create a resonant mode.\n*   **C-Field Coil:** A coil of wire positioned within the tube, generating a magnetic field to interact with the microwave energy.\n*   **Filter Cell:** A small, rectangular component placed near the entrance of the tube, presumably for filtering specific frequencies.\n*   **Entrance Cap:** A cap closing off one end of the tube.\n*   **Photocell**: A cell that will detect incoming radiation.\n*   **Magnetic Shield**: This component is used to shield an area of the device from magnetic interference.\n*   **Coupling Probe**: A tool used to measure the field in a device.\n\nThe image is highly suggestive of a microwave device used in applications such as spectroscopy or radar. The resonant tube and the associated components are characteristic of microwave engineering.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page3_2.png",
+    "description": "This image depicts a circular induction motor stator. Here’s a description:\n\nThe image shows a cutaway view of an induction motor stator. The stator consists of a central cylindrical core surrounded by laminated steel sheets. Within the core are slots that house the stator windings (coils). These coils are arranged in a multiple-turn configuration to create a magnetic field when energized. There are multiple parallel sets of windings to create a concentrated and powerful magnetic field. The design also includes a central shaft and a set of end rings. The overall purpose of the stator is to generate the rotating magnetic field necessary for the motor to operate. The drawing illustrates the key components of the stator, essential for the operation of the induction motor.\n\n**(skip)**",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page3_3.png",
+    "description": "This image is a plot of the amplitude of a signal as a function of frequency detuning. It appears to represent an absorption spectrum.\n\nThe x-axis shows the frequency detuning in kHz, and the y-axis indicates the amplitude in arbitrary units. The plot exhibits a prominent peak around 0 kHz, representing a resonance frequency. The amplitude of this peak is significantly higher than the surrounding areas, indicating a strong absorption at that specific frequency.\n\nThe shape of the plot suggests a sharp resonance, with the absorption decreasing rapidly on either side of the central peak.  The image doesn't appear to be a logo or brand. It’s a typical representation of a spectroscopic measurement, often used in physics and engineering to analyze the interaction between a signal and a system, such as an atom or a molecule. The labeled axes suggest a study of the frequency dependence of a system's response to a particular signal.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page4_4.png",
+    "description": "This image is a graph showing a frequency tuning curve. It depicts the change in signal amplitude as a function of frequency detuning. The x-axis represents frequency detuning in Hertz (Hz), and the y-axis represents the discrimination signal amplitude in microamperes (µA).\n\nThe graph shows a prominent peak at approximately 0 Hz, indicating the resonant frequency of the system being measured. The amplitude of the peak is around 1 µA. The curve decreases in amplitude symmetrically on either side of the peak, reaching a minimum of approximately -1 µA at ±500 Hz. The shape of the curve is characteristic of a resonant system. It's a typical representation used in spectroscopy, particularly in systems involving lasers or other oscillating devices. It’s a data visualization, not a logo or brand.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page4_5.png",
+    "description": "This image depicts a block diagram of a radio frequency (RF) signal processing chain. It’s a schematic illustrating the flow of a signal through a series of components used to generate and process a frequency.\n\nThe diagram shows a frequency from an oscillator (likely a Low-Frequency Oscillator, LFO) being passed through several stages:\n\n1.  **LFO**: Generates a starting frequency.\n2.  **PD1**: A Phase Detector.\n3.  **OCXO**: An Oven-Controlled Crystal Oscillator - likely used to stabilize the output frequency.\n4.  **PD2**: Another Phase Detector, possibly for feedback control.\n5.  **DRO1 & DRO2**: Dual-Slope Comparators used for measuring time intervals – important for frequency measurement.\n6.  **DBM**: Dynamic Range Booster -  improves signal-to-noise ratio.\n7.  **LFP**: Low Pass Filters are used to attenuate unwanted higher frequencies.\n8.  **DDS**: Digital-to-Analog Converter – generates a waveform.\n9.  **PD3**:  Another Phase Detector.\n10. **ALC**: Automatic Level Control - adjusts the output signal amplitude.\n11. **PSD**:  Power Supply Distribution.\n\nThe flow culminates in a power supply distribution (PSD) and final power output. This setup is commonly seen in communication systems like wireless communication.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page5_8.png",
+    "description": "This image is a line graph. The x-axis represents \"Averaging Time (s)\" and the y-axis represents \"Allan Deviation\".  There are two lines plotted, one in black and one in red.\n\n*   The black line represents the Allan deviation over time, starting at a higher value and decreasing steadily as the averaging time increases.\n*   The red line also shows the Allan deviation over time, but it rises more rapidly than the black line before eventually leveling off.\n\nThe graph is a visual representation of how the Allan deviation changes as the averaging time increases. The Allan deviation is a measure of the precision of a measurement over time. It’s a common way to visualize the noise and stability of a measurement.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page5_10.png",
+    "description": "This image depicts a diagram of a laser system, likely used for precision measurements or research. It shows a laser module, a frequency comb, an optical cavity, and a phase noise analyzer connected to a computer.\n\nThe main component is a laser, indicated as “Laser” and “Ultra-stable Laser”.  This laser likely emits a narrow, highly stable light beam.  A frequency comb is present, displaying a series of closely spaced frequencies—this is what gives the “ultra-stable laser” its name. The comb generates a precisely defined spectrum.\n\nAn optical cavity, represented by a cylinder with concentric rings, is used to amplify and stabilize the laser light. The phase noise analyzer is essential for measuring the fluctuations in the laser’s frequency or phase. Finally, the computer is used to control and analyze data from the system.\n\nThe diagram suggests a sophisticated laser system intended for applications requiring high precision and frequency stability. The components all work together to produce a stable laser output and measure its frequency characteristics.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page6_11.png",
+    "description": "The image is a graph showing the Allan deviation versus averaging time. The graph presents data for three different types of measurements, denoted by black, blue and red points. \n\nThe x-axis represents the averaging time in seconds, and the y-axis shows the Allan deviation. The black points represent \"Test\" data, the blue points represent \"H-maser\" data and the red points represent \"Real\" data.\n\nThe Allan deviation decreases with increasing averaging time for all three datasets, indicating a decreasing noise level. The trend line for each dataset visually suggests a similar power-law behavior, but the precise exponents of the power law likely vary.\n\nThe graph visually displays a trend of decreasing error or variance as the averaging time increases. In essence, it's illustrating a measurement of time uncertainty, and how it is reduced with longer averaging intervals.",
+    "document": "Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf",
+    "page": 6
+  }
+]

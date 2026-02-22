@@ -1,0 +1,2 @@
+What general trade-off regarding the parameter beta was observed across the case studies in terms of Precision and Recall?
+How does the study characterize the trade-off between short-term and long-term resilience regarding the operation of diesel generators in the St. Mary's microgrid?

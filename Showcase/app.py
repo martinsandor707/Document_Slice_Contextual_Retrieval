@@ -1,13 +1,13 @@
+import json
 import os
 
 import chainlit as cl
 import lancedb
 import ollama
 import torch
-from chainlit.input_widget import Switch, Select
+from chainlit.input_widget import Select, Switch
 from lancedb.embeddings import get_registry
 from lancedb.rerankers import ColbertReranker
-import json
 
 # --- Configs ---
 DB_PATH = "./db"
@@ -40,16 +40,17 @@ Context:
 Question: {question}
 """
 
+
 class DbHandler:
     def __init__(self, db_path, embedding_model_name):
         self.db = lancedb.connect(db_path)
         self.reranker = ColbertReranker()
         device = "cuda" if torch.cuda.is_available() else "cpu"
 
-        self.embedding_model = get_registry().get("huggingface").create(
-            name=embedding_model_name,
-            trust_remote_code=True,
-            device=device
+        self.embedding_model = (
+            get_registry()
+            .get("huggingface")
+            .create(name=embedding_model_name, trust_remote_code=True, device=device)
         )
 
     def get_table_names(self):
@@ -62,7 +63,9 @@ class DbHandler:
 
     def query_table(self, prompt, use_contextual_rag, limit=3):
         try:
-            table_name = CONTEXTUAL_TABLE_NAME if use_contextual_rag else TRADITIONAL_TABLE_NAME
+            table_name = (
+                CONTEXTUAL_TABLE_NAME if use_contextual_rag else TRADITIONAL_TABLE_NAME
+            )
             table = self.db.open_table(table_name)
         except Exception:
             return []
@@ -88,17 +91,23 @@ class DbHandler:
                 .limit(limit)
                 .to_pandas()
             )
-        
-        return results_df["original_text"].tolist(), results_df["id"].tolist(), results_df["document"].tolist()
+
+        return (
+            results_df["original_text"].tolist(),
+            results_df["id"].tolist(),
+            results_df["document"].tolist(),
+        )
+
 
 # --- Global variables ---
 db_handler = None
 ollama_client = None
 
+
 @cl.on_chat_start
 async def start():
     global db_handler, ollama_client
-    
+
     if db_handler is None:
         try:
             db_handler = DbHandler(
@@ -107,10 +116,10 @@ async def start():
             )
         except Exception:
             pass
-    
+
     if db_handler:
         available_tables = db_handler.get_table_names()
-    
+
     settings = await cl.ChatSettings(
         [
             Switch(
@@ -123,15 +132,13 @@ async def start():
                 label="Use contextual RAG",
                 values=available_tables,
                 initial=True,
-            )
+            ),
         ]
     ).send()
 
     ollama_client = ollama.AsyncClient(host=OLLAMA_HOST)
-        
-    await cl.Message(
-        content="👋 Hello! I'm ready to answer your questions!"
-    ).send()
+
+    await cl.Message(content="👋 Hello! I'm ready to answer your questions!").send()
 
     cl.user_session.set(
         "starters",
@@ -154,9 +161,11 @@ async def start():
         ],
     )
 
+
 @cl.on_settings_update
 async def setup_agent(settings):
     pass
+
 
 @cl.on_message
 async def main(message: cl.Message):
@@ -190,9 +199,9 @@ async def main(message: cl.Message):
 
         async def perform_search():
             if db_handler:
-                return await cl.make_async(
-                    db_handler.query_table
-                )(user_query, use_contextual_rag, limit=3)
+                return await cl.make_async(db_handler.query_table)(
+                    user_query, use_contextual_rag, limit=3
+                )
             return []
 
         context_chunks = []
@@ -208,24 +217,32 @@ async def main(message: cl.Message):
                 if context_chunks:
                     details = []
                     eval_message = ""
-                        
+
                     with open("example_questions.json", "r", encoding="utf-8") as f:
                         examples = json.load(f)
-                    
+
                     # Find matching question in examples
-                    matching_example = next((ex for ex in examples if ex["question"] == user_query), None)
+                    matching_example = next(
+                        (ex for ex in examples if ex["question"] == user_query), None
+                    )
                     found_count = 0
                     if matching_example:
-                        supporting_chunks = matching_example.get("supporting_chunks", [])
+                        supporting_chunks = matching_example.get(
+                            "supporting_chunks", []
+                        )
                         expected_document = matching_example.get("document", "N/A")
                         expected_answer = matching_example.get("gold_answer", "N/A")
                         found_count = 0
                         for i, hash in enumerate(chunk_ids):
                             if hash in supporting_chunks:
-                                details.append(f"✅ Chunk {i+1} is a bullseye: ...{context_chunks[i][:150]}...\nSource Document: {source_documents[i][:50]}...")
+                                details.append(
+                                    f"✅ Chunk {i + 1} is a bullseye: ...{context_chunks[i][:150]}...\nSource Document: {source_documents[i][:50]}..."
+                                )
                                 found_count += 1
                             else:
-                                details.append(f"❌ Chunk {i+1} is a miss: ...{context_chunks[i][:150]}...\nSource Document: {source_documents[i][:50]}...")
+                                details.append(
+                                    f"❌ Chunk {i + 1} is a miss: ...{context_chunks[i][:150]}...\nSource Document: {source_documents[i][:50]}..."
+                                )
                     eval_message = f"📊 **Evaluation:** Found {found_count} out of {len(supporting_chunks)} expected supporting chunks."
 
                     details = "\n\n".join(details)
@@ -278,3 +295,4 @@ async def main(message: cl.Message):
         await msg.update()
 
     await msg.update()
+

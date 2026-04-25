@@ -1,0 +1,92 @@
+[
+  {
+    "question": "How does the developed space-time-division multiplexing optical coherence tomography system mitigate the specific hardware limitations of traditional swept-source and conventional spectral-domain optical coherence tomography systems?",
+    "gold_answer": "Traditional swept-source systems suffer from axial resolution degradation due to longer wavelengths and high costs, while conventional spectral-domain systems face low scanning speeds and require multiple independent spectrometers that cause alignment errors. The developed system mitigates these limitations by utilizing a single-spectrometer configuration equipped with multiple line-scan cameras to eliminate operational dead time, thereby achieving a one megahertz a-scan rate with cost-effective development and preventing the spectrum difference errors inherent to multi-spectrometer designs.",
+    "supporting_chunks": [
+      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
+      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "In the context of trigger synchronization for the space-time-division multiplexing method, how do the trigger sequences applied to the frame grabbers enable an effective imaging rate that exceeds the maximum sampling rate of a single line-scan camera?",
+    "gold_answer": "The method supplies identical but reversed trigger sequences of two hundred and fifty kilohertz with a fifty percent duty cycle to each of the two frame grabbers. Because these continuous a-lines are captured in one period of the camera trigger and the cameras are alternately operated without dead time, the system guarantees an effective imaging rate of five hundred kilohertz, which is twice as fast as the maximum sampling rate of a single line-scan camera.",
+    "supporting_chunks": [
+      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
+      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "What specific optical components comprise the sample and reference arms of the system, and how does the customized spectrometer configuration differentiate itself from traditional single-camera setups to handle ultrahigh speeds?",
+    "gold_answer": "Both the sample and reference arms are identically comprised of a seventy-five to twenty-five fiber coupler, a collimator, a lens, and a mirror, with galvanometer scanners obtaining two-dimensional and three-dimensional scans. Unlike traditional single-camera setups, the customized spectrometer incorporates a beam splitter to divide the diffracted interference signal and direct it into two separate line-scan cameras with a resolution of two thousand and forty-eight pixels, enabling the ultrahigh-speed one megahertz a-scan rate.",
+    "supporting_chunks": [
+      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
+      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "How does the computational processing workflow, particularly the integration of graphical processing unit acceleration, interact with the user interface to ensure real-time operation without buffer overflow?",
+    "gold_answer": "The acquired raw signals are transferred to the graphical processing unit memory where they undergo high-speed processing steps including k-domain linearization, fast fourier transform, and log scaling. Upon completing the processing of data in one cycle, the engine transfers a completion status to the user interface via a callback function in the application programming interface, triggering a memory copy that updates the displayed cross-sectional and en face images in real time while preventing buffer overflow.",
+    "supporting_chunks": [
+      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
+      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "How do the spatial scanning procedures for the x-axis and y-axis scanners dictate the necessity of the flipping process during image merging?",
+    "gold_answer": "Because the system utilizes a raster scanning method, the x-axis scanner scans bidirectionally while the y-axis scanner moves one step at the end of each direction. The flipping process is absolutely required during the backward scanning phase to structurally compensate for this reversed scanning direction of the x-axis scanner, ensuring that the merged alternating data from the two cameras aligns correctly to form the complete b-scan image.",
+    "supporting_chunks": [
+      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
+      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "What are the measured sensitivity roll-off differences between the two implemented cameras, and how do the derived intensity peaks validate the effectiveness of the space-division multiplexing method?",
+    "gold_answer": "The measured sensitivity roll-off difference between the two cameras averages two point five decibels, with peak sensitivities of one hundred and thirty-nine and one hundred and thirty-seven decibels at the one hundredth pixel. When evaluating intensity peaks from varying depth positions up to two point six millimeters, the average intensity decreased by only ten point six percent between the two space-divided pixel ranges, confirming that the space-division multiplexing method successfully utilizes the full detectable range of camera pixels without severe signal degradation.",
+    "supporting_chunks": [
+      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d",
+      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "When using the system for industrial inspection, what are the specific internal layer dimensions of the customized optical thin film, and how long does the complete scanning process take for the specified frame count?",
+    "gold_answer": "The customized optical thin film features a protective film of one hundred micrometers, a transparent film of two hundred and fifty micrometers, a deco film of one hundred and fifty micrometers, and a base film of one hundred micrometers, separated by vacuum gaps measuring forty, twenty, and forty micrometers. Utilizing the linear-motor stage, performing a whole-range scan of two thousand b-scan frames at seventy micrometer intervals consumes exactly eight seconds.",
+    "supporting_chunks": [
+      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d",
+      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "Why is the optical demultiplexer-based fourier-domain optical coherence tomography considered inferior to the proposed single-spectrometer method in terms of signal quality and system cost?",
+    "gold_answer": "The optical demultiplexer-based approach is considered inferior because the interference spectrum is diffracted by a limited number of channels, which directly attenuates the signal and severely decreases the frequency interval resolution. Furthermore, it necessitates multiple data acquisition boards and digitizers, significantly increasing total system prices, whereas the proposed single-spectrometer method achieves an enhanced signal-to-noise ratio, superior sensitivity exceeding one hundred and thirty decibels, and lower overall costs.",
+    "supporting_chunks": [
+      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
+      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "In the temporal synchronization of the time-division multiplexing scheme, how does the system trace and align the three hundredth a-line obtained during forward scanning across the dual cameras?",
+    "gold_answer": "During the forward scanning phase, the three hundredth a-lines captured independently by the two cameras represent the exact same positional measurement but distinct structural information because the cameras operate alternately while the galvanometer scans continuously. During the merging process, the three hundredth line from the first camera is matched to the five hundred and ninety-ninth line of the final merged image, while the corresponding three hundredth line from the second camera is matched directly to the six hundredth line.",
+    "supporting_chunks": [
+      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
+      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  },
+  {
+    "question": "What is the demonstrated three-dimensional volume rate of the proposed system when scanning a sample measuring nine by four point five by five millimeters, and what adjustments can be made to support larger physical objects?",
+    "gold_answer": "For a sample measuring nine by four point five by five millimeters, corresponding to an image range of two hundred and fifty by two hundred and fifty by two thousand and forty-eight pixels, the system successfully achieved a three-dimensional volume rate of eight volumes per second. To support larger physical objects, this volume rate can be freely adjusted, such as decreasing to two volumes per second for a sixteen by eight by five millimeter sample or to zero point five volumes per second for a thirty by sixteen by five millimeter sample.",
+    "supporting_chunks": [
+      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
+      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
+    ],
+    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
+  }
+]

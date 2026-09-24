@@ -67,8 +67,8 @@ def split_json_by_document(input_file_path, output_directory):
 
 # --- CONFIGURATION ---
 # Change these strings to match your actual file structure
-INPUT_JSON_FILE = 'preprocessed_chunks/anthropic_sliding_chunks_with_metadata.json'   # The name of your big file
-OUTPUT_DIR = 'split_documents'    # The folder where new files will appear
+INPUT_JSON_FILE = 'preprocessed_chunks/tobacco_sliding.json'   # The name of your big file
+OUTPUT_DIR = 'split_documents/smoking'    # The folder where new files will appear
 
 if __name__ == "__main__":
     split_json_by_document(INPUT_JSON_FILE, OUTPUT_DIR)

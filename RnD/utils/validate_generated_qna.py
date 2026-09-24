@@ -4,9 +4,9 @@ import os
 
 def main():
     FILES = {
-        "chunks": "split_documents/AutoTokenizer/Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.json",
+        "chunks": "split_documents/smoking/smoke-free_implementation_report_en.pdf.json",
         "generated": "generated_qna.json",
-        "old": "q_and_a/Gemini/scientific_multi_chunk_autotokenizer.json"
+        "old": "q_and_a/Gemini/smoking.json"
     }
 
     # --- Step 1: Load and Create Set of Valid IDs ---

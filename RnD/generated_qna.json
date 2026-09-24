@@ -1,92 +1,183 @@
 [
-  {
-    "question": "How does the developed space-time-division multiplexing optical coherence tomography system mitigate the specific hardware limitations of traditional swept-source and conventional spectral-domain optical coherence tomography systems?",
-    "gold_answer": "Traditional swept-source systems suffer from axial resolution degradation due to longer wavelengths and high costs, while conventional spectral-domain systems face low scanning speeds and require multiple independent spectrometers that cause alignment errors. The developed system mitigates these limitations by utilizing a single-spectrometer configuration equipped with multiple line-scan cameras to eliminate operational dead time, thereby achieving a one megahertz a-scan rate with cost-effective development and preventing the spectrum difference errors inherent to multi-spectrometer designs.",
-    "supporting_chunks": [
-      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
-      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "In the context of trigger synchronization for the space-time-division multiplexing method, how do the trigger sequences applied to the frame grabbers enable an effective imaging rate that exceeds the maximum sampling rate of a single line-scan camera?",
-    "gold_answer": "The method supplies identical but reversed trigger sequences of two hundred and fifty kilohertz with a fifty percent duty cycle to each of the two frame grabbers. Because these continuous a-lines are captured in one period of the camera trigger and the cameras are alternately operated without dead time, the system guarantees an effective imaging rate of five hundred kilohertz, which is twice as fast as the maximum sampling rate of a single line-scan camera.",
-    "supporting_chunks": [
-      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
-      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "What specific optical components comprise the sample and reference arms of the system, and how does the customized spectrometer configuration differentiate itself from traditional single-camera setups to handle ultrahigh speeds?",
-    "gold_answer": "Both the sample and reference arms are identically comprised of a seventy-five to twenty-five fiber coupler, a collimator, a lens, and a mirror, with galvanometer scanners obtaining two-dimensional and three-dimensional scans. Unlike traditional single-camera setups, the customized spectrometer incorporates a beam splitter to divide the diffracted interference signal and direct it into two separate line-scan cameras with a resolution of two thousand and forty-eight pixels, enabling the ultrahigh-speed one megahertz a-scan rate.",
-    "supporting_chunks": [
-      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
-      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "How does the computational processing workflow, particularly the integration of graphical processing unit acceleration, interact with the user interface to ensure real-time operation without buffer overflow?",
-    "gold_answer": "The acquired raw signals are transferred to the graphical processing unit memory where they undergo high-speed processing steps including k-domain linearization, fast fourier transform, and log scaling. Upon completing the processing of data in one cycle, the engine transfers a completion status to the user interface via a callback function in the application programming interface, triggering a memory copy that updates the displayed cross-sectional and en face images in real time while preventing buffer overflow.",
-    "supporting_chunks": [
-      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
-      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "How do the spatial scanning procedures for the x-axis and y-axis scanners dictate the necessity of the flipping process during image merging?",
-    "gold_answer": "Because the system utilizes a raster scanning method, the x-axis scanner scans bidirectionally while the y-axis scanner moves one step at the end of each direction. The flipping process is absolutely required during the backward scanning phase to structurally compensate for this reversed scanning direction of the x-axis scanner, ensuring that the merged alternating data from the two cameras aligns correctly to form the complete b-scan image.",
-    "supporting_chunks": [
-      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
-      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "What are the measured sensitivity roll-off differences between the two implemented cameras, and how do the derived intensity peaks validate the effectiveness of the space-division multiplexing method?",
-    "gold_answer": "The measured sensitivity roll-off difference between the two cameras averages two point five decibels, with peak sensitivities of one hundred and thirty-nine and one hundred and thirty-seven decibels at the one hundredth pixel. When evaluating intensity peaks from varying depth positions up to two point six millimeters, the average intensity decreased by only ten point six percent between the two space-divided pixel ranges, confirming that the space-division multiplexing method successfully utilizes the full detectable range of camera pixels without severe signal degradation.",
-    "supporting_chunks": [
-      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d",
-      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "When using the system for industrial inspection, what are the specific internal layer dimensions of the customized optical thin film, and how long does the complete scanning process take for the specified frame count?",
-    "gold_answer": "The customized optical thin film features a protective film of one hundred micrometers, a transparent film of two hundred and fifty micrometers, a deco film of one hundred and fifty micrometers, and a base film of one hundred micrometers, separated by vacuum gaps measuring forty, twenty, and forty micrometers. Utilizing the linear-motor stage, performing a whole-range scan of two thousand b-scan frames at seventy micrometer intervals consumes exactly eight seconds.",
-    "supporting_chunks": [
-      "6dd75ec9c5d732f66e5a0d686811e3d8019165ee9ecf8ff5843c645df924e92d",
-      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "Why is the optical demultiplexer-based fourier-domain optical coherence tomography considered inferior to the proposed single-spectrometer method in terms of signal quality and system cost?",
-    "gold_answer": "The optical demultiplexer-based approach is considered inferior because the interference spectrum is diffracted by a limited number of channels, which directly attenuates the signal and severely decreases the frequency interval resolution. Furthermore, it necessitates multiple data acquisition boards and digitizers, significantly increasing total system prices, whereas the proposed single-spectrometer method achieves an enhanced signal-to-noise ratio, superior sensitivity exceeding one hundred and thirty decibels, and lower overall costs.",
-    "supporting_chunks": [
-      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
-      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "In the temporal synchronization of the time-division multiplexing scheme, how does the system trace and align the three hundredth a-line obtained during forward scanning across the dual cameras?",
-    "gold_answer": "During the forward scanning phase, the three hundredth a-lines captured independently by the two cameras represent the exact same positional measurement but distinct structural information because the cameras operate alternately while the galvanometer scans continuously. During the merging process, the three hundredth line from the first camera is matched to the five hundred and ninety-ninth line of the final merged image, while the corresponding three hundredth line from the second camera is matched directly to the six hundredth line.",
-    "supporting_chunks": [
-      "aea69e9e1777d071ca4e92719d09ac51da9f16b45b6490bf5e3dbfb1e119658a",
-      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  },
-  {
-    "question": "What is the demonstrated three-dimensional volume rate of the proposed system when scanning a sample measuring nine by four point five by five millimeters, and what adjustments can be made to support larger physical objects?",
-    "gold_answer": "For a sample measuring nine by four point five by five millimeters, corresponding to an image range of two hundred and fifty by two hundred and fifty by two thousand and forty-eight pixels, the system successfully achieved a three-dimensional volume rate of eight volumes per second. To support larger physical objects, this volume rate can be freely adjusted, such as decreasing to two volumes per second for a sixteen by eight by five millimeter sample or to zero point five volumes per second for a thirty by sixteen by five millimeter sample.",
-    "supporting_chunks": [
-      "ba1f4f2df23b5743521e4ef4395d0e16c6054f9a488e686530fb3c1d589c364b",
-      "a446c8a8007341f537a8bbb5c79041cd3bf222978a007a61443d37639b7067e8"
-    ],
-    "document": "Ultrahigh-Speed_Spectral-Domain_Optical_Coherence_Tomography_up_to_1-MHz_A-Scan_Rate_Using_SpaceTime-Division_Multiplexing.pdf"
-  }
+{
+"question": "How does the complexity of national legislation impact the enforcement of smoking bans in the hospitality sector, and what is the documented range of financial penalties applied to non-compliance across Member States?",
+"gold_answer": "Complex legislation containing numerous exemptions leads to divergent interpretations and makes compliance monitoring virtually impossible, as evidenced by a German survey regarding bars and restaurants. To enforce these varying laws, all Member States utilize sanctions, typically fines, which range from a minimum of fourteen euros for individuals in Latvia to a maximum of ten thousand euros for repeated business violations in Austria and Greece.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"862ae92b0582e49ca923116c5bb8cbcb479537b3c89a7e0fcf511a589fca01df",
+"f2072f0781518fed650eb07459739947c4545c6ca087a1f144c8ef84b1de1890"
+]
+},
+{
+"question": "Which Member States are recognized for implementing the most comprehensive smoke-free legislation within the hospitality sector, and how did similar legislative amendments demonstrably impact recent overall exposure rates in specific European countries?",
+"gold_answer": "The most far-reaching smoke-free legislation within enclosed workplaces and public places, including the hospitality sector, is enforced in Hungary, Bulgaria, Spain, Ireland, the United Kingdom, Malta, Greece, the Former Yugoslav Republic of Macedonia, and Turkey. The implementation of such comprehensive legislative amendments directly correlated with significant drops in exposure to second-hand smoke, particularly evident in Spain, Belgium, and Poland.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"f2072f0781518fed650eb07459739947c4545c6ca087a1f144c8ef84b1de1890",
+"8c260dc62e954751d7ec87f4358faa289e8cd6b06312831d541d785ed5633e4c"
+]
+},
+{
+"question": "While several Member States restrict or ban combustible tobacco in hotel bedrooms, which specific nations have extended their smoke-free legislation to encompass the consumption of electronic cigarettes in enclosed public spaces and other workplaces?",
+"gold_answer": "Although countries like Cyprus, Austria, and Bulgaria completely prohibit smoking in hotel bedrooms, Belgium, Malta, and Slovakia have expanded their legislative framework to explicitly ban the consumption of electronic cigarettes in enclosed public places, restaurants, bars, and other workplaces.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"63bd8049f3dee3353ab08a79a189bbc5f110793d14fbb9ed703e6f347f8c9326",
+"33e0ada1fe173ea4af8fbe357cf886dd9ae3b9632cfa7628605d77dff75c0fa9"
+]
+},
+{
+"question": "Although smoke-free legislation is highly developed within public transit networks across most Member States, which specific countries maintain limited exemptions for long-distance maritime travel?",
+"gold_answer": "The vast majority of Member States enforce a total smoking ban within public transport systems; however, Finland, Latvia, and Denmark maintain limited exemptions that permit smoking in designated rooms or specific areas aboard long-distance passenger ships.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"2619b881dfe7b705012355ca989b52d09fbdb7fcc077b19e3b340bedc4d122dc",
+"b2d3988d119caca4af0c0a6fa07bfe26b9824ea83b423c381b34030b73e3024e"
+]
+},
+{
+"question": "What measurable reductions in environmental particulate matter and occupational exposure to second-hand smoke have been documented following the implementation of smoke-free legislation, and how did this affect the respiratory health of specific worker demographics?",
+"gold_answer": "The implementation of smoke-free legislation resulted in a rapid decrease of particulate matter concentration by between eighty-four and ninety-three percent in regions such as Spain, England, Scotland, Wales, and Ireland. Concurrently, the occupational exposure of bar workers in England fell by an average of seventy-three to ninety-one percent, which directly correlated with substantial reductions in respiratory and sensory symptoms among hospitality staff and game center workers in Ireland and Sweden.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"1def975e9902fc75c5ba3dcec7ca35028111dcd6fc055c9c3ac3b6a6d918d660",
+"47bf0948412942ebc1a3dcd06bd004f8ffe375e66134457427ebe8b524e38f46"
+]
+},
+{
+"question": "Despite the Council Recommendation omitting private spaces from its scope, which countries have taken or proposed legislative action to ban smoking in vehicles containing minors, and what complementary restrictions exist regarding the sale of tobacco-imitating products?",
+"gold_answer": "Although private settings are excluded from the core recommendation, Cyprus has enacted legislation banning smoking in cars when children under the age of sixteen are present, and the Irish Ministry of Health has proposed a similar prohibition. Complementing these protective measures, approximately half of the Member States strictly prohibit the sale of sweets and toys that resemble tobacco products to prevent youth initiation and indirect advertising.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"0ef9bf7178061e120245f9a2f2780610a2e03d071f759e280b123dbb5004299b",
+"9bf15b11301f8c6e11729d8927ff5cc571243530b812daa850bbe6dc6009f0d7"
+]
+},
+{
+"question": "How does the Council Recommendation's call for a multi-sectorial approach to tobacco control align with the broader frameworks provided by the World Health Organization, and which specific Member States have openly modeled their national strategies on the MPOWER initiative?",
+"gold_answer": "The Council Recommendation expands upon the World Health Organization Framework Convention on Tobacco Control Article eight by urging Member States to extend tobacco control efforts beyond traditional health departments to encompass comprehensive, multi-sectorial strategies such as taxation. Aligning with this international guidance, Portugal and Cyprus explicitly reported that their national tobacco control strategies are based on the World Health Organization MPOWER framework to promote inter-sectorial collaboration.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"87153b7112bce3c51a148015acd0e5d12d14d421aa9e7b7bdb95c64bfaedad9b",
+"01a85cdba7fa47d5a1c3cf54bc90ecf1bc8e2e885a5415f64665071c0a206d95"
+]
+},
+{
+"question": "How do Member States fulfill the Recommendation's mandate to protect children by regulating the availability of tobacco through minimum packaging size mandates and vending machine restrictions?",
+"gold_answer": "To limit the accessibility of small packaging and protect minors, fourteen Member States mandate a minimum pack size of twenty cigarettes, four require nineteen, and the United Kingdom specifies a minimum of ten cigarettes. Furthermore, youth access is restricted by thirteen Member States completely banning the sale of tobacco from vending machines, a prohibition that Finland is scheduled to implement by the year two thousand and fifteen.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"428f4730140d0dab5298efe28c8c709c7743b2862a67c7f020213904b848b391",
+"9bf15b11301f8c6e11729d8927ff5cc571243530b812daa850bbe6dc6009f0d7"
+]
+},
+{
+"question": "What contrasting short-term impacts did comprehensive smoke-free legislation have on acute medical admissions in England compared to the immediate financial performance of the hospitality sector in Ireland?",
+"gold_answer": "Following the introduction of comprehensive smoke-free legislation, England experienced a rapid public health benefit characterized by twelve hundred fewer emergency hospital admissions for myocardial infarction within the first year. Conversely, the immediate economic impact on the hospitality sector in Ireland manifested as a four point six percent decline in bar sales, though international analyses consistently indicate that such policies exert no significant negative long-term effect on hospitality revenues.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"1def975e9902fc75c5ba3dcec7ca35028111dcd6fc055c9c3ac3b6a6d918d660",
+"80f7977dd8ca090c99528557e6bc5ae254ac380a8baa6951532cdf946a03c867"
+]
+},
+{
+"question": "How does the comprehensiveness of a smoke-free policy influence longitudinal public support among citizens, and what statistical shifts were observed in Italy and Norway following the enforcement of such laws?",
+"gold_answer": "Research indicates that comprehensive smoke-free policies garner significantly more public support than partial regulations, with approval ratings consistently rising after the successful implementation of the legislation. This dynamic was statistically demonstrated in Italy, where public support increased from eighty-three percent to ninety-three percent, and in Norway, where support dramatically surged from fifty-four percent to ninety percent following the introduction of smoking bans in bars and restaurants.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"8c260dc62e954751d7ec87f4358faa289e8cd6b06312831d541d785ed5633e4c",
+"48a11766ed9003edb9e52a2e7dd3135e818b83f8393330fb984945245852e1ad"
+]
+},
+{
+"question": "While enforcing smoke-free legislation incurs direct governmental costs, how did the implementation of these policies subsequently affect the trajectory of tobacco tax revenues across different Member States?",
+"gold_answer": "Enforcing smoke-free laws requires dedicated governmental funding, such as the estimated four to five million euros spent annually by the Netherlands, yet the subsequent impact on tobacco tax revenues exhibits significant regional variation. For instance, Italy experienced a twenty-five percent increase in tobacco tax revenues between two thousand and four and two thousand and eleven despite a decrease in overall sales, whereas Latvia and Spain documented slight revenue reductions of eight percent and two percent, respectively.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"80f7977dd8ca090c99528557e6bc5ae254ac380a8baa6951532cdf946a03c867",
+"ea708e7062176cce5b60ddaf51be9c96f9a8f9c76edd400058e67163a0980393"
+]
+},
+{
+"question": "In accordance with Article fourteen of the Framework Convention on Tobacco Control, what specific infrastructure and pharmacological support systems have Member States established to facilitate tobacco cessation and treat dependence?",
+"gold_answer": "To facilitate tobacco cessation, twenty-one Member States have established specialized centers for the treatment of tobacco dependence, and twelve have integrated these programs directly into rehabilitation facilities. To further support these clinical interventions, seven Member States provide financial assistance through low-cost dispensing or reimbursement schemes for Nicotine Replacement Therapy.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"4d0e0ea57d9ec95b97953f876163e987863aea202a1d41ed135575fd8e881e7e",
+"c4d0c7dec1692118e3f7416e1e1e70b174df4531a7e517b42f8007e9be9783d7"
+]
+},
+{
+"question": "In pursuit of complementary tobacco control policies designed to protect young demographics, by what distinct regulatory mechanisms do various Member States govern the inclusion of specific flavorings and additives within tobacco products?",
+"gold_answer": "Member States employ a variety of regulatory mechanisms to control tobacco ingredients, such as Lithuania utilizing a negative list to ban specific additives like vanilla root and clove, and Poland outright prohibiting ingredients that enhance addictive properties. Alternatively, France enforces laws establishing maximum allowable levels for ingredients that impart sweet or fruity tastes, while Sweden retains the flexibility to regulate product ingredients on a purely ad-hoc basis.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"428f4730140d0dab5298efe28c8c709c7743b2862a67c7f020213904b848b391",
+"9bf15b11301f8c6e11729d8927ff5cc571243530b812daa850bbe6dc6009f0d7"
+]
+},
+{
+"question": "How do legislative exemptions regarding combustible tobacco use differ between higher educational institutions and specialized residential care units across the European Union?",
+"gold_answer": "While institutions of lower education strictly prohibit smoking, several Member States allow limited exemptions in higher educational facilities by permitting smoking in designated rooms for staff or students. In contrast, residential care units are subject to total smoking bans in countries like Greece, Hungary, Bulgaria, and Malta, whereas Spain enforces a targeted ban that forbids smoking among staff and visitors but permits residents to smoke under specific conditions.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"d3f84495778eb85c4cdec71d3dd229427e5f2f471091cfce2e48dfa9e0ecaeb1",
+"d4a179935b1bffc895b55a03c5db1a9d36c89df29593347828b0329b6d7900c5"
+]
+},
+{
+"question": "How do national regulations contrast when addressing the permissibility of smoking within temporary or long-term private accommodations, specifically regarding prison cells and hotel bedrooms?",
+"gold_answer": "The permissibility of smoking in private living quarters varies widely, as prison cells are subject to absolute smoking bans in Spain, Malta, Sweden, Bulgaria, and Wales. Conversely, the majority of Member States allow smoking in hotel bedrooms at the discretion of the proprietor or mandate a specific quota, such as Finland reserving ten percent of rooms for smokers, while only a minority like Cyprus, Austria, and Bulgaria strictly prohibit smoking in hotel accommodations.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"63bd8049f3dee3353ab08a79a189bbc5f110793d14fbb9ed703e6f347f8c9326",
+"33e0ada1fe173ea4af8fbe357cf886dd9ae3b9632cfa7628605d77dff75c0fa9"
+]
+},
+{
+"question": "Beyond targeted proposals to restrict exposure in private vehicles, what contrasting strategies are employed across European nations regarding the legal purchasing age for tobacco and the physical visibility of these products at retail locations?",
+"gold_answer": "Across the European Union, the legal threshold to purchase tobacco is set at eighteen years of age in twenty-two Member States, while the remaining five permit sales to individuals aged sixteen. To further curtail consumption beyond private vehicles, three Member States, alongside Iceland and Norway, enforce strict laws prohibiting the visible display of tobacco products at the point of sale, and fourteen additional Member States enforce specific restrictions on promotional activities within retail environments.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"0ef9bf7178061e120245f9a2f2780610a2e03d071f759e280b123dbb5004299b",
+"9bf15b11301f8c6e11729d8927ff5cc571243530b812daa850bbe6dc6009f0d7"
+]
+},
+{
+"question": "What specific epidemiological data and international treaties served as the foundational inspiration for the Council Recommendation adopted in November two thousand and nine regarding smoke-free environments?",
+"gold_answer": "The Council Recommendation was catalyzed by conservative estimates indicating that over seventy-nine thousand adults in the European Union died in two thousand and two as a direct result of exposure to second-hand smoke at home and work. This alarming mortality data prompted the adoption of a framework inspired directly by Article eight of the World Health Organization Framework Convention on Tobacco Control and its subsequent two thousand and seven implementation guidelines.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"87153b7112bce3c51a148015acd0e5d12d14d421aa9e7b7bdb95c64bfaedad9b",
+"428f4730140d0dab5298efe28c8c709c7743b2862a67c7f020213904b848b391"
+]
+},
+{
+"question": "What distinct categories of quantitative indicators and methodological surveys are utilized by Member States to monitor and evaluate the effectiveness of their national smoke-free legislation?",
+"gold_answer": "To evaluate legislative effectiveness, Member States like Belgium and the United Kingdom utilize direct compliance data, whereas countries such as Denmark and Spain measure actual population exposure to tobacco smoke. Additionally, monitoring frameworks frequently incorporate national surveys to gauge smoking habits and indoor air quality, alongside clinical indicators tracking annual smoking prevalence, specialized quit rates, and the consumption volume of Nicotine Replacement Therapies.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"93400a8411051e4031a90d3a88973f80539e6d0f5d0ffce1a49bfcbcc99222d0",
+"c0489ce8e349c531f73a433a97eae27e14bfffc07bb6bfd17a53bbf1a659609d"
+]
+},
+{
+"question": "Why do certain Member States exhibit exceedingly high rates of public exposure to second-hand smoke despite having formal smoke-free legislation actively in place?",
+"gold_answer": "High exposure rates to second-hand smoke in certain Member States often stem from a combination of inadequate enforcement resources and overly complex legislation that includes numerous venue exemptions. Furthermore, environments characterized by high overall smoking prevalence levels render effective enforcement significantly more challenging, as smoking is perceived as more socially acceptable, resulting in exposure rates as high as seventy-one percent in drinking establishments in Greece.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"f2072f0781518fed650eb07459739947c4545c6ca087a1f144c8ef84b1de1890",
+"8c260dc62e954751d7ec87f4358faa289e8cd6b06312831d541d785ed5633e4c"
+]
+},
+{
+"question": "How does the elimination of occupational exposure to second-hand smoke translate into measurable economic advantages for employers and long-term healthcare savings for national systems?",
+"gold_answer": "Eliminating occupational exposure to second-hand smoke directly decreases non-medical expenses for employers by reducing worker absenteeism and increasing overall productivity, as comprehensive arrangements eliminate the need to construct and maintain designated smoking areas. On a macroeconomic scale, fostering an environment that encourages smoking cessation significantly reduces national medical burdens, with a Finnish study calculating that eighty-five percent of lifelong health care costs could be saved if every smoker successfully quit.",
+"document": "smoke-free_implementation_report_en.pdf",
+"supporting_chunks": [
+"1def975e9902fc75c5ba3dcec7ca35028111dcd6fc055c9c3ac3b6a6d918d660",
+"80f7977dd8ca090c99528557e6bc5ae254ac380a8baa6951532cdf946a03c867",
+"ea708e7062176cce5b60ddaf51be9c96f9a8f9c76edd400058e67163a0980393"
+]
+}
 ]

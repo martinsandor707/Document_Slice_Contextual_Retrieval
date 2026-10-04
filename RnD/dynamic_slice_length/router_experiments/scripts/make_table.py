@@ -63,8 +63,9 @@ for f in sorted(glob.glob(os.path.join(S, "real_runs", "*.json"))):
     for s in rec["generation_summary"]:
         if s.startswith("Suggested radius distribution"):
             kd = s.split(":", 1)[1].split("(")[0].strip()
-    label = {"tables1": "genre router, tables→1", "tables1_run2": "genre router, tables→1 (identical repeat)",
-             "binary_t2": "2-class router (S skip, N→2), tables→2"}.get(rec["tag"], rec["tag"])
+    label = {"tables1": "genre router, tables→1 (exemplars from benchmark papers)", "tables1_run2": "genre router, tables→1 (identical repeat)",
+             "binary_t2": "2-class router (S skip, N→2), tables→2 (exemplars from benchmark papers)",
+             "binary_t2_heldout": "2-class router (S skip, N→2), tables→2, exemplars from the HELD-OUT papers (final)"}.get(rec["tag"], rec["tag"])
     note = f"{label}; k {kd}; table k={table_ks}; generation {rec['gen_minutes']} min"
     res_f = os.path.join(S, f"res_real_{rec['tag']}.json")
     if os.path.exists(res_f):

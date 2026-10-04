@@ -39,8 +39,9 @@ def _real(tag):
     return {r["id"]: r for r in json.load(open(p))} if os.path.exists(p) else {}
 
 
-REAL = {tag: _real(tag) for tag in ["tables1", "fixed2"]}
+REAL = {tag: _real(tag) for tag in ["tables1", "fixed2", "binary_t2"]}
 SOURCES = [("real_tables1", REAL["tables1"]), ("real_fixed2", REAL["fixed2"])]
+SOURCES_BIN = [("real_binary_t2", REAL["binary_t2"]), ("real_fixed2", REAL["fixed2"])]   # base = the 2-class router's own run
 k_final = {cid: int(r["doc_slice_radius"]) for cid, r in REAL["tables1"].items()}     # the final config's own routing
 tier_final = {cid: r["slice_tier"] for cid, r in REAL["tables1"].items()}
 
@@ -202,6 +203,12 @@ SWEEPS = {
         ("fin_split5_abs1", lambda: route_policy_final("split5", {"A": 1, "B": 0, "C": 1, "D": 2, "E": 2}), "skip", "5-class: abstracts/conclusions -> 1, boilerplate skipped"),
         ("fin_split5_abs2", lambda: route_policy_final("split5", {"A": 2, "B": 0, "C": 1, "D": 2, "E": 2}), "skip", "5-class: abstracts/conclusions -> 2, boilerplate skipped"),
     ],
+    # ---- exemplar re-sourcing check: 2-class router with exemplars from the held-out papers, on the binary_t2 run's own
+    #      summaries (chunks that change class take k=2 summaries from the constant-k=2 run, or are skipped)
+    "heldout": [
+        ("bin_own_base", lambda: route_policy_final("binary", {"S": 0, "N": 2}, table_k=2), "skip", "binary_t2 routing rebuilt from its own real summaries (must reproduce 0.9487)"),
+        ("bin_heldout", lambda: route_policy_final("binary_heldout", {"S": 0, "N": 2}, table_k=2), "skip", "2-class router with HELD-OUT exemplars, tables->2, on binary_t2's summaries"),
+    ],
     "determ": [
         ("sim_len_s3_m2_l1", lambda: length_policy(), "skip", "length only: <700 chars->3, 700-2500->2, >2500->1, T->3"),
         ("sim_len_s3_m2_l2", lambda: length_policy(k_long=2), "skip", "length only: <700->3, else 2, T->3"),
@@ -229,4 +236,5 @@ if __name__ == "__main__":
                 if os.path.exists(f"{S}/res_{name}.json"):
                     print("skip (done):", name, flush=True)
                     continue
-                run(name, make_policy(), k0m, note, sources=SOURCES if sw.startswith("final") else None)
+                src = SOURCES_BIN if sw == "heldout" else (SOURCES if sw.startswith("final") else None)
+                run(name, make_policy(), k0m, note, sources=src)

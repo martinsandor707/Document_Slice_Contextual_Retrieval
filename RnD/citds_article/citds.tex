@@ -1,0 +1,341 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{listings} % For code snippets (PyTorch/TensorFlow)
+\usepackage{float} 
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily\small,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{gray!5},
+    stringstyle=\color{blue},
+    keywordstyle=\color{teal},
+    commentstyle=\color{gray}
+}
+
+\IEEEoverridecommandlockouts
+\IEEEpubid{%
+\makebox[\columnwidth]{%
+979-8-3195-0700-6/26/\$31.00~\copyright~2026 IEEE\hfill
+}%
+\hspace{\columnsep}%
+\makebox[\columnwidth]{}%
+}
+
+\begin{document}
+
+\bstctlcite{BSTcontrol}
+
+\title{Efficient Local Retrieval-Augmented Generation via Neighboring Document Slice Contextualization\\
+%{\footnotesize \textsuperscript{*}@@SUBTITLE@@}
+%\thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{\IEEEauthorblockN{Martin Tibor Sándor}
+\IEEEauthorblockA{
+\textit{Faculty of Informatics} \\
+\textit{University of Debrecen} \\
+Debrecen, Hungary \\
+sandor.martin@inf.unideb.hu}\\
+\and 
+%\newlineauthors
+\IEEEauthorblockN{Róbert Lakatos}
+\IEEEauthorblockA{
+\textit{Dept. of Data Science \& Visualization}\\
+\textit{Faculty of Informatics} \\
+\textit{University of Debrecen} \\
+Debrecen, Hungary \\
+lakatos.robert@inf.unideb.hu}
+}
+
+\maketitle
+
+\begin{abstract}
+State-of-the-art AI architectures like Retrieval-Augmented Generation (RAG) using LLMs often rely on "Red AI" infrastructure, creating significant barriers to privacy-centric, localized applications. Anthropic’s Contextual Retrieval addresses chunk-level context loss but introduces linear computational scaling that exceeds the limits of consumer-grade hardware. This study proposes a "Document Slice" architecture that optimizes context generation by utilizing a sliding window of neighboring chunks rather than the entire document. By constraining the context window to a fixed radius, we facilitate efficient RAG operations on a single GPU with 8GB of VRAM. Our empirical evaluation, conducted on a primary "Silver Standard" dataset of 250 complex queries and validated against a secondary cross-domain policy dataset, demonstrates that the proposed method achieves a 2.5x increase in preprocessing speed and a 51\% reduction in carbon emissions and energy consumption. These efficiency gains are realized with a statistically insignificant relative decrease in Recall@20 of 0.9\% compared to the full-context baseline. While broader generalization to other languages and extreme document lengths requires further validation, this work offers a step toward balancing retrieval accuracy with accessible "Green AI" practices, providing a viable framework for resource-constrained environments.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Retrieval-Augmented Generation, Small Language Models, Consumer Hardware, Green AI, Local Deployment 
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+The contemporary technological landscape is dominated by Large Language Models (LLMs) that have fundamentally altered how we interact with information \cite{bengioetal2003, zhu2025informationretrieval}. However, a growing 'compute divide' \cite{besiroglu2024computedividemachinelearning} threatens the democratization of these tools. Much of the current literature assumes the availability of data-center-grade infrastructure, a trend dubbed 'Red AI' \cite{schwartz2020green} that prioritizes raw performance over computational efficiency. This reliance on massive resources creates a substantial barrier for localized, privacy-centric applications, particularly for academic teams and individual researchers.
+
+Retrieval-Augmented Generation (RAG) has emerged as a primary solution to the limitations of static model knowledge \cite{lewisetal2021, info16090766}, yet even RAG architectures are becoming increasingly resource-intensive \cite{shen2024RAGDesignTradeoffs}. The industry standard has shifted toward Hybrid Retrieval, combining semantic search with keyword-based algorithms like BM25 \cite{robertson1995okapi, kiran2025hybrid}. While effective, these systems often struggle with 'decontextualized' chunks—text fragments that lose their meaning when separated from their parent document \cite{merola2025reconstructingcontextevaluatingadvanced}.
+
+
+Anthropic’s 'Contextual Retrieval' \cite{anthropic2024contextual} improves accuracy by using LLMs to contextualize document chunks. However, this introduces significant computational overhead during indexing. Because standard Transformer self-attention scales with quadratic complexity $(O(L^2))$ \cite{tay2022efficient}, VRAM demands grow significantly with sequence length. When memory footprints exceed the physical limits of single accelerators, costly multi-GPU clusters are required. This scaling bottleneck restricts real-time processing and local deployment for extensive corpora.
+
+This paper introduces a novel modification to the Contextual Retrieval architecture. We argue that providing the entire document for every chunk's context generation is not only computationally excessive but also subjects the model to the 'Lost in the Middle' phenomenon \cite{liu2023lostmiddlelanguagemodels}. Rather than being a model-specific artifact, this phenomenon illustrates a fundamental architectural limitation where Transformer-based self-attention mechanisms inherently struggle to process information situated in the center of long contexts \cite{guo2024serialpositioneffectslarge, lee2025quantifyingpositionalbiasestext}. By proposing a 'Document Slice' approach, we utilize a sliding window of neighboring chunks to provide sufficient context while maintaining a fixed computational overhead.
+
+Recent advancements in RAG architectures have introduced "small-to-large" retrieval paradigms to resolve the tension between search precision and contextual coherence. Techniques such as Sentence-Window Retrieval and Parent-Child Chunking, categorized broadly under context expansion strategies \cite{gao2024retrievalaugmentedgenerationlargelanguage}, separate the text segments used for vector embedding from the broader context blocks passed to the generative model \cite{Liu_LlamaIndex_2022}. Furthermore, hierarchical methods like RAPTOR \cite{sarthi2024raptorrecursiveabstractiveprocessing} leverage abstractive processing to generate synthesized summaries of encompassing document sections. While our proposed Document Slice method successfully captures the semantic benefits of this context generation, synthesizing information from neighboring chunks to enrich the target embedding, it diverges by enforcing a strict, fixed-radius boundary rather than relying on variable-length parent nodes. This distinction guarantees a predictable sequence length, which is critical for maintaining a static VRAM footprint without triggering system RAM offloading on consumer-grade hardware, and it also ensures faster retrieval execution by satisfying the context requirement in a single query.
+
+The following Section \ref{sec:methodology} details our methodology, including hybrid chunking via Docling \cite{auer2024doclingtechnicalreport, docling2024chunkingdocumentation}, the implementation of the sliding-window algorithm, and a comprehensive evaluation of performance metrics and ecological impact \cite{strubell2019energycost, codecarbon_software}. Our experimental results (Section \ref{sec:results}) confirm the efficacy of this localized approach. We demonstrate that the Document Slice architecture achieves a 94.5\% Recall@20, a statistically insignificant deviation from the full-context baseline, while ensuring that relevant information remains within the optimal "attentional accessibility" range of the model. Beyond retrieval quality, our findings highlight a substantial efficiency gain: a 2.5x increase in preprocessing speed and a 51\% reduction in energy consumption \cite{tabbakh2024GreenAI}, effectively enabling high-performance RAG operations on hardware with as little as 8GB of VRAM.
+
+\section{Methodology}
+\label{sec:methodology}
+Our methodology focuses on achieving reproducibility and efficiency in resource-constrained environments, specifically targeting hardware with 8GB of VRAM. 
+
+The architecture is divided into three primary phases:
+Hybrid Chunking (\ref{subsec:hcs}), Sliding Window Contextualization (\ref{subsec:swc}), and Analysis Methods (\ref{subsec:am}). 
+
+
+\subsection{DataSet}
+
+To evaluate our architecture, we developed a "Silver Standard" QA dataset \cite{rebholz2010silverstandard} using 25 scientific papers from IEEE and Nature. Following the "LLM-as-a-Judge" paradigm \cite{zheng2023judgingllmasajudgemtbenchchatbot}, Gemini 3 Pro generated 10 complex questions per document for a total of 250, each requiring at least two supporting chunks to ensure a rigorous retrieval test (see Listing \ref{lst:qna_example}). 
+
+To address potential annotation bias inherent in LLM-generated evaluation sets and to evaluate cross-domain generalizability, we compiled a secondary "Gold Standard" dataset. This subset comprised 80 multi-hop queries derived from four publicly available European Commission tobacco policy documents. Crucially, while the primary dataset served as a "Silver Standard," a representative random subset (20\%) of the policy dataset underwent rigorous manual human validation. This subset demonstrated strict semantic alignment with the ground-truth supporting chunks, providing high confidence in the automated generation pipeline and isolating potential model-preference artifacts from the underlying retrieval mechanics.
+
+Each question was designed to require at least two distinct chunks for a complete answer, providing a rigorous test for retrieval recall and ranking accuracy.
+
+The pipeline utilized Docling’s HybridChunker to map segments to unique IDs, providing a verifiable ground truth for retrieval quality based on the model-identified supporting chunk arrays (see Listing \ref{lst:qna_prompt}).
+
+\begin{lstlisting}[language=json, captionpos=b, caption={One of the questions generated by Gemini}, label={lst:qna_example}]
+{
+  "question": "What general trade-off regarding the parameter beta was observed...",
+  "gold_answer": "The studies observed that smaller values of beta lead to...",
+  "document": "name-of-the-document.pdf",
+  "supporting_chunks": [
+    "hash-code-1",
+    ...
+  ]
+}
+\end{lstlisting}
+
+The pipeline utilized Docling’s HybridChunker to map segments to unique IDs, providing a verifiable ground truth for retrieval quality based on the model-identified supporting chunk arrays (see Listing \ref{lst:qna_prompt}).
+
+\begin{lstlisting}[language=json, captionpos=b, caption={A shortened version of the prompt used to generate the dataset}, label={lst:qna_prompt}]
+Act as a 'Senior NLP Data Scientist' evaluating RAG systems. 
+Objective: Generate exactly 10 high-complexity QnA pairs from the provided JSON chunks to benchmark retrieval metrics (Recall@k, MRR, NDCG).
+
+Constraints & Rules:
+1. Strict Grounding: Use only the provided JSON 'text'. Zero external knowledge or hallucination.
+2. Multi-Hop Reasoning: Questions must synthesize information across >= 2 distinct chunk 'id's. Avoid simple single-chunk fact retrieval.
+3. Answer Formulation: The 'gold_answer' must be a standalone, plain-text sentence. Strictly avoid LaTeX, math notation, or symbols.
+4. Data Tracking: Accurately map each question to its source 'document' filename.
+5. Strict Output: Return ONLY a valid JSON array of 10 objects. Each object must include a 'supporting_chunks' list containing the required 'chunk_id's. No conversational filler.
+\end{lstlisting}
+
+We acknowledge a potential circularity concern inherent in LLM-generated evaluation datasets: the ground truth was produced by Gemini 3 Pro, a large proprietary model. At the same time, context generation in our pipeline employs the substantially smaller gemma3:4b-it-qat model \cite{gemma3report2025}. However, we argue that this asymmetry mitigates rather than amplifies systematic bias, as the two models differ significantly in architecture, scale, and training provenance. Consequently, any shared preference for specific chunks is unlikely to stem from model-level correlation.
+
+\subsection{Hybrid Chunking Strategy}
+\label{subsec:hcs}
+
+To ensure high-quality initial fragments, we employed the Docling library, which utilizes specialized AI models for layout analysis and table recognition. Unlike simple token-based splitting, our hybrid approach respects the document's hierarchy. The process involves analyzing the document layout, creating initial chunks based on structural elements (headings, paragraphs), and then applying a tokenizer-based limit. Chunks within the same section are merged if they fit within the 2,000-token limit, ensuring that the resulting fragments are semantically coherent before any enrichment occurs. 
+
+\subsection{Sliding Window Contextualization}
+\label{subsec:swc}
+
+We define a fixed context radius, $k$, which determines the number of preceding and succeeding chunks provided to the LLM for context generation (See Listing \ref{lst:contextualization_prompt}.). 
+
+\begin{lstlisting}[language=json, captionpos=b, caption={A concise version of the prompt used to contextualize chunks}, label={lst:contextualization_prompt}]
+Act as a summarization assistant specialized in contextual chunk analysis.
+Task: Analyze a provided text CHUNK against its FULL DOCUMENT. Output a concise, objective summary of the chunk's relevance or specific contribution to the whole (e.g., "Introduces the central thesis.").
+Constraints: 
+1. Return ONLY the summary. 
+2. Strictly no preamble, conclusion, or conversational filler. 
+3. Do not use introductory phrases like "This chunk is...".
+\end{lstlisting}
+
+For a given chunk $i$, the document slice is constructed as a continuous segment from chunk $(i - k)$ to $(i + k)$. This ensures the target chunk is positioned centrally within the prompt, mitigating the primacy and recency biases inherent in LLMs. For document boundaries (start or end), the window is truncated on one side and extended on the other to maintain a consistent total token count (see Fig. \ref{fig:doc_slice_boundary}). This approach ensures that the GPU memory requirement remains constant regardless of the total document length, as the prompt size is capped by the window radius rather than the document's total page count. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{images/underflow_adjusted_doc_slice_alt.png}
+    \caption{Sliding window generation for document boundaries}
+    \label{fig:doc_slice_boundary}
+\end{figure}
+
+\subsection{Embedding Generation}
+
+Once the generated context is prepended to the chunk, embeddings will be generated using the 'nomic-embed-text-v1.5' model. It was selected for three reasons:
+
+\begin{enumerate}
+    \item It natively supports context windows of thousands of tokens, making it well-suited to our use case of up to 2000-token chunks.
+    \item It achieves competitive performance on the MTEB benchmark while remaining deployable on consumer hardware without quantization.
+    \item Its open weights and permissive license align with the privacy-centric, local deployment goals of this work.
+\end{enumerate}
+
+We acknowledge that results may vary across alternative embedding models and identify a systematic comparison of embedding models as a direction for future work.
+
+\subsection{Experimental Setup} 
+
+For benchmarking, we utilized a GeForce RTX 4060 Mobile GPU (8GB VRAM) and an Intel Core i7-14650HX CPU. The RAG pipeline integrated LanceDB\cite{lancedb} for vector storage, and the embedding model executed in the Ollama\cite{ollama} inference framework.
+
+\subsection{Analysis Methods}
+\label{subsec:am}
+
+We employed four primary metrics: Recall@K, Mean Reciprocal Rank (MRR), Mean Average Rank (MAR, our custom metric), and preprocessing latency. 
+
+\[\text{MAR}=\frac{1}{|Q|} \sum_{q \in Q} \left( \frac{1}{|R_q \cap G_q|} \sum_{c \in (R_q \cap G_q)} \text{rank}(c)\right) \]
+
+\noindent Where:
+\begin{itemize}
+    \item $Q$: Set of all queries in the evaluation dataset.
+    \item $R_q$: Set of retrieved documents for query $q$.
+    \item $G_q$: Set of ground-truth relevant documents for query $q$.
+    \item $\text{rank}(c)$: Rank position of chunk $c$ in the retrieved list.
+\end{itemize}
+
+Additionally, we tracked the ecological footprint using the CodeCarbon library \cite{codecarbon_software} to quantify energy consumption and CO2 emissions, aligning our analysis with the principles of 'Green AI'. CO2 equivalent emissions are calculated by querying the individual energy consumption of the CPU and GPU, multiplying it with the passage of time, and finally converting using the gCO2eq/kWh exchange range associated with the power grid of the region as defined in their study, where their emission estimation framework was introduced \cite{lacoste2019quantifyingcarbonemissionsmachine}.
+
+
+\section{Results}
+\label{sec:results}
+
+In our primary experiments, we set $k = 3$, meaning each document slice consists of up to 7 chunks (the target chunk plus three preceding and three succeeding neighbors), with each chunk capped at approximately 2,000 tokens and each document slice capped at approximately 14,000 tokens. This value was selected empirically following an ablation study of different slice lengths that can still fit into the GPU 100\% of the time. See Table \ref{tab:ablation_summary}. for a summary on the results of the ablation. 
+
+\begin{table}[ht!]
+    \centering
+    \caption{Ablation results on different document slice lengths}
+    \label{tab:ablation_summary}
+    \begin{tabular}{ccccc}
+        \toprule
+        \textbf{Method} & \textbf{Time*} & \textbf{Recall@20} & \textbf{MRR@20} & \textbf{MAR@20} \\
+        \midrule
+        Hybrid retrieval & 0 & 0.9393 & 0.7748 & 4.0363 \\
+        doc slice k=0 & \textbf{7m28s} & 0.9373 & 0.7861 & 3.8083  \\
+        doc slice k=1 & 12m08s & 0.9433 & 0.799 & \textbf{3.726} \\
+        doc slice k=2 & 17m28s & \textbf{0.9467} & 0.768 & 3.8095 \\
+        doc slice k=3 & 22m41s & 0.9453 & 0.7877 & 4.02 \\
+        doc slice k=4 & 28m11s & 0.9433 & \textbf{0.8933} & 3.9588 \\
+        Anthropic† & 71m34s & 0.954 & 0.7863 & 3.9355 \\
+        \bottomrule
+        \\
+    \end{tabular}
+    *:Only the context generation for chunks was measured \\
+    †:CPU-offloading had to be utilized to recreate the original solution
+\end{table}
+
+We would like to call attention to the fact that even though the context generation was carried out on 0 temperature, the resulting contexts that were prepended can still differ between runs, thus producing slightly different metrics each time. That being said, slice lengths of $k=2$ and $3$ remained the most performant over multiple iterations. 
+
+Importantly, the generated chunks were shown to rarely reach this length, with Docling's dynamic chunking almost always producing chunks of 500-1,000 tokens to respect document layout. We acknowledge that a further ablation study regarding the optimal slice length without Docling is required as future work. 
+
+\begin{table}[h!]
+    \centering
+    \caption{Anthropic Baseline vs. Proposed Method (k=3)}
+    \label{tab:performance_comparison}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Metric} & \textbf{Anthropic†} & \textbf{Doc slice} & \textbf{Relative Change} \\
+        \midrule
+        Recall@20 & 95.4\% & 94.5\% & \textbf{-0.9\%} \\
+        MRR@20 & 0.786 & 0.77 & -2\% \\
+        MAR@20 & 3.93 & 4.01 &  1.8\% \\
+        Preprocessing Time & 71m34s & 29m09s & \textbf{-60\%} \\
+        \bottomrule
+        \\
+    \end{tabular}
+    †:CPU-offloading had to be utilized to recreate the original solution
+\end{table}
+
+The primary experimental results confirm that our Document Slice architecture provides a viable path for local RAG deployment without compromising retrieval quality. On our test set of 250 complex queries, the proposed method achieved a Recall@20 of 94.5\%, representing a negligible 0.9\% (see Table \ref{tab:performance_comparison}) relative decrease compared to the full-context Anthropic baseline (95.4\%). 
+
+A McNemar test for marginal homogeneity\cite{McNemar_1947} indicated that this difference is statistically insignificant ($p=0.5$ for the least favorable scenario), suggesting that the information lost by omitting distant document sections is rarely critical for situating local chunks. To further validate this finding, we calculated 99\% confidence intervals for the difference in recall using bootstrap resampling \cite{smucker2007comparison} ($B = 10,000$, BCa method \cite{efron1987better}). The resulting interval of [-0.0080, 0.0273] explicitly contains zero, corroborating the McNemar test results and providing evidence (at the $\alpha = 0.01$ level) that the minor performance deviation is statistically immaterial.
+
+\subsection{Retrieval Quality and Ranking Dynamics}
+
+While Recall@20 remained stable, we observed a slight shift in ranking metrics. The Mean Reciprocal Rank (MRR@20) for our method was 0.77, compared to 0.786 for the baseline—a 2\% decrease. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1\linewidth]{images/u_curve_no_border.png}
+    \caption{The U-shaped curve from the foundational study in the topic\cite{liu2023lostmiddlelanguagemodels}}
+    \label{fig:u_curve}
+\end{figure}
+
+This indicates that the first relevant chunk is still consistently placed in the top two positions. To complement this standard evaluation, we introduced Mean Average Rank (MAR) strictly as an exploratory metric of 'attentional accessibility' rather than a validated measure of downstream answer quality. Because multi-hop queries require retrieving multiple supporting chunks, traditional metrics are insufficient: Recall merely verifies presence within the top $K$, while MRR only reflects the position of the highest-ranked chunk. Our method showed a MAR@20 of 4.01, only 1.8\% higher than the baseline's 3.93. This indicates that relevant chunks remain within the 'safe zone' of the LLM's attention span, avoiding the performance degradation associated with the U-shaped accuracy curve (see Fig. \ref{fig:u_curve}).
+
+
+
+Even with 20 chunks retrieved, the supporting information is concentrated in the top 20\% of the context, ensuring high-quality generation during the RAG cycle.
+
+\subsection{Cross-Domain Robustness}
+To verify that the Document Slice architecture does not overfit to the structural conventions of scientific literature, we evaluated the pipeline against the secondary European Commission policy dataset.
+
+\begin{table}[ht!]
+    \centering
+    \caption{Cross-Domain Robustness: European Commission Tobacco Policy Dataset (k=3)}
+    \label{tab:tobacco_results}
+    \begin{tabular}{cccc}
+        \toprule
+        \textbf{Metric} & \textbf{Anthropic†} & \textbf{Doc Slice} & \textbf{Relative Change} \\
+        \midrule
+        Recall@20 & 96.9\% & 96.3\% & \textbf{-0.6}\% \\
+        MRR@20 & 0.822 & 0.813 & -1.1\% \\
+        MAR@20 & 3.52 & 3.62 & 2.8\% \\
+        Preprocessing Time & 14m18s & 4m12s & \textbf{-70.6\%} \\
+        \bottomrule
+        \\
+    \end{tabular}
+    †:CPU-offloading had to be utilized to recreate the original solution
+\end{table}
+
+As detailed in Table \ref{tab:tobacco_results}, the retrieval metrics remained consistent across domains. For the manually validated policy documents, the fixed-radius approach ($k=3$) achieved a Recall@20 of 96.3\%, an MRR@20 of 0.813, and an MAR of 3.62. The corresponding Anthropic full-context baseline yielded comparable results. These parallel outcomes suggest that the sliding window can act as an effective semantic filter across different document layouts and domain-specific terminologies, helping to maintain retrieval performance while mitigating the risk of annotation bias artifacts.
+
+\subsection{Computational Efficiency and Ecological Impact}
+
+The most striking findings relate to computational overhead. By fixing the context window, we eliminated the linear scaling of VRAM requirements. Our approach kept the entire context generation process on the GPU, resulting in a 2.5x increase in preprocessing speed. The total time required to process 382 chunks across 25 documents dropped from 71 minutes to 29 minutes (See Table \ref{tab:performance_comparison}.). 
+
+This efficiency translated directly into ecological gains. Using the CodeCarbon framework, we measured a 51\% reduction in both total CO2-equivalent emissions and energy consumption (See Fig. \ref{fig:eco_friendliness}). These results underscore the potential of optimized RAG architectures to contribute to 'Green AI' goals while making advanced NLP tools accessible on standard laptops. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{images/eco_friendliness.png}
+    \caption{Sustainability improvements}
+    \label{fig:eco_friendliness}
+\end{figure}
+
+\subsection{Critical Interpretation}
+
+The trade-off between a 0.9\% drop in recall (Table \ref{tab:performance_comparison}) and a 60\% reduction in preprocessing time (Table \ref{tab:performance_comparison}) is highly favorable for many resource-constrained, localized applications. The 'Lost in the Middle' phenomenon likely explains why the full-document context provided by the baseline does not yield significantly better results; the extra information often acts as noise or is neglected by the model's attention mechanism. Our sliding window effectively acts as a semantic filter, focusing the LLM's reasoning on the most relevant neighboring information.
+
+\subsection{Hardware Profiling and Unified Memory Bottlenecks}
+During the evaluation of the Anthropic baseline, a critical hardware bottleneck was identified. While the quantized weights of the model natively fit within the 8GB VRAM limit, the Key-Value (KV) cache footprint for full-document context sequences vastly exceeded the remaining physical memory. To prevent Out-Of-Memory (OOM) failures, the inference backend utilized CUDA Unified Memory, dynamically offloading the KV cache overflow into the host system RAM. Observations during the evaluation of extended policy documents indicated peak system RAM allocations approaching 10GB strictly for the inference process's KV cache overflow.
+
+Consequently, the inference engine was forced to fetch context tokens across the PCIe bus, causing massive page faulting and memory controller saturation. While system utilities reported 100\% GPU utilization, this metric reflected I/O stall states rather than compute throughput. Because of this, strategies such as input caching cannot resolve the bottleneck; while caching reduces computational overhead, the cached representations themselves still exceed physical VRAM. By capping the Document Slice context window to a strictly enforced radius ($k=3$), our architecture restricts the peak memory footprint to the hardware's limitations. This stabilizes resident VRAM usage at approximately 5GB and effectively prevents the host RAM overflow, thereby enabling the 60\% reduction in preprocessing time.
+
+\section{Conclusion}
+\label{sec:Conclusion}
+
+This study demonstrates that state-of-the-art contextual retrieval can be successfully adapted for resource-constrained environments. By replacing full-document context with a localized 'Document Slice' sliding window, we have developed an RAG architecture that fits within the 8GB of VRAM available on consumer-grade GPUs. 
+
+Our findings indicate that the most critical context for chunk enrichment resides in the immediate vicinity of the text, and that including distant document sections yields diminishing returns while incurring high computational costs. The proposed method achieves a 2.5x speedup and a 51\% reduction in energy consumption with a statistically insignificant impact on retrieval recall. 
+
+These results have significant implications for the development of private, local research assistants and the broader adoption of 'Green AI' practices. 
+
+However, limitations remain. Our current implementation uses a fixed window radius, and future work should explore dynamic window sizing based on the Manifold Hypothesis to identify the optimal amount of context for different document types. Furthermore, while the initial expansion into policy documents demonstrates strong cross-domain generalizability, claims regarding universal, domain-agnostic scalability and broad ``Green AI'' deployment remain promising but preliminary. Testing on substantially larger corpora, such as thousand-page financial reports, will be necessary to fully validate the operational limits of the slice-based approach.
+
+Ultimately, this research provides a framework for balancing the competing demands of retrieval accuracy, computational efficiency, and environmental sustainability, ensuring that the benefits of Large Language Models remain accessible beyond the confines of high-performance computing clusters.
+
+\section*{Acknowledgment}
+
+This research was presented in advance at the \textit{Student Research Conference} at the University of Debrecen. It was supported by the \textit{UD Talent Program} and the \textit{Doctoral School of Informatics and the Faculty of Informatics} at the University of Debrecen.
+
+The authors acknowledge the use of generative artificial intelligence (AI) tools, specifically Gemini (Google), Claude (Anthropic), ChatGPT (OpenAI), and Grammarly, in preparing this manuscript and the associated research.
+
+These AI systems were employed to enhance the stylistic quality, grammatical accuracy, and overall linguistic coherence and consistency of the text. Furthermore, Gemini was utilized during the initial literature review phase to assist in exploring and surveying the relevant field of study.
+
+Gemini was used to generate initial drafts or components of the explanatory diagrams presented in this work. Additionally, ChatGPT and Gemini were used as coding assistants to accelerate the implementation of the source code that realizes the proposed concept.
+
+The authors explicitly declare that the core concepts, research methodology, and scientific contributions of this paper are 100\% their original work. All AI-generated outputs, including text refinements, source code fragments, and visual elements, were produced under strict human supervision, underwent rigorous manual validation, and were critically reviewed and edited by the authors. The authors remain fully responsible for the accuracy, integrity, and originality of the final content.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

@@ -145,6 +145,9 @@ VARIANTS = {
     # round 3: prompts for a router that never needs k=3 (tables are gated to k=1)
     "genre3": lambda: Router(GENRE3_PROMPT, ["A", "B", "C"], shots=relabelled_shots({0: "A", 1: "B", 2: "C", 3: "C"}), label="Genre"),
     "binary": lambda: Router(BINARY_PROMPT, ["S", "N"], shots=relabelled_shots({0: "S", 1: "N", 2: "N", 3: "N"}), label="Answer"),
+    # same prompt; exemplars are whatever the module's default_few_shots() currently returns (held-out papers since the
+    # exemplar re-sourcing) - saved under a separate name so it can be compared with routes_binary.json (old exemplars)
+    "binary_heldout": lambda: Router(BINARY_PROMPT, ["S", "N"], shots=relabelled_shots({0: "S", 1: "N", 2: "N", 3: "N"}), label="Answer"),
     "split5": lambda: Router(SPLIT5_PROMPT, ["A", "B", "C", "D", "E"], shots=split5_shots(), label="Class"),
 }
 

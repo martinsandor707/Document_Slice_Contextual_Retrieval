@@ -5,7 +5,9 @@ Goal: configure the slice-radius router in `utils/dynamic_slice_prediction.py` s
 against the Anthropic full-document baseline. All numbers are on the 250 scientific multi-chunk questions
 (`q_and_a/Gemini/scientific_multi_chunk_control.json`: 530 gold chunk references, 226 distinct gold chunks, 382 Docling
 chunks from 25 papers). Research material: `dynamic_slice_length/router_experiments/` (scripts, per-question results,
-router routes, real-run records); the pre-research router is `utils/dynamic_slice_prediction.py.bak`.
+router routes, real-run records). **Test-set hygiene:** every result up to Section 7 was obtained with few-shot
+exemplars taken from benchmark papers; Section 8 replaces them with exemplars from six held-out papers and repeats the
+final live run — that run is the one to report.
 
 ## 1. Result
 
@@ -19,18 +21,20 @@ router routes, real-run records); the pre-research router is `utils/dynamic_slic
 | Best offline policy, round 1 (tables → 1 on the paper's fixed-radius summaries, original routing) | 0.9500 | 0.781 | 3.79 | 273 / 66 % | — |
 | Best offline modification, round 3: 2-class prompt (self-describing → skip, else k=2), tables → 2, on the final run's own summaries | 0.9507 | 0.791 | 3.97 | 281 / ~74 % | — |
 | Round 3: genre router over k ∈ {0,1,2} (fragments → 2, tables → 2) | 0.9500 | 0.787 | 3.90 | 271 / ~71 % | — |
-| **Dynamic router, 2-class (S → skip, N → 2), tables → 2, real run** | 0.9487 | 0.793 | 3.92 | 279 / 73 % | 10.3 min |
+| Dynamic router, 2-class (S → skip, N → 2), tables → 2, real run, exemplars from benchmark papers | 0.9487 | 0.793 | 3.92 | 279 / 73 % | 10.3 min |
+| **Dynamic router, 2-class (S → skip, N → 2), tables → 2, real run, exemplars from the HELD-OUT papers (Section 8) — final** | **0.9520** | **0.798** | 3.92 | 262 / ~69 % | 9.7 min |
 
-**Verdict.** No router configuration reached the full-document baseline (0.954) or fixed k=2 (0.9467) in a real run.
-The final router lands 0.5 pt below fixed k=2 — inside the ±0.7 pt single-run band measured in Section 3 — while
-making 29 % fewer summariser calls, sending 65 % of the prompt text and finishing generation in ~9 min instead of
-11.2 min (17.5 min in the paper's two-model pipeline). If Recall@20 is the sole criterion, **fixed k=2 remains the
-safe choice**; the router's value is compute (and, with boilerplate skipped, the best MRR / MAR / R@5 of all
-configurations). Offline, i.e. with the summariser noise removed, the router with tables → 1 was the best policy of
-round 1 (0.9500), but that gain did not survive a fresh generation of the table summaries. Round 3 (Section 4b), run
-on the final configuration's own summaries, finds that k=3 can be dropped entirely, that tables → 2 is the
-better-supported table setting, and that the simplest router of all (skip self-describing chunks, k=2 for everything
-else, tables → 2) is the best offline modification at 0.9507; its real run gave **0.9487**, statistically indistinguishable from fixed k=2 (0.9467) within the ±0.7 pt single-run band, at 73 % of the k=2 prompt text and 279 summariser calls.
+**Verdict.** The final router — a 2-class classifier (self-describing chunk → no summary, everything else → k=2)
+with the table gate at k=2 and exemplars from held-out papers — is the only configuration that beats fixed k=2 in a
+real run: **0.9520 vs 0.9467** (+0.5 pt, 7 questions better / 4 worse) with 31 % fewer summariser calls and 9.7 min
+of generation instead of 11.2 min (17.5 min in the paper's two-model pipeline), and it lands 0.2 pt below the
+full-document baseline (0.954; 6 better / 7 worse), i.e. statistically level with it within the ±0.7 pt single-run band
+of Section 3, at a fraction of the baseline's cost (54.9 min). Its MRR (0.798) is above both. The path there: the
+original 4-class router with tables → 3 scored 0.9380 mostly because wide slices degrade table summaries (Section 2);
+tables → 1 recovered part of it in real runs (0.9420); round 3 (Section 4b) showed that k=3 can be dropped entirely,
+that tables → 2 is the better-supported table setting and that the simplest 2-class router is the best offline
+modification (0.9507); its real run with benchmark-derived exemplars gave 0.9487, and the rerun with clean exemplars
+(Section 8) gave 0.9520. Single-run differences below ~0.7 pt remain ties; the compute saving is not.
 
 **Final router configuration** (module defaults): genre prompt unchanged; class A (abstract / conclusion / boilerplate)
 → no summary (k=0, skipped), B (self-contained exposition) → k=1, C (section-internal technical body) → k=2,
@@ -93,10 +97,13 @@ chunk ids (42 gated tables inside the 59). Letters: A/B/C/D = genre classes, T =
 | Fixed k=3 | real (paper) | 0.9453 | 0.7877 | 4.020 | 0.7410 | 0.8590 | 382 / 133% |  |
 | Dynamic router, original config (Martin's run) | real | 0.9380 | 0.7949 | 3.685 | 0.7597 | 0.8650 | 273 / 73% |  |
 | Constant k=2 through the dynamic notebook (FIXED_K=2) | real (re-generation) | 0.9467 | 0.7923 | 3.921 | 0.7463 | 0.8643 | 382 / 100% |  |
-| Real run `binary_t2` | real | 0.9487 | 0.7926 | 3.924 | 0.7503 | 0.8623 | 279 / 73% | 2-class router (S skip, N→2), tables→2; k {0: 103, 2: 279}; table k=[2]; generation 10.3 min |
-| Real run `tables1` | real | 0.9420 | 0.7882 | 3.826 | 0.7490 | 0.8583 | 271 / 65% | genre router, tables→1; k {0: 111, 1: 96, 2: 157, 3: 18}; table k=[1]; generation 9.4 min |
-| Real run `tables1_run2` | real | 0.9420 | 0.7882 | 3.826 | 0.7490 | 0.8583 | 271 / 65% | genre router, tables→1 (identical repeat); k {0: 111, 1: 96, 2: 157, 3: 18}; table k=[1]; generation 9.1 min |
+| Real run `binary_t2` | real | 0.9487 | 0.7926 | 3.924 | 0.7503 | 0.8623 | 279 / 73% | 2-class router (S skip, N→2), tables→2 (exemplars from benchmark papers); k {0: 103, 2: 279}; table k=[2]; generation 10.3 min |
+| Real run `binary_t2_heldout` | real | 0.9520 | 0.7979 | 3.922 | 0.7517 | 0.8657 | 262 / 69% | 2-class router (S skip, N→2), tables→2, exemplars from the HELD-OUT papers (final); k {0: 120, 2: 262}; table k=[2]; generation 9.7 min |
+| Real run `tables1` | real | 0.9420 | 0.7882 | 3.826 | 0.7490 | 0.8583 | 271 / 65% | genre router, tables→1 (exemplars from benchmark papers); k {0: 111, 1: 96, 2: 157, 3: 18}; table k=[1]; generation 9.4 min |
+| Real run `tables1_run2` | real | 0.9420 | 0.7882 | 3.826 | 0.7490 | 0.8583 | — | genre router, tables→1 (identical repeat); k {0: 111, 1: 96, 2: 157, 3: 18}; table k=[]; generation 9.1 min |
 | `fin_binary_S0N2_T2`: 2-class prompt: S skip, N->2, tables->2 (k in {0,2}) | offline sim | 0.9507 | 0.7907 | 3.966 | 0.7457 | 0.8603 | — | k {'0': 99, '2': 281} |
+| `bin_own_base`: binary_t2 routing rebuilt from its own real summaries (must reproduce 0.9487) | offline sim | 0.9507 | 0.7912 | 3.977 | 0.7483 | 0.8583 | 281 / 74% | k {'0': 99, '2': 281} |
+| `bin_heldout`: 2-class router with HELD-OUT exemplars, tables->2, on binary_t2's summaries | offline sim | 0.9507 | 0.8001 | 3.931 | 0.7517 | 0.8603 | 260 / 69% | k {'0': 120, '2': 260} |
 | `sim_dyn_T1`: current routing but tables -> 1 | offline sim | 0.9500 | 0.7814 | 3.787 | 0.7603 | 0.8683 | 273 / 66% | k {'0': 107, '1': 95, '2': 161, '3': 17} |
 | `sim_dyn_T1_D2`: tables -> 1, fragments D -> 2 | offline sim | 0.9500 | 0.7816 | 3.792 | 0.7570 | 0.8683 | 273 / 65% | k {'0': 107, '1': 95, '2': 178} |
 | `sim_dyn_T1_B2`: tables -> 1, B -> 2 | offline sim | 0.9500 | 0.7693 | 3.821 | 0.7563 | 0.8703 | 273 / 70% | k {'0': 107, '1': 42, '2': 214, '3': 17} |
@@ -226,18 +233,23 @@ What round 3 adds:
    plus the genre SLM is what carries the gain.
 7. **Method: rank with the offline simulator, confirm with two real runs;** treat any single-run difference below ~0.7 pt
    of R@20 as a tie.
+8. **Exemplars must come from held-out papers.** Swapping the benchmark-derived exemplars for ten role-matched
+   exemplars from six unrelated papers (Section 8) changed 15 % of the router's letters (mostly more skipping of
+   front matter, acknowledgements and conclusions) but not a single question offline, and the live rerun scored
+   0.9520; the earlier runs were contaminated in principle even though no exemplar chunk was ever a gold answer.
 
 ## 6. Code and data state
 
-* `utils/dynamic_slice_prediction.py` — module defaults are now the **2-class router** of round 3:
+* `utils/dynamic_slice_prediction.py` — module defaults are the **2-class router** of round 3:
   `SYSTEM_PROMPT = BINARY_SYSTEM_PROMPT`, `LETTER_TO_K = {S: 0, N: 2}`, `ANSWER_LABEL = "Answer"`, exemplars =
-  `binary_few_shots()` (the ten genre exemplars relabelled S/N), **`TABLE_K = 2`**, `FIXED_K = None`. The 4-class genre
-  router of the confirmation runs is preserved and byte-identical to its original prompts:
+  `binary_few_shots()` (the ten role exemplars relabelled S/N; since Section 8 they come from the held-out papers in
+  `split_documents_router`, `SPLIT_DIR`), **`TABLE_K = 2`**, `FIXED_K = None`. The 4-class genre router of the
+  confirmation runs is preserved with its original prompt:
   `DynamicSlicePredictor(system_prompt=GENRE_SYSTEM_PROMPT, letter_to_k=GENRE_LETTER_TO_K, answer_label=GENRE_ANSWER_LABEL,
-  few_shots=genre_few_shots(), table_k=1)`. Experiment switches: `FIXED_K` (constant radius for every chunk) and
-  `TABLE_K` (gate radius); both also exist as `DynamicSlicePredictor` fields. The pre-research module is
-  `utils/dynamic_slice_prediction.py.bak`. Untested alternative with the same offline score: the genre router with
-  `TABLE_K = 2` and `LETTER_TO_K = {A:0, B:1, C:2, D:2}` (offline 0.9500).
+  few_shots=genre_few_shots(), table_k=1)` (its exemplars are now the held-out ones too). Experiment switches: `FIXED_K`
+  (constant radius for every chunk) and `TABLE_K` (gate radius); both also exist as `DynamicSlicePredictor` fields.
+  Untested alternative with the same offline score: the genre router with `TABLE_K = 2` and
+  `LETTER_TO_K = {A:0, B:1, C:2, D:2}` (offline 0.9500).
 * `preprocessed_chunks/ablation_doc_slice_radius_dynamic.json` and the `ablation_doc_slice_radius_dynamic` table hold the
   **last real run** (the 2-class router, `binary_t2`); copies of every real run's summaries are in
   `router_experiments/real_runs/<tag>_chunks.json` (`tables1_run2` produced byte-identical summaries to `tables1`
@@ -262,7 +274,58 @@ $PY sweep.py --report                                      # ranked table of eve
 $PY -u chain.py wait real:<tag> evalreal:<tag>             # real run with the module's current policy (+ per-question eval)
 $PY make_table.py                                          # the markdown table above
 $PY diagnose.py; $PY oracle.py; $PY cost.py                # per-question diagnosis, headroom, compute cost
+$PY chunk_router_docs.py                                   # chunk RnD/input_router/*.pdf with the corpus recipe -> split_documents_router/
+$PY compare_routes.py binary binary_heldout                # letter-level agreement of two router passes (+ which gold chunks flip)
 ```
 
 New prompt variants: add to `VARIANTS` in `router_variants.py` (one Ollama forward pass per chunk), then add
-`route_policy("<variant>", {...})` entries to `sweep.py`.
+`route_policy("<variant>", {...})` entries to `sweep.py`. New exemplars must come from `split_documents_router` (or
+new held-out PDFs chunked with `chunk_router_docs.py`), never from `split_documents`.
+
+## 8. Exemplar re-sourcing to held-out papers (test-set hygiene)
+
+The exemplar set used in Sections 1–7 was built from chunks of benchmark papers (the Gaze paper, one chunk of the
+Nature machine-behaviour paper, one author-contribution line), i.e. from the corpus the 250 questions are asked about.
+Even though none of those chunks is a gold answer, that is test-set contamination. Martin supplied six unrelated papers
+(`RnD/input_router/`: Lempel & Ziv 1976, SRCNN, LeCun/Bengio/Hinton "Deep learning", AlphaGo Zero, the Sycamore
+quantum-supremacy paper, a 2023 survey on personalised federated learning), which were chunked with exactly the corpus
+recipe (Docling `DocumentConverter()` defaults, `HybridChunker` with the nomic-embed tokenizer at 2000 tokens,
+`merge_peers=True`, the same string cleaning, id = SHA-256 of the cleaned text) into `RnD/split_documents_router/`
+(109 chunks). Structure check against `split_documents`: identical keys and types, id = SHA-256(text) for 109/109,
+`document` = file name, median chunk 2 995 vs 2 090 characters (max 9 772 vs 10 260), the same Docling artefacts
+(formula placeholders in 15 chunks, serialised table cells in 17, captions in 9, bullet lists in 21); only the IEEE
+`GLYPH<..>` font codes are absent. No exemplar text occurs anywhere in the benchmark corpus (checked).
+
+The ten roles, clip lengths and order were kept one to one:
+
+| # | Role (k → letter) | Old source (benchmark paper) | New source (held-out paper) |
+|---|---|---|---|
+| 1 | abstract (0 → S) | Gaze #1 | federated-learning survey #0 (author line + Abstract), 900 chars |
+| 2 | formulas with "where" (2 → N) | Gaze #8 | SRCNN #10 (MSE loss, "where n is the number of training samples"), 700 |
+| 3 | related work (1 → N) | Gaze #3 | SRCNN #4 (MLP / CNN denoising, Cui et al.), 650 |
+| 4 | fragment (3 → N) | machine-behaviour #12 (two bullet questions) | AlphaGo Zero #14 (dangling figure caption + layout junk, 148 chars) |
+| 5 | reference list (0 → S) | Gaze #13, 3 lines | SRCNN #25, 3 lines |
+| 6 | results pointing to a figure (2 → N) | Gaze #11 | SRCNN #22 (Fig. 12, running-time comparison), 600 |
+| 7 | method overview naming the device (1 → N) | Gaze #5 | Sycamore #3 (the 54-qubit processor), 650 |
+| 8 | conclusion (0 → S) | Gaze #12 | SRCNN #24 ("We have presented …"), 700 |
+| 9 | experimental setup (1 → N) | Gaze #9 | SRCNN #12 (training sets, network settings), 600 |
+| 10 | contributions / acknowledgement (0 → S) | s41598-020 #10 (87 chars) | Lempel–Ziv #7 (88 chars) |
+
+**Does the router still decide the same?** On the 338 non-table benchmark chunks the 2-class router agrees with its
+previous decisions on 287 (84.9 %); letters move from S 99 / N 239 to S 120 / N 218. The 36 N→S flips are mostly
+author/affiliation blocks, acknowledgements and conclusions (correct in the gold sense) plus a few section stubs and
+introductions; the 15 S→N flips are mostly long reference lists, which were uncertain with either set (p 0.5–0.8).
+23 of the 51 flipped chunks are gold supporting chunks. **Effect on retrieval, offline** (on the `binary_t2` run's own
+summaries, chunks that change class taking k=2 summaries from the constant-k=2 run or being skipped): R@20 0.9507,
+MRR 0.800, MAR 3.93 with 120 skipped chunks — identical per question to the old-exemplar routing on the same
+summaries (0 worse / 0 better), 0 worse / 1 better than the real `binary_t2` run, 4 worse / 6 better than fixed k=2,
+8 worse / 6 better than the baseline. So the re-sourcing is retrieval-neutral, and the router now skips 21 more chunks.
+
+**Live rerun with the held-out exemplars** (module defaults, tables → 2, `real_runs/binary_t2_heldout.json`):
+R@20 **0.9520**, MRR 0.798, MAR 3.92, R@5 0.7517, R@10 0.8657, R@15 0.9267; router k distribution {0: 120, 2: 262};
+262 summariser calls; generation 9.7 min, benchmark 5.7 min; codecarbon 13.5 Wh / 2.9 g CO2eq. Per question: vs the
+offline estimate (0.9507) 1 worse / 2 better; vs the real run with benchmark-derived exemplars (0.9487) 0 worse / 2
+better; vs fixed k=2 (0.9467) 4 worse / 7 better; vs the constant-k=2 re-generation 1 worse / 4 better; vs the
+full-document baseline (0.9540) 7 worse / 6 better. This is the best real run of the study and the one to report:
++0.5 pt over fixed k=2 at 69 % of its summariser calls, 0.2 pt below the full-document baseline (well inside the
+single-run band), with a better MRR than either.

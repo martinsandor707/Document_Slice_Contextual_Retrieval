@@ -102,8 +102,10 @@ GENRE_ANSWER_LABEL = "Genre"                    # answer prefix of the 4-class g
 OLLAMA_OPTIONS: Dict[str, Any] = {"temperature": 0.0, "num_predict": 1, "top_p": 1.0}
 TOP_LOGPROBS = 20
 
-#: Docling chunk JSONs the default exemplars are taken from (``RnD/split_documents`` next to ``RnD/utils``).
-SPLIT_DIR = Path(os.environ.get("DSL_SPLIT_DIR", Path(__file__).resolve().parent.parent / "split_documents"))
+#: Docling chunk JSONs the few-shot exemplars are taken from.  These are the six HELD-OUT papers of ``RnD/input_router``
+#: (chunked with the corpus recipe into ``RnD/split_documents_router``), which are not part of the retrieval benchmark;
+#: the benchmark corpus itself (``RnD/split_documents``) must never be used for exemplars.
+SPLIT_DIR = Path(os.environ.get("DSL_SPLIT_DIR", Path(__file__).resolve().parent.parent / "split_documents_router"))
 
 # ---- routing policy (module defaults, used by the notebooks) ------------------------------------------------------
 # Round-3 default: the 2-class router.  S = self-describing (abstract, conclusion, boilerplate) -> k = 0 (no summary),
@@ -246,23 +248,28 @@ def _load_doc(pattern: str, split_dir: Path = SPLIT_DIR) -> List[dict]:
 
 
 def default_few_shots(split_dir: Path = SPLIT_DIR) -> Tuple[FewShot, ...]:
-    """The ten exemplars of ollama_dynamic_slice_length.ipynb (k in 0..3), built from verbatim Docling chunks of papers
-    held out of the gold set; the routers relabel them through genre_few_shots() / binary_few_shots()."""
-    gaze = _load_doc("A_Hybrid_Gaze*", split_dir)          # whole paper held out of the gold set
-    nat = _load_doc("s41586*", split_dir)                  # only chunk 12 used
-    srep = _load_doc("s41598-020*", split_dir)             # only chunk 10 used
-    refs = "\n".join(gaze[13]["text"].split("\n")[:3])
+    """Ten exemplars (k in 0..3) taken verbatim from Docling chunks of the held-out papers in ``split_dir``; the routers
+    relabel them through genre_few_shots() / binary_few_shots().  Roles, clip lengths and order are those of the original
+    exemplar set (which came from benchmark papers and was replaced for test-set hygiene):
+    abstract | formulas with 'where' | related work | fragment | references | results pointing to a figure |
+    method overview naming the device | conclusion | experimental setup | acknowledgement."""
+    tan = _load_doc("tan2023*", split_dir)                   # IEEE survey on personalised federated learning
+    srcnn = _load_doc("Image_Super-Resolution*", split_dir)  # IEEE TPAMI, SRCNN
+    arute = _load_doc("arute2019*", split_dir)               # Nature, quantum supremacy (Sycamore)
+    silver = _load_doc("silver2017*", split_dir)             # Nature, AlphaGo Zero
+    lempel = _load_doc("lempel1976*", split_dir)             # IEEE Trans. Inf. Theory, Lempel-Ziv complexity
+    refs = "\n".join(srcnn[25]["text"].split("\n")[:3])
     return (
-        FewShot(clip(gaze[1]["text"], 900, 0), 0, "affiliations + ABSTRACT"),
-        FewShot(clip(gaze[8]["text"], 700, 0), 2, "confidence-measure formulas with 'where'"),
-        FewShot(clip(gaze[3]["text"], 650, 0), 1, "related work, methods named"),
-        FewShot(nat[12]["text"], 3, "two bullet questions from a figure"),
+        FewShot(clip(tan[0]["text"], 900, 0), 0, "author line + Abstract"),
+        FewShot(clip(srcnn[10]["text"], 700, 0), 2, "MSE loss formula with 'where n is ...'"),
+        FewShot(clip(srcnn[4]["text"], 650, 0), 1, "related work, methods named (MLP, CNN denoising, Cui et al.)"),
+        FewShot(silver[14]["text"], 3, "dangling figure caption with layout junk (148 chars)"),
         FewShot(refs, 0, "reference list excerpt"),
-        FewShot(clip(gaze[11]["text"], 600, 0), 2, "results pointing to Fig. 7, Eq. 1/3, segments"),
-        FewShot(clip(gaze[5]["text"], 650, 0), 1, "method overview, devices named"),
-        FewShot(clip(gaze[12]["text"], 700, 0), 0, "conclusion 'This paper proposed ...'"),
-        FewShot(clip(gaze[9]["text"], 600, 0), 1, "experimental setup"),
-        FewShot(srep[10]["text"], 0, "author contributions (87 chars)"),
+        FewShot(clip(srcnn[22]["text"], 600, 0), 2, "results pointing to Fig. 12, running-time comparison"),
+        FewShot(clip(arute[3]["text"], 650, 0), 1, "device description: the Sycamore processor"),
+        FewShot(clip(srcnn[24]["text"], 700, 0), 0, "conclusion 'We have presented ...'"),
+        FewShot(clip(srcnn[12]["text"], 600, 0), 1, "experimental setup: training sets, network settings"),
+        FewShot(lempel[7]["text"], 0, "acknowledgement (88 chars)"),
     )
 
 

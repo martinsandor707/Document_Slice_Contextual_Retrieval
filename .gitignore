@@ -212,3 +212,88 @@ RnD/input/Robi_kutatasok/**
 RnD/split_documents/**
 RnD/smoking/**
 *.lance
+
+RnD/nature_article/writing-references
+
+## Core LaTeX Auxiliaries & Build Artifacts
+*.aux
+*.bfl
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.fmt
+*.fot
+*.gup
+*.log
+*.out
+*.run.xml
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+
+## Table of Contents, Lists, & Sectioning Metadata
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.soc
+
+## Bibliographic & Indexing Artifacts (BibTeX, Biber, MakeIndex, Xindy)
+*.bcf
+*.idx
+*.ilg
+*.ind
+*.ist
+*.nlo
+*.nls
+*.xdy
+
+## Glossaries & Acronyms
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+## Package-Specific Caches & Intermediates
+# minted & pythontex
+_minted*
+*.pyg
+*.pytxcode
+pythontex-files-*/
+
+# tikz externalize
+*.dpth
+*.md5
+
+# tabularx, algorithmicx, and listings
+*.upa
+*.upb
+
+## PDF Output
+# By default, generated PDFs should not be tracked in version control.
+# If tracking camera-ready builds, explicitly unignore: !final-paper.pdf
+*.pdf
+*.dvi
+*.ps
+
+## Linux & Editor Artifacts (Arch/Garuda & Wayland environments)
+*~
+*.swp
+*.swo
+.fuse_hidden*
+.directory
+.Trash-*
+
+# IDE/Tooling Caches
+.vscode/
+.idea/
+.zed/
+__pycache__/

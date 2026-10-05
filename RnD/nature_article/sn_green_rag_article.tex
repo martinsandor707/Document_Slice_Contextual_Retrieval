@@ -110,7 +110,7 @@ The pipeline (Fig.~\ref{fig:architecture}) runs on one workstation with a single
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{images/fig01_architecture.png}
+  \includegraphics[width=\textwidth]{images/fig01_architecture.png}
   \caption{End-to-end on-premise architecture on one 8\, GB consumer GPU: router and summariser share one resident \texttt{gemma3:4b-it-qat} runner (16\,384-token window), the embedder runs after the runner is stopped, and chunks routed to $k=0$ bypass the summariser.}
   \label{fig:architecture}
 \end{figure}

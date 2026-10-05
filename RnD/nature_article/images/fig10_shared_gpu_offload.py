@@ -5,7 +5,7 @@ the 15 MiB of the desktop), left panel = layers kept on the GPU (of 35), right p
 by the same prompt's time on an empty GPU for the same release (k=3 and full-document prompts normalised separately).
 Shaded bands: measured footprints of a live Docling converter (1.8 GiB) and of a kernel after Docling + LanceDB embedding
 (5.9-6.1 GiB), from coresident_gpu_footprint.py. Run from the repository root:
-.venv/bin/python RnD/citds_article/figures/fig10_shared_gpu_offload.py"""
+.venv/bin/python RnD/nature_article/images/fig10_shared_gpu_offload.py"""
 import glob, json, os, sys
 import matplotlib.pyplot as plt
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)

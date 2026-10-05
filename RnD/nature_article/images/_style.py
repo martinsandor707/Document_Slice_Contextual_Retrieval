@@ -27,5 +27,6 @@ def apply():
 
 
 def save(fig, stem):
-    fig.savefig(f"{stem}.pdf"); fig.savefig(f"{stem}.png")
-    print("saved", f"{stem}.pdf", f"{stem}.png")
+    """Writes the PNG only (300 dpi, tight bounding box); the manuscript includes PNGs, no PDF is needed."""
+    fig.savefig(f"{stem}.png")
+    print("saved", f"{stem}.png")

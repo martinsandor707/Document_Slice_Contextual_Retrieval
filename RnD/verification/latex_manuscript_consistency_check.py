@@ -1,6 +1,6 @@
-"""Static consistency checks for RnD/citds_article/sn_green_rag_article.tex (no TeX toolchain is installed):
+"""Static consistency checks for RnD/nature_article/sn_green_rag_article.tex (no TeX toolchain is installed):
 balanced braces, matched environments, every \\ref/\\eqref target defined and every label referenced (including
-listings' label={...}), every \\cite key present in refs.bib, no \\includegraphics (figures are placeholders),
+listings' label={...}), every \\cite key present in refs.bib, every \\includegraphics file exists under RnD/nature_article/,
 counts of \\todo and \\verify notes, rendered word counts of the abstract (<= 200), introduction (700-800),
 discussion (300-400) and conclusion, and a heuristic list of sentences that state measured-looking numbers
 without an adjacent \\verify/\\todo note (review manually; citation keys with underscores are false positives).
@@ -8,8 +8,8 @@ Run from the repository root:  .venv/bin/python RnD/verification/latex_manuscrip
 import re, sys, collections
 from pathlib import Path
 here = Path(__file__).resolve().parent
-tex_path = Path(sys.argv[1]) if len(sys.argv) > 1 else here.parent / "citds_article" / "sn_green_rag_article.tex"
-bib_path = Path(sys.argv[2]) if len(sys.argv) > 2 else here.parent / "citds_article" / "refs.bib"
+tex_path = Path(sys.argv[1]) if len(sys.argv) > 1 else here.parent / "nature_article" / "sn_green_rag_article.tex"
+bib_path = Path(sys.argv[2]) if len(sys.argv) > 2 else here.parent / "nature_article" / "refs.bib"
 tex = open(tex_path, encoding="utf-8").read(); bib = open(bib_path, encoding="utf-8").read()
 problems = []
 body = re.sub(r"(?<!\\)%.*", "", tex)
@@ -38,7 +38,8 @@ for l in labels:
 bibkeys = set(re.findall(r"^@\w+\{([^,\s]+)", bib, flags=re.M))
 cites = [k.strip() for m in re.finditer(r"\\cite[pt]?\{([^}]*)\}", body) for k in m.group(1).split(",")]
 for k in sorted(set(cites) - bibkeys): problems.append(f"unknown citation key: {k}")
-if "\\includegraphics" in body: problems.append("includegraphics present (figures must stay placeholders)")
+for img in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}", body):
+    if not (tex_path.parent / img).exists(): problems.append(f"missing image file: {img}")
 NESTED = r"\\(?:todo|verify)\{(?:[^{}]|\{(?:[^{}]|\{(?:[^{}]|\{[^{}]*\})*\})*\})*\}"
 def words(s):
     s = re.sub(NESTED, " ", s, flags=re.S)

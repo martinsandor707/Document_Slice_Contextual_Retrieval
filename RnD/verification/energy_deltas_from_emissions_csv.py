@@ -16,6 +16,7 @@ RUNS = {
     "original 4-class router run": "2026-09-23T22:32:37",
     "policy corpus, full-document baseline": "2026-07-19T16:44:18",
     "policy corpus, static k=3": "2026-07-19T15:01:49",
+    "routed pipeline, end to end from PDFs (parse+route+summarise)": "2026-10-05T19:21:45",
 }
 print(f"{'run':52s} {'end time':19s} {'s':>8s} {'Wh':>7s} {'cpu':>6s} {'gpu':>6s} {'ram':>6s} {'gCO2':>6s} {'CI':>7s} {'cpuW':>6s} {'gpuW':>6s} {'gpu%':>5s} {'ramGB':>6s} ver")
 for name, ts in RUNS.items():

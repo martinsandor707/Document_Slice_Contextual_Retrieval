@@ -6,7 +6,7 @@ sum_i P_i^2 for the same designs (log scale). Both panels overlay the MEASURED p
 25 corpus papers (actual chunk lengths, cost.py formula via RnD/verification/prompt_volume_and_attention_proxy.py,
 characters / 4.17 per token) as markers; the corpus-level totals appear in the legend and the 4.6x / 10.8x ratios
 are annotated in panel (b).
-Run from the repository root:  .venv/bin/python RnD/citds_article/figures/fig04_cost_curves.py"""
+Run from the repository root:  .venv/bin/python RnD/nature_article/images/fig04_cost_curves.py"""
 import sys, os
 import numpy as np
 import matplotlib.pyplot as plt

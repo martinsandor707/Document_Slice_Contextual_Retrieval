@@ -3,7 +3,7 @@ Rows: generation time in minutes (notebook wall-clock comments of the fixed-radi
 sent to the summariser in millions of characters (RnD/verification/prompt_volume_and_attention_proxy.py). The resident
 GPU memory of the runner is not a row any more: it is the same 4.54 GiB for every k (RnD/verification/ollama_runner_vram.json),
 and the caption / Table 2 state it. Each row uses its own sequential blue ramp.
-Run from the repository root:  .venv/bin/python RnD/citds_article/figures/fig06_radius_heatmap.py"""
+Run from the repository root:  .venv/bin/python RnD/nature_article/images/fig06_radius_heatmap.py"""
 import sys, os
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle

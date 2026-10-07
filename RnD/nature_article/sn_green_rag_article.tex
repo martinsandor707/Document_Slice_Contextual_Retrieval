@@ -76,7 +76,7 @@
 \author[1]{\fnm{Martin Tibor} \sur{Sándor}}\email{sandor.martin@inf.unideb.hu}
 \author[2]{\fnm{Róbert} \sur{Lakatos}}\email{lakatos.robert@inf.unideb.hu}
 
-\affil*[1]{\orgdiv{Doctoral School of Informatics}, \orgname{University of Debrecen}, \orgaddress{\city{Debrecen}, \country{Hungary}}}
+\affil*[1]{\orgdiv{Doctoral School of Informatics, Faculty of Informatics}, \orgname{University of Debrecen}, \orgaddress{\city{Debrecen}, \country{Hungary}}}
 \affil[2]{\orgdiv{Department of Data Science and Visualization, Faculty of Informatics}, \orgname{University of Debrecen}, \orgaddress{\city{Debrecen}, \country{Hungary}}}
 
 %% VERIFY (abstract; kept free of red text): every number below is stated again with its provenance note in the body:
@@ -106,7 +106,7 @@ This article extends our conference study of Document Slice contextualisation \c
 
 \section{Methodology}\label{sec:method}
 
-The pipeline (Fig.~\ref{fig:architecture}) runs on one workstation with a single 8\, GB GPU: a PDF is parsed into layout-aware chunks (Sect.~\ref{sec:parsing}), a routing agent decides per chunk how much neighbouring context, if any, the summariser sees (Sects.~\ref{sec:slice}--\ref{sec:router}), and the summary is prepended to the chunk, embedded and indexed for hybrid retrieval (Sect.~\ref{sec:retrieval}). The only GPU-resident model during context generation is \texttt{gemma3:4b-it-qat} \cite{gemma3report2025}, a quantization-aware-trained 4-billion-parameter model served by Ollama \cite{ollama}, which acts as router and as summariser.
+We first describe the two corpora and question sets on which every measurement is taken (Sect.~\ref{sec:datasets}). The pipeline (Fig.~\ref{fig:architecture}) runs on one workstation with a single 8\, GB GPU: a PDF is parsed into layout-aware chunks (Sect.~\ref{sec:parsing}), a routing agent decides per chunk how much neighbouring context, if any, the summariser sees (Sects.~\ref{sec:slice}--\ref{sec:router}), and the summary is prepended to the chunk, embedded and indexed for hybrid retrieval (Sect.~\ref{sec:retrieval}). The only GPU-resident model during context generation is \texttt{gemma3:4b-it-qat} \cite{gemma3report2025}, a quantization-aware-trained 4-billion-parameter model served by Ollama \cite{ollama}, which acts as router and as summariser.
 
 \begin{figure}[htbp]
   \centering
@@ -114,6 +114,30 @@ The pipeline (Fig.~\ref{fig:architecture}) runs on one workstation with a single
   \caption{End-to-end on-premise architecture on one 8\, GB consumer GPU: router and summariser share one resident \texttt{gemma3:4b-it-qat} runner (16\,384-token window), the embedder runs after the runner is stopped, and chunks routed to $k=0$ bypass the summariser.}
   \label{fig:architecture}
 \end{figure}
+
+\subsection{Datasets}\label{sec:datasets}
+
+The primary corpus consists of 25 open-access papers from IEEE and Nature-portfolio journals across engineering, physics, computing, and the life sciences, chosen for their heavy use of tables, formulas, and figure references. Following the LLM-as-a-judge paradigm \cite{zheng2023judgingllmasajudgemtbenchchatbot} we built a ``silver standard'' question set \cite{rebholz2010silverstandard}: Gemini~3~Pro was given the chunk JSON of one paper at a time (chunks as produced by the parser of Sect.~\ref{sec:parsing}) and instructed to write exactly ten high-complexity question--answer pairs grounded only in the provided text, each requiring at least two distinct chunk identifiers (abridged prompt in the conference paper \cite{sandor2025documentslicecontextualretrieval}), and a validator rejects questions with fewer than two supporting chunks or with unknown identifiers: 250 questions with 530 gold references over 226 distinct chunks (Table~\ref{tab:corpora}). The gold labels come from a large proprietary model and the summaries from a 4-billion-parameter open model, so a shared preference for particular chunks is unlikely. To test the method inside the target genre of regulatory text, we use four public European Commission documents on tobacco-control policy (COM(2016)~269, COM(2021)~249, SWD(2013)~56 and the 2023 methodology report of the Independent Advisory Panel on characterising flavours), chunked and questioned with the same protocol (80 questions, 164 gold references; a random 20\,\% subset was checked manually); they share the genre of energy-governance documents: directive articles, member-state implementation tables, methodology sections and annexes. The exemplars of the routing agent (Sect.~\ref{sec:router}) come from six further papers in neither benchmark, so no text the router has seen as an example can be retrieved as an answer.\verify{\texttt{RnD/split\_documents\_router/}: 6 files, 109 records; \texttt{RnD/input\_router/} holds the PDFs}
+
+\begin{table}[tbp]
+\caption{Evaluation corpora: the scientific silver-standard benchmark and the European Commission policy set.}\label{tab:corpora}
+\begin{tabular}{@{}p{4.0cm}p{4.0cm}p{4.2cm}@{}}
+\toprule
+Quantity & Scientific benchmark & EC policy set \\
+\midrule
+Documents & 25 (IEEE, Nature portfolio) & 4 (COM(2016)~269, COM(2021)~249, SWD(2013)~56, IAP methodology 2023) \\
+Chunks & 382 & 141 (14 / 32 / 35 / 60 per document) \\
+Characters (total) / median chunk length & 1\,056\,773 / 2\,090 & 259\,985 / 1\,206 \\
+Chunk length, tokens (mean / median; tokenizer of Sect.~\ref{sec:parsing}) & 663.6 / 450 & 446.8 / 246 \\
+Questions & 250 (10 per document) & 80 (10 / 20 / 20 / 30 per document) \\
+Supporting chunks per question & 2--4 (mean 2.12; 223 / 24 / 3 questions with 2 / 3 / 4) & 2--3 (mean 2.05; 76 / 4) \\
+Gold references & 530 & 164 \\
+Distinct gold chunks (share of corpus) & 226 (59.5\,\%) & 94 (66.7\,\%) \\
+Question generator / manual validation & Gemini~3~Pro / --- & Gemini~3~Pro / 20\,\% random subset \\
+\botrule
+\end{tabular}
+\ifprovenance\footnotetext{\verify{Chunk counts, character statistics and per-document chunk counts: read-only pass over \texttt{RnD/split\_documents/*.json} and \texttt{RnD/split\_documents/smoking/*.json}; question statistics: \texttt{RnD/q\_and\_a/Gemini/scientific\_multi\_chunk\_control.json} and \texttt{RnD/q\_and\_a/Gemini/smoking.json} (count the \texttt{supporting\_chunks} lists; distinct gold ids as a set); token statistics: \texttt{len(tokenizer.tokenize(text))} with the nomic tokenizer over \texttt{RnD/split\_documents/*.json} (mean 663.58, median 450, total 253\,488) and over the final 141 records of \texttt{RnD/split\_documents/smoking/*.json} (mean 446.80, median 246, min 1, max 1\,992, total 62\,999); the 420.94 printed by cell~2 of \texttt{RnD/doc\_slice\_chunking.ipynb} refers to an earlier 144-chunk version of the policy corpus; scripts: \texttt{RnD/verification/chunk\_character\_statistics.py} and \texttt{chunk\_token\_statistics.py}.}}\fi
+\end{table}
 
 \subsection{Layout-aware document parsing}\label{sec:parsing}
 
@@ -125,7 +149,7 @@ D=(c_1,\dots,c_n),\quad \ell_j=|\tau(c_j)|\le \ell_{\max}=2000,\quad L=\sum_{j=1
 where $\tilde c_j$ is the cleaned chunk text; the content hash gives a chunk the same identifier in every experimental condition.
 \end{definition}
 
-Segmentation uses Docling \cite{auer2024doclingtechnicalreport,livathinos2025doclinglayoutanalysis}: layout analysis, table-structure recognition and OCR per page, then the \texttt{HybridChunker} \cite{docling2024chunkingdocumentation} splits along structural elements and merges adjacent elements of a section while the token count under the \texttt{nomic-embed-text-v1.5} tokenizer stays below $\ell_{\max}=2000$, so that a table, its caption and the paragraph discussing it tend to stay together; the chunks keep the reading order of the document, which is the order the slices of Sect.~\ref{sec:slice} rely on. Chunk text is normalized (Unicode NFKD, ASCII dashes and quotes, URLs removed, whitespace collapsed) before hashing (Fig.~\ref{fig:docling}; Table~\ref{tab:parsing}). Two properties matter later: a recognized table is serialized as one line of ``\texttt{\textless row\textgreater, \textless column\textgreater = \textless value\textgreater.}'' cells, so tables are detectable by a regular expression (the Tier-1 gate of the router, Sect.~\ref{sec:router}), and layout artifacts survive (formula placeholders in 51 of the 382 chunks, glyph codes in 93).
+Segmentation uses Docling \cite{auer2024doclingtechnicalreport,livathinos2025doclinglayoutanalysis}: layout analysis, table-structure recognition and OCR per page, then the \texttt{HybridChunker} \cite{docling2024chunkingdocumentation} splits along structural elements and merges adjacent elements of a section while the token count under the \texttt{nomic-embed-text-v1.5} tokenizer stays below $\ell_{\max}=2000$, so that a table, its caption and the paragraph discussing it tend to stay together; the chunks keep the reading order of the document, which is the order the slices of Sect.~\ref{sec:slice} rely on. Chunk text is normalized (Unicode NFKD, ASCII dashes and quotes, URLs removed, whitespace collapsed) before hashing (Fig.~\ref{fig:docling}; Table~\ref{tab:parsing}). Two properties matter later: a recognized table is serialized as one line of ``\texttt{\textless row\textgreater, \textless column\textgreater{} = \textless value\textgreater.}'' cells, so tables are detectable by a regular expression (the Tier-1 gate of the router, Sect.~\ref{sec:router}), and layout artifacts survive (formula placeholders in 51 of the 382 chunks, glyph codes in 93).
 
 \begin{figure}[htbp]
   \centering
@@ -182,20 +206,24 @@ for the full-document design, with $s=164$ tokens of system prompt, so under $\e
 
 \subsection{Dynamic radius routing}\label{sec:router}
 
-Our conference ablation \cite{sandor2025documentslicecontextualretrieval} showed that $k=2$ and $k=3$ are the best fixed radii, but a fixed radius wastes work twice over: chunks that already describe themselves (abstracts, conclusions, reference lists, author and funding statements, layout debris) gain nothing from a summary, and chunks carrying a serialised table are summarised \emph{worse} when the window is wide, because the model then describes the surrounding prose or degenerates into one of its own prompt examples. A routing agent $\mathcal R$ therefore chooses the radius per chunk in two cheap tiers, before any summary is written. Tier~1 is a deterministic table gate,
-
+Our conference ablation \cite{sandor2025documentslicecontextualretrieval} showed that $k=2$ and $k=3$ are the best fixed radii, but a fixed radius wastes work twice over: chunks that already describe themselves (abstracts, conclusions, reference lists, author and funding statements, layout debris) gain nothing from a summary, and chunks carrying a serialised table are summarised \emph{worse} when the window is wide, because the model then describes the surrounding prose or degenerates into one of its own prompt examples. A routing agent $\mathcal R$ therefore chooses the radius per chunk in two cheap tiers, before any summary is written. Tier~1 is a deterministic table gate defined by string matching. Let $\Sigma$ be the character set, $\Sigma^{*}$ the strings over it and $|w|$ the length of a string $w$; let $\Lambda(c)=(\lambda_1,\dots,\lambda_m)$ be the lines of a chunk, i.e.\ the unique factorisation $c=\lambda_1\,\mathrm{LF}\,\lambda_2\cdots\mathrm{LF}\,\lambda_m$ at the line feeds with no line feed inside a $\lambda_j$. For a language $X\subseteq\Sigma^{*}$ let $\nu_X(w)$ be the number of factors (substrings) of $w$ that belong to $X$, counted by a leftmost, non-overlapping scan of $w$, with $\nu_u$ for $X=\{u\}$, and write $\sigma_{=}$ for the three-character separator ``\texttt{ = }'' (blank, equals sign, blank). Let $C$, $T$ and $T_{|}$ be the regular languages of the cell, caption and pipe-caption expressions printed in Table~\ref{tab:prompts}: $C$ contains the tails ``\texttt{, \textless col\textgreater{} = \textless val\textgreater.}'' of Docling's serialised cells ``\texttt{\textless row\textgreater, \textless col\textgreater{} = \textless val\textgreater.}'', each cell from the comma after its row label onward (the row label is unconstrained and may be empty, as in header cells, so it is not part of the match), $T$ the caption heads ``\texttt{TABLE I}'', ``\texttt{Table 1:}'' and $T_{|}$ the Nature-style ``\texttt{Table 1 |}'' that may be glued to the first cell. With the Iverson bracket $[P]\in\{0,1\}$, the gate is
 % Note Formális ellenőrzés eredménye: Táblázat-detektáló kapu (5. egyenlet): A formalizáció itt túlzottan informális és pszeudokód-szerű ("line C c", "#"="(X) \le 100 v caption(c)"). A formális helyesség érdekében ezt szigorúbb halmazelméleti vagy karakterlánc-operátorokra (string matching) épülő szintaktikával kellene definiálni.
+% Martin: Egyenlet átírva, ez nekem már rigorózusabbnak tűnik, de cserébe félek, hogy elrontottuk ezzel a `tab:prompts` táblázatot, mivel ott definiáltuk a regexeket. Erre valószínűleg lenne jobb megoldás, ha van bármi ötleted, akkor nyitott vagyok rá. Emellett még gondolkodom, hogy kivegyem-e T_| -t mint szimbólumot, és ne legyen-e inkább T a táblázatot felismerő regexek halmaza és ha közülük bármelyik illeszkedik, akkor g_T(c)=1.
 \begin{equation}\label{eq:gate}
-\mathrm{table}(c)=\Bigl[\exists\,\text{line }\lambda\subseteq c:\ \#\mathrm{cells}(\lambda)\ge 3 \ \wedge\ |\lambda|/\#\text{``\texttt{ = }''}(\lambda)\le 100\Bigr]\ \vee\ \mathrm{caption}(c),
+\begin{aligned}
+g_T(c)=\Bigl[\ &\exists\,\lambda\in\Lambda(c):\ \nu_{C}(\lambda)\ge 3\ \wedge\ |\lambda|\le 100\,\nu_{\sigma_{=}}(\lambda)\\
+&\vee\ \exists\,\lambda\in\Lambda(c):\ \lambda\in T\,\Sigma^{*}\ \ \vee\ \ c\in\Sigma^{*}\,T_{|}\,\Sigma^{*}\ \Bigr],
+\end{aligned}
 \end{equation}
-where a cell matches ``\texttt{, \textless col\textgreater = \textless val\textgreater.}'' and a caption ``\texttt{TABLE I}'', ``\texttt{Table 1:}'' or ``\texttt{Table 1 |}'' at the start of a line; table chunks receive $k_T=2$ without a model call. Tier~2 classifies every other chunk with one forward pass of the resident model emitting a single token, from the router system prompt $\pi_r$ (Table~\ref{tab:prompts}), ten in-context exemplars $\mathcal X$ and the chunk clipped to its first 1\,500 and last 500 characters; the agent takes the argmax of the top-20 next-token log-probabilities over the two answer letters (fallbacks: the emitted token, then $k_{\mathrm{default}}=2$), with $\kappa(\mathrm S)=0$ (self-describing, no summariser call) and $\kappa(\mathrm N)=2$ (needs its neighbours). The policy, and the two statistics reported for every run, are
+that is, a chunk is a table chunk if some line carries at least three serialised cells (three cell tails in $C$) at a density of at most 100 characters per separator, or some line starts with a caption, or a pipe caption occurs anywhere (the second and third terms are prefix and factor membership, respectively); table chunks, $g_T(c)=1$, receive $k_T=2$ without a model call. Tier~2 classifies every other chunk with one forward pass of the resident model emitting a single token, from the router system prompt $\pi_r$ (Table~\ref{tab:prompts}), ten in-context exemplars $\mathcal X$ and the chunk clipped to its first 1\,500 and last 500 characters; the agent takes the argmax of the top-20 next-token log-probabilities over the two answer letters (fallbacks: the emitted token, then $k_{\mathrm{default}}=2$), with $\kappa(\mathrm S)=0$ (self-describing, no summariser call) and $\kappa(\mathrm N)=2$ (needs its neighbours). In the fixed-radius control runs of Sect.~\ref{sec:static} the agent is bypassed and every chunk receives the same radius $k_{\mathrm{fix}}\in\{0,\dots,4\}$; the full-document baseline uses no slice at all and is not a case of the policy. The policy, and the two statistics reported for every run, are
 % Note: Formális ellenőrzés eredménye: Útválasztó ágens döntési függvénye (6. és 7. egyenlet): A darabokra bontott (piecewise) $\mathcal{R}(c_i)$ függvény lefedi az implementációt, de az argmax operátornál a logaritmus valószínűségek kimeneti osztályai hibásan, $\lambda \in \{8, N\}$ formában jelennek meg az elvárt $\{S, N\}$ (Self-describing, Needs neighbours) halmaz helyett. Szintén definiálatlan a 6. egyenlet első ágában szereplő $k_{E,x}$ változó, amely valószínűleg a statikus kísérletek $k$ értékét hivatott jelölni. 
+% Martin: A $\lambda \in \{8, N\}$-ben a {8, N} csak OCR hiba a te részedről, ahogyan a $k_{E,x}$ is. Az viszont jogos, hogy a $k_{mathrm{fix}}$-et nem definiáltam, javítottam. A lambdát továbbá lecseréltem y-ra, mivel eq:gate-ben is használva van a lambda és mást jelent.
 \begin{equation}\label{eq:policy}
 \mathcal R(c_i)=
 \begin{cases}
 k_{\mathrm{fix}} & \text{(control runs)},\\[2pt]
-k_T=2 & \text{if } \mathrm{table}(c_i)\ \text{(Tier 1)},\\[2pt]
-\kappa\bigl(\arg\max_{\lambda\in\{\mathrm S,\mathrm N\}}\log p_\theta(\lambda\mid \pi_r,\mathcal X,\mathrm{clip}(c_i))\bigr) & \text{(Tier 2)},
+k_T=2 & \text{if } g_T(c_i)=1\ \text{(Tier 1)},\\[2pt]
+\kappa\bigl(\arg\max_{y\in\{\mathrm S,\mathrm N\}}\log p_\theta(y\mid \pi_r,\mathcal X,\mathrm{clip}(c_i))\bigr) & \text{(Tier 2)},
 \end{cases}
 \end{equation}
 \begin{equation}\label{eq:kbar}
@@ -216,7 +244,7 @@ Summariser messages & user~1: ``\texttt{FULL DOCUMENT:}'' + newline + the chunks
 Router & same resident runner and \texttt{num\_ctx}; \texttt{temperature 0}, \texttt{num\_predict 1}, \texttt{top\_p 1}, \texttt{logprobs} with \texttt{top\_logprobs 20}; decision: argmax of the letter log-probabilities, $\kappa(\mathrm S)=0$, $\kappa(\mathrm N)=2$; fallback: parse the emitted letter, else $k_{\mathrm{default}}=2$ \\
 Router system prompt & ``Decide whether the passage describes itself'': S\,--\,self-describing (abstract; conclusion or summary of the whole paper, even when full of numbers; non-content matter such as reference lists, acknowledgements, funding, author biographies, competing interests, metadata, licence text, layout garbage); N\,--\, needs its neighbours (any other passage); ``Reply with the letter only'' (verbatim: \texttt{BINARY\_SYSTEM\_PROMPT} in the repository) \\
 Router user message & ten exemplar blocks ``\texttt{Passage:} $x$ / \texttt{Answer:} S$\mid$N'' (from six held-out papers: abstract, reference-list excerpt, conclusion, acknowledgement $\to$ S; formula block, related work, caption fragment, results, device description, experimental setup $\to$ N), then ``\texttt{Passage:} $\mathrm{clip}(c_i)$ / \texttt{Answer:}'' with the query clipped to its first 1\,500 and last 500 characters \\
-Tier-1 criteria & $\ge 3$ cells ``\texttt{, \textless col\textgreater = \textless val\textgreater.}'' on one line with $\le 100$ characters per ``\texttt{ = }'', or a caption ``\texttt{TABLE I}'' / ``\texttt{Table 1:}'' / ``\texttt{Table 1 |}'' at the start of a line $\Rightarrow k_T=2$ \\
+Tier-1 gate, Eq.~\eqref{eq:gate} (Python \texttt{re} syntax; $T$ is anchored at the start of a line) & cell $C$: {\footnotesize\texttt{, [\^{},=\textbackslash n]\{1,80\} = [\^{}=\textbackslash n]\{0,80\}\textbackslash S\textbackslash .(?: |\$)}}\newline caption $T$: {\footnotesize\texttt{\^{}[ \textbackslash t]*(?:TABLE|Table)[ \textbackslash t]+(?:\textbackslash d\{1,2\}|[IVXLC]\{1,5\})\textbackslash b}}\newline \phantom{caption $T$:} {\footnotesize\texttt{(?:[ \textbackslash t]*[.:|][ \textbackslash t]*\textbackslash S|[ \textbackslash t]+[A-Z][A-Za-z]|[ \textbackslash t]*\$)}}\newline pipe caption $T_{|}$: {\footnotesize\texttt{\textbackslash bTable[ \textbackslash t]+\textbackslash d\{1,2\}[ \textbackslash t]*\textbackslash |}}\newline $\ge 3$ cells of $C$ on one line with $\le 100$ characters per ``\texttt{ = }'', or a caption $\Rightarrow k_T=2$ \\
 \botrule
 \end{tabular}
 \end{table}
@@ -253,7 +281,7 @@ C_{\mathrm{full}}&=\sum_{i=1}^{n}(L+\ell_i)=(n+1)L,\qquad
 C_{k}=\sum_{i=1}^{n}\Bigl(\sum_{j\in W_i(k)}\ell_j+\ell_i\Bigr)\le n\,(2k+2)\,\ell_{\max},\nonumber\\
 C_{\mathrm{dyn}}&=\sum_{i:\,k_i>0}\Bigl(\sum_{j\in W_i(k_i)}\ell_j+\ell_i\Bigr)+\sum_{i\notin\mathcal T}\rho_i,\label{eq:volume}
 \end{align}
-where $\mathcal T$ is the set of table-gated chunks and $\rho_i$ the router prompt (about 2\,000 tokens, mostly a cached prefix)\verify{router prompt length: mean 2\,062 tokens printed by \texttt{RnD/ollama\_dynamic\_slice\_length.ipynb}}: the full-document volume is quadratic in $n$, the bounded volume linear with a constant $2k+2$ that the router lowers further by skipping chunks. Attention widens the gap, since a forward pass over $P$ tokens costs approximately \cite{kaplan2020scaling}
+where $\mathcal T=\{\,i: g_T(c_i)=1\,\}$ is the set of table-gated chunks and $\rho_i$ the router prompt (about 2\,000 tokens, mostly a cached prefix)\verify{router prompt length: mean 2\,062 tokens printed by \texttt{RnD/ollama\_dynamic\_slice\_length.ipynb}}: the full-document volume is quadratic in $n$, the bounded volume linear with a constant $2k+2$ that the router lowers further by skipping chunks. Attention widens the gap, since a forward pass over $P$ tokens costs approximately \cite{kaplan2020scaling}
 \begin{equation}\label{eq:flops}
 F(P)\approx 2N_{\mathrm{par}}\,P+2\,n_L\,d_{\mathrm{attn}}\,P^{2}
 \end{equation}
@@ -302,31 +330,6 @@ Q_K^{+}=\{\,q\in Q : R_q^K\cap G_q\neq\varnothing\,\},\label{eq:recall}\\
 \end{align}
 Recall is primary because every question needs at least two chunks; MRR \cite{voorhees1999trec8} reflects the first relevant chunk; MAR, our exploratory measure of attentional accessibility, is the mean position of \emph{all} retrieved gold chunks and tells whether the evidence sits where the positional bias of Sect.~\ref{sec:intro} is least harmful. Ranking metrics are averaged over $Q_K^{+}$ (questions without a hit are excluded rather than scored zero; 233, 246, 247 and 248 of 250 for the routed pipeline)\verify{``Number of N values with NaN MRR in own metrics: 17/250, 4/250, 3/250, 2/250'' printed by cell~7 of \texttt{RnD/benchmarking\_retrievals.ipynb}; the \texttt{np.nanmean} calls in cell~9 implement the exclusion}, and gold sets are matched by content hash. \Rec{20} differences are tested per question with a 99\,\% BCa bootstrap interval of the paired difference \cite{efron1987better,smucker2007comparison} (SciPy \cite{virtanen2020scipy}, 9\,999 resamples, fixed seed) and an exact McNemar test \cite{McNemar_1947,dietterich1998approximate} on the event ``all gold chunks in the top 20'', reporting the discordant counts $b$ (only the compared system succeeds) and $c$ (only the baseline succeeds). Because the summariser is stochastic even at temperature~0, we also measure the noise floor of a single run by regenerating one configuration (Sect.~\ref{sec:routing-results}): about 0.7 points of \Rec{20} and 2 points of \MRR{20}, below which gaps are treated as ties.
 
-% Note: Ezt én inkább az elején letudnám a módszertanban. Általában ott szokott lenni ha csak nincs valamilyen különleges oka hogy végén mutassuk be.
-\subsection{Datasets}\label{sec:datasets}
-
-The primary corpus consists of 25 open-access papers from IEEE and Nature-portfolio journals across engineering, physics, computing, and the life sciences, chosen for their heavy use of tables, formulas, and figure references. Following the LLM-as-a-judge paradigm \cite{zheng2023judgingllmasajudgemtbenchchatbot} we built a ``silver standard'' question set \cite{rebholz2010silverstandard}: Gemini~3~Pro was given the chunk JSON of one paper at a time and instructed to write exactly ten high-complexity question--answer pairs grounded only in the provided text, each requiring at least two distinct chunk identifiers (abridged prompt in the conference paper \cite{sandor2025documentslicecontextualretrieval}), and a validator rejects questions with fewer than two supporting chunks or with unknown identifiers: 250 questions with 530 gold references over 226 distinct chunks (Table~\ref{tab:corpora}). The gold labels come from a large proprietary model and the summaries from a 4-billion-parameter open model, so a shared preference for particular chunks is unlikely. To test the method inside the target genre of regulatory text, we use four public European Commission documents on tobacco-control policy (COM(2016)~269, COM(2021)~249, SWD(2013)~56 and the 2023 methodology report of the Independent Advisory Panel on characterising flavours), chunked and questioned with the same protocol (80 questions, 164 gold references; a random 20\,\% subset was checked manually); they share the genre of energy-governance documents: directive articles, member-state implementation tables, methodology sections and annexes. The router's exemplars come from six further papers in neither benchmark, so no text the router has seen as an example can be retrieved as an answer.\verify{\texttt{RnD/split\_documents\_router/}: 6 files, 109 records; \texttt{RnD/input\_router/} holds the PDFs}
-
-\begin{table}[htbp]
-\caption{Evaluation corpora: the scientific silver-standard benchmark and the European Commission policy set.}\label{tab:corpora}
-\begin{tabular}{@{}p{4.0cm}p{4.0cm}p{4.2cm}@{}}
-\toprule
-Quantity & Scientific benchmark & EC policy set \\
-\midrule
-Documents & 25 (IEEE, Nature portfolio) & 4 (COM(2016)~269, COM(2021)~249, SWD(2013)~56, IAP methodology 2023) \\
-Chunks & 382 & 141 (14 / 32 / 35 / 60 per document) \\
-Characters (total) / median chunk length & 1\,056\,773 / 2\,090 & 259\,985 / 1\,206 \\
-Chunk length, tokens (mean / median) & 663.6 / 450 & 446.8 / 246 \\
-Questions & 250 (10 per document) & 80 (10 / 20 / 20 / 30 per document) \\
-Supporting chunks per question & 2--4 (mean 2.12; 223 / 24 / 3 questions with 2 / 3 / 4) & 2--3 (mean 2.05; 76 / 4) \\
-Gold references & 530 & 164 \\
-Distinct gold chunks (share of corpus) & 226 (59.5\,\%) & 94 (66.7\,\%) \\
-Question generator / manual validation & Gemini~3~Pro / --- & Gemini~3~Pro / 20\,\% random subset \\
-\botrule
-\end{tabular}
-\ifprovenance\footnotetext{\verify{Chunk counts, character statistics and per-document chunk counts: read-only pass over \texttt{RnD/split\_documents/*.json} and \texttt{RnD/split\_documents/smoking/*.json}; question statistics: \texttt{RnD/q\_and\_a/Gemini/scientific\_multi\_chunk\_control.json} and \texttt{RnD/q\_and\_a/Gemini/smoking.json} (count the \texttt{supporting\_chunks} lists; distinct gold ids as a set); token statistics: \texttt{len(tokenizer.tokenize(text))} with the nomic tokenizer over \texttt{RnD/split\_documents/*.json} (mean 663.58, median 450, total 253\,488) and over the final 141 records of \texttt{RnD/split\_documents/smoking/*.json} (mean 446.80, median 246, min 1, max 1\,992, total 62\,999); the 420.94 printed by cell~2 of \texttt{RnD/doc\_slice\_chunking.ipynb} refers to an earlier 144-chunk version of the policy corpus; scripts: \texttt{RnD/verification/chunk\_character\_statistics.py} and \texttt{chunk\_token\_statistics.py}.}}\fi
-\end{table}
-
 \subsection{Continuous energy and carbon accounting}\label{sec:energy}
 
 Every generation run is wrapped in a CodeCarbon tracker \cite{codecarbon_software,lacoste2019quantifyingcarbonemissionsmachine} that samples GPU, CPU, and memory power once per second and integrates it over the run; emissions follow through the grid factor:
@@ -361,8 +364,7 @@ Water footprint & not tracked (WUE 0) \\
 
 \section{Results and empirical evaluation}\label{sec:results}
 
-% Note: Mivel vannak alszekciók itt is egy kicsit kontextusba helyezheted mi következik az alszekciókban ugyanúgy ahogy a methodolgy-ban is csináltad.
-All metrics are those of Sect.~\ref{sec:metrics} on the corpora of Sect.~\ref{sec:datasets}; times and energies refer to the tracked generation scope unless stated otherwise.
+All metrics are those of Sect.~\ref{sec:metrics} on the corpora of Sect.~\ref{sec:datasets}; times and energies refer to the tracked generation scope unless stated otherwise. Sect.~\ref{sec:static} first reports the fixed-radius sweep that motivated the router, Sect.~\ref{sec:primary} the central comparison of the full-document baseline, the static slice and the routed pipeline in accuracy, time, energy and emissions, and Sect.~\ref{sec:routing-results} what the router decided, how its policy was arrived at and how much a single run can resolve. Sect.~\ref{sec:ranking} then examines where the retrieved evidence lands in the ranking, Sect.~\ref{sec:policy} repeats the comparison on the European Commission policy corpus, and Sect.~\ref{sec:profiling} closes with the memory measurements that test the model of Sect.~\ref{sec:complexity}.
 
 \subsection{Static radius sweep}\label{sec:static}
 

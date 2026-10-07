@@ -35,8 +35,8 @@
 
 %% --- provenance switch --------------------------------------------------------------------------------------------
 \newif\ifprovenance
-%\provenancefalse   % \provenancetrue prints the VERIFY notes and figure specifications (adds about 4 pages)
-\provenancetrue
+\provenancefalse   % \provenancetrue prints the VERIFY notes and figure specifications (adds about 4 pages)
+% \provenancetrue
 
 %% --- placeholder / provenance macros (remove before submission) -----------------------------------------------------
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
@@ -469,7 +469,7 @@ The ranking metrics explain why skipping a third of the summaries does not hurt:
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.6\textwidth]{images/fig09_ucurve.png}
-  \caption{The ``lost in the middle'' effect, reproduced from Liu et al.\ \cite{liu2023lostmiddlelanguagemodels}: answer accuracy of a language model as a function of the position of the relevant passage among 20 retrieved documents is highest at the first positions, lowest in the middle and only partly recovers at the end. The curve is shown as a general, model-agnostic tendency of long-context reading and is not a measurement of our system; it motivates reading the mean average ranks of Table~\ref{tab:primary} (about four of twenty) as evidence placed in the primacy region. \todo{[Reused figure: confirm the licence of the source (TACL, CC~BY~4.0) and name the source figure number in the caption.]}}
+  \caption{The ``lost in the middle'' effect, reproduced from Liu et al.\ \cite{liu2023lostmiddlelanguagemodels}: answer accuracy of a language model as a function of the position of the relevant passage among 20 retrieved documents is highest at the first positions, lowest in the middle and only partly recovers at the end. The curve is shown as a general, model-agnostic tendency of long-context reading and is not a measurement of our system; it motivates reading the mean average ranks of Table~\ref{tab:primary} (about four of twenty) as evidence placed in the primacy region. Reproduced from Figure~1 of Liu et al.\ \cite{liu2023lostmiddlelanguagemodels}, \copyright\ the authors, licensed under CC~BY~4.0.}
   \label{fig:ucurve}
 \end{figure}
 

@@ -209,8 +209,6 @@ __marimo__/
 # Martin
 RnD/input/Robi_kutatasok/**
 RnD/input/Robi_kutatasok/**
-RnD/split_documents/**
-RnD/smoking/**
 *.lance
 
 RnD/nature_article/writing-references
@@ -281,6 +279,7 @@ pythontex-files-*/
 # By default, generated PDFs should not be tracked in version control.
 # If tracking camera-ready builds, explicitly unignore: !final-paper.pdf
 *.pdf
+!RnD/smoking/**/*.pdf
 *.dvi
 *.ps
 

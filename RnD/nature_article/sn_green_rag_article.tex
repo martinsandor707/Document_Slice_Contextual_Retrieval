@@ -299,7 +299,7 @@ On the corpus the bounds are loose but the ordering holds (Fig.~\ref{fig:complex
   \label{fig:complexity}
 \end{figure}
 
-\textcolor{red}{Prompt volume and attention work set the time; a second resource sets a hard limit.} Memory decides whether the arithmetic can be done on the device at all: the GPU must hold the quantized weights $M_w$, the activations $M_{\mathrm{act}}$, and the KV cache, which for $P$ tokens occupies
+Memory decides whether the arithmetic can be done on the device at all: the GPU must hold the quantized weights $M_w$, the activations $M_{\mathrm{act}}$, and the KV cache, which for $P$ tokens occupies
 \begin{equation}\label{eq:kv}
 M_{\mathrm{KV}}(P)=2\,n_L\,n_{kv}\,d_h\,b\,P
 \end{equation}

@@ -1,10 +1,3 @@
-@IEEEtranBSTCTL{BSTcontrol,
-CTLuse_forced_etal       = "yes",
-CTLmax_names_forced_etal = "6",
-CTLnames_show_etal       = "6"
-}
-
-
 @misc{gemma3report2025,
       title={Gemma 3 Technical Report}, 
       author={{Gemma Team} and {Google DeepMind}},
@@ -23,7 +16,8 @@ CTLnames_show_etal       = "6"
   number={6},
   pages={1--28},
   year={2022},
-  publisher={ACM New York, NY}
+  publisher={ACM New York, NY},
+  doi = {10.1145/3530811}
 }
 
 @misc{lewisetal2021,
@@ -57,7 +51,7 @@ number = {9},
 article-number = {766},
 howpublished = {\url{https://www.mdpi.com/2078-2489/16/9/766} (Retrieved: 2025-12-31)},
 issn = {2078-2489},
-doi5 = {10.3390/info16090766}
+doi = {10.3390/info16090766}
 }
 
 @misc{zhao2025RAGDesignDecisions,
@@ -85,7 +79,9 @@ doi5 = {10.3390/info16090766}
   booktitle = {Proceedings of the Third Text REtrieval Conference (TREC-3)},
   year      = {1995},
   pages     = {109--126},
-  publisher = {NIST Special Publication 500-225}
+  publisher = {National Institute of Standards and Technology},
+  address = {Gaithersburg, MD, USA},
+  series = {NIST Special Publication 500-225},
 }
 
 @article{kiran2025hybrid,
@@ -223,7 +219,6 @@ doi = {10.48550/arXiv.2509.11720}
    title={Large Language Models for Information Retrieval: A Survey},
    volume={44},
    ISSN={1558-2868},
-   howpublished={\url{http://dx.doi.org/10.1145/3748304} (Retrieved: 2026-01-24)},
    DOI={10.1145/3748304},
    number={1},
    journal={ACM Transactions on Information Systems},
@@ -249,7 +244,8 @@ doi = {10.48550/arXiv.2509.11720}
   number={12},
   pages={54--63},
   year={2020},
-  publisher={ACM New York, NY, USA}
+  publisher={ACM New York, NY, USA},
+  doi = {10.1145/3381831}
 }
 @misc{yao2025spotlighthiddenbiasundermining,
       title={Who is in the Spotlight: The Hidden Bias Undermining Multimodal Retrieval-Augmented Generation}, 
@@ -270,8 +266,6 @@ number = {01},
 pages = {163-179},
 year = {2010},
 doi = {10.1142/S0219720010004562},
-URL = {https://doi.org/10.1142/S0219720010004562},
-eprint = {https://doi.org/10.1142/S0219720010004562}
 }
 
 
@@ -286,15 +280,15 @@ eprint = {https://doi.org/10.1142/S0219720010004562}
       howpublished={\url{https://arxiv.org/abs/2306.05685} (Retrieved: 2026-01-24)}, 
 },
 
-@misc{sandor2025documentslicecontextualretrieval,
-  author       = {Sándor, Martin Tibor},
-  title        = {Document Slice Contextual Retrieval},
-  year         = {2025},
-  publisher    = {GitHub},
-  journal      = {GitHub repository},
-  howpublished = {\url{https://github.com/martinsandor707/Document_Slice_Contextual_Retrieval}},
-  note         = {Accessed: \today}
-}
+@inproceedings{sandor2025documentslicecontextualretrieval,
+  author={Sándor, Martin Tibor and Lakatos, Róbert},
+  booktitle={2026 IEEE 4th Conference on Information Technology and Data Science (CITDS)}, 
+  title={Efficient Local Retrieval-Augmented Generation via Neighboring Document Slice Contextualization}, 
+  year={2026},
+  pages={257-262},
+  doi={10.1109/CITDS70571.2026.11706860},
+  note={Code available at \url{https://github.com/martinsandor707/Document_Slice_Contextual_Retrieval}}
+  },
 
 @inproceedings{strubell2019energycost,
     title = "Energy and Policy Considerations for Deep Learning in {NLP}",
@@ -324,10 +318,10 @@ eprint = {https://doi.org/10.1142/S0219720010004562}
 },
 @inproceedings{Luccioni_2024, series={FAccT ’24},
    title={Power Hungry Processing: Watts Driving the Cost of AI Deployment?},
-   url={http://dx.doi.org/10.1145/3630106.3658542},
    DOI={10.1145/3630106.3658542},
    booktitle={The 2024 ACM Conference on Fairness, Accountability and Transparency},
-   publisher={ACM},
+   publisher = {ACM},
+   address = {New York, NY, USA},
    author={Luccioni, Sasha and Jernite, Yacine and Strubell, Emma},
    year={2024},
    month=jun, pages={85–99},
@@ -371,7 +365,6 @@ eprint = {https://doi.org/10.1142/S0219720010004562}
   publisher    = {Zenodo},
   version      = {v2.4.1},
   doi          = {10.5281/zenodo.11171501},
-  url          = {https://doi.org/10.5281/zenodo.11171501},
 }
 
 @misc{lacoste2019quantifyingcarbonemissionsmachine,
@@ -430,7 +423,7 @@ pages={153–157}
       url={https://arxiv.org/abs/2312.10997}, 
 }
 
-@software{Liu_LlamaIndex_2022,
+@misc{Liu_LlamaIndex_2022,
 author = {Liu, Jerry},
 doi = {10.5281/zenodo.1234},
 month = {11},
@@ -457,7 +450,8 @@ year = {2022}
   number={397},
   pages={171--185},
   year={1987},
-  publisher={Taylor \& Francis}
+  publisher={Taylor \& Francis},
+  doi = {10.1080/01621459.1987.10478410}
 }
 
 @inproceedings{smucker2007comparison,
@@ -467,7 +461,6 @@ year = {2007},
 isbn = {9781595938039},
 publisher = {Association for Computing Machinery},
 address = {New York, NY, USA},
-url = {https://doi.org/10.1145/1321440.1321528},
 doi = {10.1145/1321440.1321528},
 booktitle = {Proceedings of the Sixteenth ACM Conference on Conference on Information and Knowledge Management},
 pages = {623–632},
@@ -529,6 +522,7 @@ doi = {10.3390/en18092359}
   booktitle = {Proceedings of the 29th Symposium on Operating Systems Principles (SOSP 2023)},
   year      = {2023},
   publisher = {ACM},
+  address = {New York, NY, USA},
   doi       = {10.1145/3600006.3613165},
   note      = {arXiv:2309.06180}
 }
@@ -555,7 +549,7 @@ doi = {10.3390/en18092359}
   author    = {Ainslie, Joshua and Lee-Thorp, James and de Jong, Michiel and Zemlyanskiy, Yury and Lebr{\'o}n, Federico and Sanghai, Sumit},
   booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP 2023)},
   year      = {2023},
-  note      = {arXiv:   }
+  note      = {arXiv:2305.13245}
 }
 
 @misc{nussbaum2024nomic,
@@ -583,6 +577,7 @@ doi = {10.3390/en18092359}
   year      = {2020},
   pages     = {39--48},
   publisher = {ACM},
+  address = {New York, NY, USA},
   doi       = {10.1145/3397271.3401075}
 }
 
@@ -735,10 +730,10 @@ doi = {10.3390/en18092359}
 
 @inproceedings{sevilla2022compute,
   title={Compute Trends Across Three Eras of Machine Learning},
-  url={http://dx.doi.org/10.1109/IJCNN55064.2022.9891914},
   DOI={10.1109/ijcnn55064.2022.9891914},
   booktitle={2022 International Joint Conference on Neural Networks (IJCNN)},
-  publisher={IEEE},
+  publisher = {IEEE},
+  address = {Piscataway, NJ, USA},
   author={Sevilla, Jaime and Heim, Lennart and Ho, Anson and Besiroglu, Tamay and Hobbhahn, Marius and Villalobos, Pablo},
   year={2022},
   month={07},
@@ -794,6 +789,7 @@ doi = {10.3390/en18092359}
   year      = {2023},
   pages     = {1--9},
   publisher = {IEEE},
+  address = {Piscataway, NJ, USA},
   doi       = {10.1109/HPEC58863.2023.10363447},
   note      = {arXiv:2310.03003}
 }
@@ -836,7 +832,9 @@ doi = {10.3390/en18092359}
   booktitle = {Proceedings of the Eighth Text REtrieval Conference (TREC-8)},
   year      = {1999},
   pages     = {77--82},
-  publisher = {NIST Special Publication 500-246}
+  publisher = {National Institute of Standards and Technology},
+  address = {Gaithersburg, MD, USA},
+  series = {NIST Special Publication 500-246},
 }
 
 @misc{gdpr2016,

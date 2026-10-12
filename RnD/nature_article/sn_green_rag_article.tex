@@ -1,48 +1,18 @@
-%% =====================================================================================================================
-%% Sustainable Local RAG Architectures for Energy Governance:
-%% A Green AI Approach via Document Slice Contextualization
-%%
-%% Springer Nature journal manuscript, sn-jnl class (Math & Physical Sciences, numbered references).
-%% Compile with the Springer Nature LaTeX template package (sn-jnl.cls, sn-mathphys-num.bst) and refs.bib.
-%%
-%% v2 (condensed, 2026-09-30): shortened from the 37-page v1 draft (sn_green_rag_article_v1_37pages_backup.tex) to
-%% v3 (2026-10-05): memory analysis (Sect. 2.5, 4.6, Table 2, Figs 5/6/11) rewritten after the Ollama memory measurements of
-%% RnD/verification/ollama_offload_under_vram_pressure.py; backup sn_green_rag_article_v2_before_memory_rewrite_backup.tex.
-%% about 18 pages before the reference list (target was 15; see CHANGES_v2_condensed.md for the page arithmetic). Every figure, table and equation requested in
-%% springer_nature_paper_upgrade_plan.md is kept (11 figures, 8 tables, 16 numbered equations, Proposition 1), and
-%% every number that remains in the text is unchanged from v1. Conventions:
-%%   \todo{...}     short red flag that must be resolved before submission (missing measurement, citation, statement)
-%%   \verify{...}   provenance note: how a number was computed and where in the repository it can be checked.
-%%                  Printed (in red) only when \provenancetrue is set below; zero length otherwise.
-%%   \figspec{...}  drawing instructions and data values for a figure; printed only with \provenancetrue.
-%%   \figbox{h}{w}{...}  fixed-size placeholder reserving the space of a figure that has not been drawn yet;
-%%                  replace by \includegraphics[height=h] when the image exists.
-%% Coloured text is not reproduced in the publisher's XML: remove every \todo, \verify and \figspec before submission.
-%% =====================================================================================================================
+%% Sustainable Local RAG Architectures for Energy Governance: A Green AI Approach via Document Slice Contextualisation
+%% Springer Nature journal manuscript, sn-jnl class (Math & Physical Sciences, numbered references); compile with
+%% latexmk -pdf (sn-jnl.cls, sn-mathphys-num.bst and refs.bib in this directory).
+%% \todo{...} marks an item to resolve before submission; coloured text is not reproduced in the publisher's XML.
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
 
 \usepackage{graphicx}
-\usepackage{multirow}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{amsthm}
-\usepackage{mathrsfs}
-\usepackage[title]{appendix}
 \usepackage{xcolor}
 \usepackage{textcomp}
-\usepackage{manyfoot}
 \usepackage{booktabs}
 \usepackage{microtype}
 
-%% --- provenance switch --------------------------------------------------------------------------------------------
-\newif\ifprovenance
-\provenancefalse   % \provenancetrue prints the VERIFY notes and figure specifications (adds about 4 pages)
-% \provenancetrue
-
-%% --- placeholder / provenance macros (remove before submission) -----------------------------------------------------
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
-\newcommand{\verify}[1]{\ifprovenance\textcolor{red}{{\footnotesize [VERIFY: #1]}}\fi}
-\newcommand{\figspec}[1]{\ifprovenance\par\noindent{\footnotesize\color{red}[FIGURE SPEC: #1]}\par\fi}
-\newcommand{\figbox}[3]{\fbox{\parbox[c][#1][c]{#2}{\centering\footnotesize\color{red}#3}}}
 
 %% --- float packing: let large floats share a page with text instead of drifting to float pages --------------------
 \renewcommand{\topfraction}{0.95}
@@ -71,7 +41,7 @@
 
 \begin{document}
 
-\title[Sustainable Local RAG for Energy Governance]{Sustainable Local RAG Architectures for Energy Governance: A Green AI Approach via Document Slice Contextualization}
+\title[Sustainable Local RAG for Energy Governance]{Sustainable Local RAG Architectures for Energy Governance: A Green AI Approach via Document Slice Contextualisation}
 
 \author[1]{\fnm{Martin Tibor} \sur{Sándor}}\email{sandor.martin@inf.unideb.hu}
 \author[2]{\fnm{Róbert} \sur{Lakatos}}\email{lakatos.robert@inf.unideb.hu}
@@ -82,13 +52,13 @@
 %% VERIFY (abstract; kept free of red text): every number below is stated again with its provenance note in the body:
 %%   1.37 mean radius, 32 % skipped, 0.952 vs 0.954, 106.7 -> 13.2 Wh, 21.8 -> 2.8 g, 54.9 -> 8.8 min  -> Table 7 (tab:primary) and Sect. 3.2
 %%   0.6 points and 71.8 % on the policy corpus                                                     -> Table 8 (tab:policy) and Sect. 3.5
-\abstract{\textbf{Background:} Retrieval-augmented generation pipelines that contextualize every chunk against its whole document follow a “Red AI” pattern: quadratic self-attention and a linearly growing key–value cache push index-time inference beyond the 8 GB of a consumer GPU, while energy-sector auditing and policy work, bound by data-sovereignty rules, must run locally. 
+\abstract{\textbf{Background:} Retrieval-augmented generation pipelines that contextualise every chunk against its whole document follow a “Red AI” pattern: quadratic self-attention and a linearly growing key–value cache push index-time inference beyond the 8 GB of a consumer GPU, while energy-sector auditing and policy work, bound by data-sovereignty rules, must run locally. 
 
-\textbf{Results:} We formalize Document Slice contextualization, which conditions each chunk summary on a bounded window of neighboring chunks, and add a two-tier routing agent that selects the radius for each chunk using a regex gate and a single-token forward pass of the same 4B-parameter model. On 25 scientific papers (382 chunks, 250 multi-hop questions) the router chose a mean radius of 1.37, skipped 32 \% of the summaries and reached Recall@20 of 0.952 against 0.954 for full document contextualisation, with higher MRR, while cutting tracked generation energy from 106.7 to 13.2 Wh ( - 87. 6 \%), emissions from 21.8 to 2.8 g CO 2 eq and generation time from 54.9 to 8.8 min. In four European Commission policy documents, the fixed-radius variant remained within 0.6 points of the baseline, at 71.8 \% lower energy. 
+\textbf{Results:} We formalise Document Slice contextualisation, which conditions each chunk summary on a bounded window of neighbouring chunks, and add a two-tier routing agent that selects the radius for each chunk using a regex gate and a single-token forward pass of the same 4B-parameter model. On 25 scientific papers (382 chunks, 250 multi-hop questions) the router chose a mean radius of 1.37, skipped 32 \% of the summaries and reached Recall@20 of 0.952 against 0.954 for full document contextualisation, with higher MRR, while cutting tracked generation energy from 106.7 to 13.2 Wh ($-87.6$\,\%), emissions from 21.8 to 2.8 \gco{} and generation time from 54.9 to 8.8 min. In four European Commission policy documents, the fixed-radius variant remained within 0.6 points of the baseline, at 71.8 \% lower energy. 
 
-\textbf{Conclusion:} Bounded, routed contextualization offers a PEP-AI pathway (Precise, Explainable, Provable) to decentralized compliance auditing: reproducible metrics, inspectable per-chunk decisions, and per-run energy ledgers.}
+\textbf{Conclusion:} Bounded, routed contextualisation offers a PEP-AI pathway (Precise, Explainable, Provable) to decentralised compliance auditing: reproducible metrics, inspectable per-chunk decisions, and per-run energy ledgers.}
 
-\keywords{Retrieval-Augmented Generation, Green AI, Small Language Models, Edge Inference, Energy Governance, Contextual Retrieval, Carbon Footprint}
+\keywords{Retrieval-Augmented Generation, Green AI, Small Language Models, Edge Inference, Energy Governance, Contextual Retrieval}
 
 \maketitle
 
@@ -96,17 +66,17 @@
 
 Large language models (LLMs) have changed how organisations search, summarise and reason over documents \cite{bengioetal2003,zhu2025informationretrieval}, but the capability is concentrated where data-centre-scale compute is affordable, resulting in a  ``compute divide'' \cite{besiroglu2024computedividemachinelearning,sevilla2022compute,thompson2020computational,hooker2021hardware} between high and low resource institutions. Schwartz et al.\ called this culture ``Red AI'' and contrasted it with ``Green AI'', which reports efficiency as a first-class result \cite{schwartz2020green}; the energy, carbon and water footprints of large models \cite{strubell2019energycost,patterson2021carbon,Luccioni_2024,li2025makingaithirstyuncovering,devries2023growing,wu2022sustainable} and frameworks for reporting them \cite{henderson2020systematic,lacoste2019quantifyingcarbonemissionsmachine,lannelongue2021green,tabbakh2024GreenAI} are well documented.
 
-For most organisations the practical answer to the compute divide is to rent data-centre capacity; for some it is not an option. Energy governance cannot externalize these costs to a cloud provider. The recast Energy Efficiency Directive \cite{eueed2023}, the Energy Union governance framework \cite{eugovernance2018} and the Commission's plan for digitalising the energy system \cite{eu2022digitalising} produce long, structured documents that regulators and operators must query precisely and defensibly, while the General Data Protection Regulation \cite{gdpr2016} and the Artificial Intelligence Act \cite{euaiact2024} impose data-sovereignty, transparency and record-keeping obligations on automated decision support \cite{jorgensen2025aidecisionsupport}. On-premises retrieval on commodity hardware is therefore a compliance property, and it has to fit the 8\, GB of a typical workstation GPU \cite{zhou2019edge}.
+For most organisations the practical answer to the compute divide is to rent data-centre capacity; for some it is not an option. Energy governance cannot externalise these costs to a cloud provider. The recast Energy Efficiency Directive \cite{eueed2023}, the Energy Union governance framework \cite{eugovernance2018} and the Commission's plan for digitalising the energy system \cite{eu2022digitalising} produce long, structured documents that regulators and operators must query precisely and defensibly, while the General Data Protection Regulation \cite{gdpr2016} and the Artificial Intelligence Act \cite{euaiact2024} impose data-sovereignty, transparency and record-keeping obligations on automated decision support \cite{jorgensen2025aidecisionsupport}. On-premises retrieval on commodity hardware is therefore a compliance property, and it has to fit the 8\, GB of a typical workstation GPU \cite{zhou2019edge}.
 
 The standard way of querying such documents with a language model is to retrieve first and generate second. Retrieval-augmented generation (RAG) grounds model answers in retrieved text \cite{lewisetal2021,info16090766,ram2023incontext}; production systems combine dense retrieval \cite{karpukhin2020dpr} with BM25 \cite{robertson1995okapi,robertson2009bm25} and late-interaction re-ranking \cite{khattab2020colbert,santhanam2022colbertv2,kiran2025hybrid,wang2024searching}. Their weakest link is chunking: a passage cut from its document loses the referents that make it retrievable \cite{merola2025reconstructingcontextevaluatingadvanced,smith2024evaluating,qu2024semanticchunkingworthcomputational,chen2023densex}, layout-aware segmentation only partly repairs this \cite{auer2024doclingtechnicalreport,verma2025s2chunkinghybridframework}, and context-aware representations have therefore been proposed at embedding time \cite{gunther2024latechunking} and, most influentially, at index time, by prepending a model-written summary of the chunk's role before embedding \cite{anthropic2024contextual}.
 
-The repair is bought with compute, however, and its price is set by how much context each chunk is given. Industrial index-time contextualization sends the whole document with every chunk: $(n+1)L$ prompt tokens for a document of $n$ chunks and $L$ tokens, and, since self-attention is quadratic in sequence length \cite{vaswani2017attention,tay2022efficient,kaplan2020scaling}, attention work grows with $\sum_i (L+\ell_i)^2$. The key--value cache grows linearly with the context window \cite{pope2023efficiently,kwon2023vllm,ainslie2023gqa}, and once weights plus cache exceed physical VRAM the runtime pages to host memory over PCIe, where throughput collapses \cite{sheng2023flexgen}; efficient kernels \cite{dao2022flashattention}, sparse attention \cite{beltagy2020longformer} and quantisation \cite{jacob2018quantization} lower the constants, not the dependence on $L$ \cite{shen2024RAGDesignTradeoffs,zhao2025RAGDesignDecisions,samsi2023words}. Long contexts are also used badly: models retrieve information best from the beginning and end of a prompt and degrade for the middle \cite{liu2023lostmiddlelanguagemodels}, an architectural effect \cite{guo2024serialpositioneffectslarge,menschikov2025earlytokenbiasmodelspecificlanguagespecific,hsieh2024found} that persists in embedding models \cite{lee2025quantifyingpositionalbiasestext} and multimodal retrieval \cite{yao2025spotlighthiddenbiasundermining}, so a summariser handed a whole paper to describe one paragraph pays quadratically for context it largely ignores. Giving each chunk less, but better-chosen, context is the obvious remedy, and several designs move in that direction without settling how much context is enough. Sentence-window and parent--child retrieval \cite{gao2024retrievalaugmentedgenerationlargelanguage, Liu_LlamaIndex_2022}, summary trees \cite{sarthi2024raptorrecursiveabstractiveprocessing} and graph summarisation \cite{edge2024graphrag} add neighbouring or hierarchical context with inputs that are hard to bound, and adaptive systems decide per query how much to retrieve \cite{jeong2024adaptiverag,asai2024selfrag} or which model to call \cite{ong2024routellm,chen2023frugalgpt}; missing is a per-chunk decision, taken at index time, of how much neighbouring context a chunk needs, under a hard bound that keeps every prompt inside a fixed memory envelope.
+The repair is bought with compute, however, and its price is set by how much context each chunk is given. Industrial index-time contextualisation sends the whole document with every chunk: $(n+1)L$ prompt tokens for a document of $n$ chunks and $L$ tokens, and, since self-attention is quadratic in sequence length \cite{vaswani2017attention,tay2022efficient,kaplan2020scaling}, attention work grows with $\sum_i (L+\ell_i)^2$. The key--value cache grows linearly with the context window \cite{pope2023efficiently,kwon2023vllm,ainslie2023gqa}, and once weights plus cache exceed physical VRAM the runtime pages to host memory over PCIe, where throughput collapses \cite{sheng2023flexgen}; efficient kernels \cite{dao2022flashattention}, sparse attention \cite{beltagy2020longformer} and quantisation \cite{jacob2018quantization} lower the constants, not the dependence on $L$ \cite{shen2024RAGDesignTradeoffs,zhao2025RAGDesignDecisions,samsi2023words}. Long contexts are also used badly: models retrieve information best from the beginning and end of a prompt and degrade for the middle \cite{liu2023lostmiddlelanguagemodels}, an architectural effect \cite{guo2024serialpositioneffectslarge,menschikov2025earlytokenbiasmodelspecificlanguagespecific,hsieh2024found} that persists in embedding models \cite{lee2025quantifyingpositionalbiasestext} and multimodal retrieval \cite{yao2025spotlighthiddenbiasundermining}, so a summariser handed a whole paper to describe one paragraph pays quadratically for context it largely ignores. Giving each chunk less, but better-chosen, context is the obvious remedy, and several designs move in that direction without settling how much context is enough. Sentence-window and parent--child retrieval \cite{gao2024retrievalaugmentedgenerationlargelanguage, Liu_LlamaIndex_2022}, summary trees \cite{sarthi2024raptorrecursiveabstractiveprocessing} and graph summarisation \cite{edge2024graphrag} add neighbouring or hierarchical context with inputs that are hard to bound, and adaptive systems decide per query how much to retrieve \cite{jeong2024adaptiverag,asai2024selfrag} or which model to call \cite{ong2024routellm,chen2023frugalgpt}; missing is a per-chunk decision, taken at index time, of how much neighbouring context a chunk needs, under a hard bound that keeps every prompt inside a fixed memory envelope.
 
 This article extends our conference study of Document Slice contextualisation \cite{sandor2025documentslicecontextualretrieval} in that direction with (i) a formal definition of the bounded, boundary-clamped slice and its index-time cost; (ii) a two-tier routing agent that assigns each chunk a radius $k\in\{0,2\}$ with a deterministic table gate and a single-token forward pass of the same 4-billion-parameter model that writes the summaries; (iii) a complexity and memory model of why the full-document baseline leaves the 8\,GB envelope; (iv) an evaluation on 250 multi-hop questions in which the routed pipeline reaches \Rec{20} of 0.952 against 0.954 for the baseline at 12.4\,\% of its tracked generation energy; (v) a cross-domain check on European Commission policy documents; and (vi) a measurement protocol with a noise-floor analysis and per-run energy ledgers. Section~\ref{sec:method} presents the method and its cost model, Sect.~\ref{sec:results} the results, Sect.~\ref{sec:discussion} the implications and Sect.~\ref{sec:conclusion} concludes. The complete architecture and all results are openly available at \url{https://github.com/martinsandor707/Document_Slice_Contextual_Retrieval}, and every number, table and figure of this article can be regenerated from it: the repository holds the frozen chunk and question files, the per-run energy ledger, the routing and retrieval records, and the scripts that recompute each reported value and draw each figure.
 
 \section{Methodology}\label{sec:method}
 
-We first describe the two corpora and question sets on which every measurement is taken (Sect.~\ref{sec:datasets}). The remaining subsections then follow a document through the pipeline. The pipeline (Fig.~\ref{fig:architecture}) runs on one workstation with a single 8\, GB GPU: a PDF is parsed into layout-aware chunks (Sect.~\ref{sec:parsing}), a routing agent decides per chunk how much neighbouring context, if any, the summariser sees (Sects.~\ref{sec:slice}--\ref{sec:router}), and the summary is prepended to the chunk, embedded and indexed for hybrid retrieval (Sect.~\ref{sec:retrieval}). The only GPU-resident model during context generation is \texttt{gemma3:4b-it-qat} \cite{gemma3report2025}, a quantization-aware-trained 4-billion-parameter model served by Ollama \cite{ollama}, which acts as router and as summariser.
+We first describe the two corpora and question sets on which every measurement is taken (Sect.~\ref{sec:datasets}). The remaining subsections then follow a document through the pipeline. The pipeline (Fig.~\ref{fig:architecture}) runs on one workstation with a single 8\, GB GPU: a PDF is parsed into layout-aware chunks (Sect.~\ref{sec:parsing}), a routing agent decides per chunk how much neighbouring context, if any, the summariser sees (Sects.~\ref{sec:slice}--\ref{sec:router}), and the summary is prepended to the chunk, embedded and indexed for hybrid retrieval (Sect.~\ref{sec:retrieval}). The only GPU-resident model during context generation is \texttt{gemma3:4b-it-qat} \cite{gemma3report2025}, a quantisation-aware-trained 4-billion-parameter model served by Ollama \cite{ollama}, which acts as router and as summariser.
 
 \begin{figure}[htbp]
   \centering
@@ -128,7 +98,7 @@ Quantity & Scientific benchmark & EC policy set \\
 Documents & 25 (IEEE, Nature portfolio) & 4 (COM(2016)~269, COM(2021)~249, SWD(2013)~56, IAP methodology 2023) \\
 Chunks & 382 & 141 (14 / 32 / 35 / 60 per document) \\
 Characters (total) / median chunk length & 1\,056\,773 / 2\,090 & 259\,985 / 1\,206 \\
-Chunk length, tokens (mean / median; tokenizer of Sect.~\ref{sec:parsing}) & 663.6 / 450 & 446.8 / 246 \\
+Chunk length, tokens (mean / median; tokeniser of Sect.~\ref{sec:parsing}) & 663.6 / 450 & 446.8 / 246 \\
 Questions & 250 (10 per document) & 80 (10 / 20 / 20 / 30 per document) \\
 Supporting chunks per question & 2--4 (mean 2.12; 223 / 24 / 3 questions with 2 / 3 / 4) & 2--3 (mean 2.05; 76 / 4) \\
 Gold references & 530 & 164 \\
@@ -141,19 +111,19 @@ Question generator / manual validation & Gemini~3~Pro / --- & Gemini~3~Pro / 20\
 \subsection{Layout-aware document parsing}\label{sec:parsing}
 
 \begin{definition}[Chunk sequence]\label{def:chunks}
-Let $\tau$ be the tokenizer of the embedding model and $\ell_{\max}$ a token budget. A document is the ordered chunk sequence
-\begin{equation}\label{eq:chunks}
+Let $\tau$ be the tokeniser of the embedding model and $\ell_{\max}$ a token budget. A document is the ordered chunk sequence
+\begin{equation}
 D=(c_1,\dots,c_n),\quad \ell_j=|\tau(c_j)|\le \ell_{\max}=2000,\quad L=\sum_{j=1}^{n}\ell_j,\quad \mathrm{id}(c_j)=\mathrm{SHA256}(\tilde c_j),
 \end{equation}
 where $\tilde c_j$ is the cleaned chunk text; the content hash gives a chunk the same identifier in every experimental condition.
 \end{definition}
 
-The sequence of Definition~\ref{def:chunks} is produced as follows. Segmentation uses Docling \cite{auer2024doclingtechnicalreport,livathinos2025doclinglayoutanalysis}: layout analysis, table-structure recognition and OCR per page, then the \texttt{HybridChunker} \cite{docling2024chunkingdocumentation} splits along structural elements and merges adjacent elements of a section while the token count under the \texttt{nomic-embed-text-v1.5} tokenizer stays below $\ell_{\max}=2000$, so that a table, its caption and the paragraph discussing it tend to stay together; the chunks keep the reading order of the document, which is the order the slices of Sect.~\ref{sec:slice} rely on. Chunk text is normalized (Unicode NFKD, ASCII dashes and quotes, URLs removed, whitespace collapsed) before hashing (Fig.~\ref{fig:docling}; Table~\ref{tab:parsing}). Two properties matter later: a recognized table is serialized as one line of ``\texttt{\textless row\textgreater, \textless column\textgreater{} = \textless value\textgreater.}'' cells, so tables are detectable by a regular expression (the Tier-1 gate of the router, Sect.~\ref{sec:router}), and layout artifacts survive (formula placeholders in 51 of the 382 chunks, glyph codes in 93).
+The sequence of Definition~\ref{def:chunks} is produced as follows. Segmentation uses Docling \cite{auer2024doclingtechnicalreport,livathinos2025doclinglayoutanalysis}: layout analysis, table-structure recognition and OCR per page, then the \texttt{HybridChunker} \cite{docling2024chunkingdocumentation} splits along structural elements and merges adjacent elements of a section while the token count under the \texttt{nomic-embed-text-v1.5} tokeniser stays below $\ell_{\max}=2000$, so that a table, its caption and the paragraph discussing it tend to stay together; the chunks keep the reading order of the document, which is the order the slices of Sect.~\ref{sec:slice} rely on. Chunk text is normalised (Unicode NFKD, ASCII dashes and quotes, URLs removed, whitespace collapsed) before hashing (Fig.~\ref{fig:docling}; Table~\ref{tab:parsing}). Two properties matter later: a recognised table is serialised as one line of ``\texttt{\textless row\textgreater, \textless column\textgreater{} = \textless value\textgreater.}'' cells, so tables are detectable by a regular expression (the Tier-1 gate of the router, Sect.~\ref{sec:router}), and layout artefacts survive (formula placeholders in 51 of the 382 chunks, glyph codes in 93).
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{images/fig02_docling_workflow.png}
-  \caption{Layout-aware parsing and chunking: layout analysis, structure-aware segmentation, token-bounded merging of peers within a section, cleaning and hashing. The chunks keep the reading order of the document and form the sequence $D=(c_1,\dots,c_n)$ of Definition~\ref{def:chunks} that the slices of Sect.~\ref{sec:slice} index; the serialized tables and undecoded content in the call-outs are what the routing agent of Sect.~\ref{sec:router} detects and has to cope with.}
+  \caption{Layout-aware parsing and chunking: layout analysis, structure-aware segmentation, token-bounded merging of peers within a section, cleaning and hashing. The chunks keep the reading order of the document and form the sequence $D=(c_1,\dots,c_n)$ of Definition~\ref{def:chunks} that the slices of Sect.~\ref{sec:slice} index; the serialised tables and undecoded content in the call-outs are what the routing agent of Sect.~\ref{sec:router} detects and has to cope with.}
   \label{fig:docling}
 \end{figure}
 
@@ -178,7 +148,7 @@ Chunks carrying a serialised table (Tier-1 gate) & 42 & cells or caption pattern
 
 \subsection{Bounded document slices}\label{sec:slice}
 
-\begin{definition}[Document slice]\label{def:slice}
+\begin{definition}[Document slice]
 For a chunk $c_i\in D$ and a context radius $k\in\mathbb{N}_0$ the document slice is the set of chunks within $k$ positions of $c_i$,
 \begin{equation}\label{eq:slice}
 \Slice(c_i,k)=\{\,c_j\in D \mid \max(1,\,i-k)\le j\le \min(n,\,i+k)\,\}.
@@ -210,7 +180,7 @@ g_T(c)=\Bigl[\,\exists\,\lambda\in\Lambda(c):\ \bigl(\nu_{C}(\lambda)\ge 3\ \wed
 \end{equation}
 that is, a chunk is a table chunk if one of its lines carries at least three serialised cells (three cell tails in $C$) at a density of at most 100 characters per separator, or passes a caption test, a caption at the start of the line or a pipe caption anywhere in it; table chunks, $g_T(c)=1$, receive $k_T=2$ without a model call. Tier~2 classifies every other chunk with one forward pass of the resident model emitting a single token, from the router system prompt $\pi_r$ (Table~\ref{tab:prompts}), ten in-context exemplars $\mathcal X$ and the chunk clipped to its first 1\,500 and last 500 characters; the agent takes the argmax of the top-20 next-token log-probabilities over the two answer letters (fallbacks: the emitted token, then $k_{\mathrm{default}}=2$), with $\kappa(\mathrm S)=0$ (self-describing, no summariser call) and $\kappa(\mathrm N)=2$ (needs its neighbours). In the fixed-radius control runs of Sect.~\ref{sec:static} the agent is bypassed and every chunk receives the same radius $k_{\mathrm{fix}}\in\{0,\dots,4\}$; the full-document baseline uses no slice at all and is not a case of the policy. The policy, and the two statistics reported for every run, are
 
-\begin{equation}\label{eq:policy}
+\begin{equation}
 \mathcal R(c_i)=
 \begin{cases}
 k_{\mathrm{fix}} & \text{(control runs)},\\[2pt]
@@ -218,11 +188,11 @@ k_T=2 & \text{if } g_T(c_i)=1\ \text{(Tier 1)},\\[2pt]
 \kappa\bigl(\arg\max_{y\in\{\mathrm S,\mathrm N\}}\log p_\theta(y\mid \pi_r,\mathcal X,\mathrm{clip}(c_i))\bigr) & \text{(Tier 2)},
 \end{cases}
 \end{equation}
-\begin{equation}\label{eq:kbar}
+\begin{equation}
 \bar k=\frac1n\sum_{i=1}^{n}k_i,\qquad N_{\mathrm{calls}}=\bigl|\{\,i : k_i>0\,\}\bigr| .
 \end{equation}
 
- One forward pass takes about 0.16\,s on the RTX~4060M (median 155\,ms; the exemplars form a cached prefix of roughly 2\,000 tokens), so the corpus is routed in about a minute, and nothing is reloaded between the routing and summarising phases. With exemplars from six papers outside both benchmarks (109 chunks), the router agrees with a 119-chunk hand-labeled set on 82 of the 99 chunks that reach Tier~2, and the gate fires on all 20 gold table chunks with no false positives. The server's logits vary slightly with the state of its prefix cache, so chunks whose two letters lie within about 0.1--0.3 nats can flip between runs; the agent logs the letter log-probabilities so that such near-ties can be audited, the ``explainable'' half of the pathway of Sect.~\ref{sec:discussion}.
+ One forward pass takes about 0.16\,s on the RTX~4060M (median 155\,ms; the exemplars form a cached prefix of roughly 2\,000 tokens), so the corpus is routed in about a minute, and nothing is reloaded between the routing and summarising phases. With exemplars from six papers outside both benchmarks (109 chunks), the router agrees with a 119-chunk hand-labelled set on 82 of the 99 chunks that reach Tier~2, and the gate fires on all 20 gold table chunks with no false positives. The server's logits vary slightly with the state of its prefix cache, so chunks whose two letters lie within about 0.1--0.3 nats can flip between runs; the agent logs the letter log-probabilities so that such near-ties can be audited, the ``explainable'' half of the pathway of Sect.~\ref{sec:discussion}.
 
 \begin{table}[htbp]
 \caption{Prompt templates of the summariser and of the routing agent, and the routing decision criteria.}\label{tab:prompts}
@@ -242,7 +212,7 @@ Tier-1 gate, Eq.~\eqref{eq:gate} (Python \texttt{re} syntax) & cell set $C$, str
 \end{table}
 
 \subsection{Context-enriched embedding and hybrid retrieval}\label{sec:retrieval}
- The enriched text is embedded with \texttt{nomic-embed-text-v1.5} \cite{nussbaum2024nomic}, a 768-dimensional open-weight encoder with a long native context and a competitive MTEB score \cite{muennighoff2023mteb} that runs unquantized on the same GPU, through LanceDB's embedding registry \cite{lancedb} in fp32 with mean pooling, without task prefixes or normalization, identically in every condition. LanceDB stores the enriched text with its vector, a BM25 index, the raw chunk, the summary, the content hash, and the routing decision. Retrieval is hybrid \cite{kiran2025hybrid,wang2024searching}: the 20 nearest chunks by exact L2 search and the 20 best BM25 matches \cite{robertson1995okapi,robertson2009bm25} are re-scored by a ColBERTv2 re-ranker \cite{khattab2020colbert,santhanam2022colbertv2} and cut to the top 20. Every system, including the full-document baseline and the no-context control, is indexed and queried with exactly this procedure, so the only experimental variable is the embedded text. The Ollama runner and the PyTorch models cannot share the GPU without spilling, so the phases run in sequence (routing and summarisation, \texttt{ollama stop}, embedding and indexing, retrieval); Table~\ref{tab:hardware} lists the environment.
+ The enriched text is embedded with \texttt{nomic-embed-text-v1.5} \cite{nussbaum2024nomic}, a 768-dimensional open-weight encoder with a long native context and a competitive MTEB score \cite{muennighoff2023mteb} that runs unquantised on the same GPU, through LanceDB's embedding registry \cite{lancedb} in fp32 with mean pooling, without task prefixes or normalisation, identically in every condition. LanceDB stores the enriched text with its vector, a BM25 index, the raw chunk, the summary, the content hash, and the routing decision. Retrieval is hybrid \cite{kiran2025hybrid,wang2024searching}: the 20 nearest chunks by exact L2 search and the 20 best BM25 matches \cite{robertson1995okapi,robertson2009bm25} are re-scored by a ColBERTv2 re-ranker \cite{khattab2020colbert,santhanam2022colbertv2} and cut to the top 20. Every system, including the full-document baseline and the no-context control, is indexed and queried with exactly this procedure, so the only experimental variable is the embedded text. The Ollama runner and the PyTorch models cannot share the GPU without spilling, so the phases run in sequence (routing and summarisation, \texttt{ollama stop}, embedding and indexing, retrieval); Table~\ref{tab:hardware} lists the environment.
 
 \begin{table}[htbp]
 \caption{Experimental hardware and software environment and embedding configuration.}\label{tab:hardware}
@@ -265,7 +235,7 @@ Energy tracking & CodeCarbon 3.2.3 (spring/summer 2026 rows) and 3.3.1 (Septembe
 
 \subsection{Computational complexity and memory analysis}\label{sec:complexity}
 
-Index-time contextualization issues one summariser call per chunk, so a document costs the sum of Eq.~\eqref{eq:prompt}. With $\bar\ell=L/n$ and the system prompt neglected, the prompt-token volumes of the three designs are
+Index-time contextualisation issues one summariser call per chunk, so a document costs the sum of Eq.~\eqref{eq:prompt}. With $\bar\ell=L/n$ and the system prompt neglected, the prompt-token volumes of the three designs are
 \begin{align}
 C_{\mathrm{full}}&=\sum_{i=1}^{n}(L+\ell_i)=(n+1)L,\qquad
 C_{k}=\sum_{i=1}^{n}\Bigl(\sum_{j\in W_i(k)}\ell_j+\ell_i\Bigr)\le n\,(2k+2)\,\ell_{\max},\nonumber\\
@@ -295,22 +265,22 @@ On the corpus the bounds are loose but the ordering holds (Fig.~\ref{fig:complex
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{images/fig04_cost_curves.png}
-  \caption{Theoretical index-time cost: full-document contextualization grows quadratically in the number of chunks in prompt tokens and cubically in attention work, bounded slices linearly with a constant set by the radius, which the router lowers further by skipping self-describing chunks.}
+  \caption{Theoretical index-time cost: full-document contextualisation grows quadratically in the number of chunks in prompt tokens and cubically in attention work, bounded slices linearly with a constant set by the radius, which the router lowers further by skipping self-describing chunks.}
   \label{fig:complexity}
 \end{figure}
 
-Memory decides whether the arithmetic can be done on the device at all: the GPU must hold the quantized weights $M_w$, the activations $M_{\mathrm{act}}$, and the KV cache, which for $P$ tokens occupies
+Memory decides whether the arithmetic can be done on the device at all: the GPU must hold the quantised weights $M_w$, the activations $M_{\mathrm{act}}$, and the KV cache, which for $P$ tokens occupies
 \begin{equation}\label{eq:kv}
 M_{\mathrm{KV}}(P)=2\,n_L\,n_{kv}\,d_h\,b\,P
 \end{equation}
 bytes ($n_{kv}$ key--value heads of width $d_h$, $b$ bytes per element) \cite{pope2023efficiently,ainslie2023gqa}, so the run stays on the device only if
-\begin{equation}\label{eq:vram}
+\begin{equation}
 M_w+M_{\mathrm{KV}}(P_{\mathrm{ctx}})+M_{\mathrm{act}}\le V_{\mathrm{GPU}}
 \quad\Longleftrightarrow\quad
 P_{\mathrm{ctx}}\le P^{\star}=\frac{V_{\mathrm{GPU}}-M_w-M_{\mathrm{act}}}{2\,n_L\,n_{kv}\,d_h\,b},
 \end{equation}
-where $P_{\mathrm{ctx}}$ is the window reserved at load time, not the current prompt length. The bounded slice fixes $P_{\mathrm{ctx}}=16\,384$ for every document ($k\le3$); the longest paper alone is about 18\,300 tokens, so the full-document design needs $P_{\mathrm{ctx}}\ge s+L_{\max}+\ell_{\max}\approx 20\,400$ tokens and was run with a 30\,000-token window. What the wider window costs depends on the cache architecture. For a dense cache, Eq.~\eqref{eq:kv} with the constants of an 8B model of 32 layers and 8 key--value heads of width 128 gives 3.7\,GiB at 30\,000 and 2.0\,GiB at 16\,384 tokens in fp16, so next to about 4.6\,GiB of int4 weights the wider window no longer fits an 8\,GiB device while the bounded one does. \textcolor{red}{The model used here is a more favourable case.} Gemma~3 interleaves $n_s=29$ local layers, whose cache is capped at the sliding window of 1\,024 tokens, with $n_g=5$ global layers, so only the global share grows with the window:
-\begin{equation}\label{eq:kv-iswa}
+where $P_{\mathrm{ctx}}$ is the window reserved at load time, not the current prompt length. The bounded slice fixes $P_{\mathrm{ctx}}=16\,384$ for every document ($k\le3$); the longest paper alone is about 18\,300 tokens, so the full-document design needs $P_{\mathrm{ctx}}\ge s+L_{\max}+\ell_{\max}\approx 20\,400$ tokens and was run with a 30\,000-token window. What the wider window costs depends on the cache architecture. For a dense cache, Eq.~\eqref{eq:kv} with the constants of an 8B model of 32 layers and 8 key--value heads of width 128 gives 3.7\,GiB at 30\,000 and 2.0\,GiB at 16\,384 tokens in fp16, so next to about 4.6\,GiB of int4 weights the wider window no longer fits an 8\,GiB device while the bounded one does. The model used here is a more favourable case. Gemma~3 interleaves $n_s=29$ local layers, whose cache is capped at the sliding window of 1\,024 tokens, with $n_g=5$ global layers, so only the global share grows with the window:
+\begin{equation}
 M_{\mathrm{KV}}(P_{\mathrm{ctx}})=2\,n_{kv}\,d_h\,b\,\bigl(n_g\,P_{\mathrm{ctx}}+n_s\,\tilde w\bigr),
 \end{equation}
 with $\tilde w=1\,536$ cells (window plus batch). The server allocates 764\,MiB at 30\,000 and 494\,MiB at 16\,384 tokens, and the resident runner measures 4.82 against 4.54\,GiB on an otherwise empty device, every layer on the GPU in both cases, under the server release of the March runs as well as the current one. For this model the reserved window therefore does not cross $P^{\star}$ on an 8\,GiB device by itself; what crosses it is the memory that other components of the pipeline hold at the same time, which Sect.~\ref{sec:profiling} measures.
@@ -320,20 +290,20 @@ with $\tilde w=1\,536$ cells (window plus batch). The server allocates 764\,MiB 
 For a question $q\in Q$ let $G_q$ be its gold chunks, $R_q^K$ the top-$K$ retrieved list and $\rnk_q(c)$ the 1-based position of $c$ in it; for $K\in\{5,10,15,20\}$ we report
 \begin{align}
 \Rec{K}&=\frac{1}{|Q|}\sum_{q\in Q}\frac{|R_q^K\cap G_q|}{|G_q|},\qquad
-Q_K^{+}=\{\,q\in Q : R_q^K\cap G_q\neq\varnothing\,\},\label{eq:recall}\\
-\MRR{K}&=\frac{1}{|Q_K^{+}|}\sum_{q\in Q_K^{+}}\frac{1}{\min_{c\in R_q^K\cap G_q}\rnk_q(c)},\label{eq:mrr}\\
-\MAR{K}&=\frac{1}{|Q_K^{+}|}\sum_{q\in Q_K^{+}}\frac{1}{|R_q^K\cap G_q|}\sum_{c\in R_q^K\cap G_q}\rnk_q(c).\label{eq:mar}
+Q_K^{+}=\{\,q\in Q : R_q^K\cap G_q\neq\varnothing\,\},\\
+\MRR{K}&=\frac{1}{|Q_K^{+}|}\sum_{q\in Q_K^{+}}\frac{1}{\min_{c\in R_q^K\cap G_q}\rnk_q(c)},\\
+\MAR{K}&=\frac{1}{|Q_K^{+}|}\sum_{q\in Q_K^{+}}\frac{1}{|R_q^K\cap G_q|}\sum_{c\in R_q^K\cap G_q}\rnk_q(c).
 \end{align}
 Recall is primary because every question needs at least two chunks; MRR \cite{voorhees1999trec8} reflects the first relevant chunk; MAR, our exploratory measure of attentional accessibility, is the mean position of \emph{all} retrieved gold chunks and tells whether the evidence sits where the positional bias of Sect.~\ref{sec:intro} is least harmful. Ranking metrics are averaged over $Q_K^{+}$ (questions without a hit are excluded rather than scored zero; 233, 246, 247 and 248 of 250 for the routed pipeline), and gold sets are matched by content hash. \Rec{20} differences are tested per question with a 99\,\% BCa bootstrap interval of the paired difference \cite{efron1987better,smucker2007comparison} (SciPy \cite{virtanen2020scipy}, 9\,999 resamples, fixed seed) and an exact McNemar test \cite{McNemar_1947,dietterich1998approximate} on the event ``all gold chunks in the top 20'', reporting the discordant counts $b$ (only the compared system succeeds) and $c$ (only the baseline succeeds). Because the summariser is stochastic even at temperature~0, we also measure the noise floor of a single run by regenerating one configuration (Sect.~\ref{sec:routing-results}): about 0.7 points of \Rec{20} and 2 points of \MRR{20}, below which gaps are treated as ties.
 
 \subsection{Continuous energy and carbon accounting}\label{sec:energy}
 
 Every generation run is wrapped in a CodeCarbon tracker \cite{codecarbon_software,lacoste2019quantifyingcarbonemissionsmachine} that samples GPU, CPU, and memory power once per second and integrates it over the run; emissions follow through the grid factor:
-\begin{equation}\label{eq:energy}
+\begin{equation}
 E_{\mathrm{total}}=\int_{0}^{T}\bigl(P_{\mathrm{GPU}}(t)+P_{\mathrm{CPU}}(t)+P_{\mathrm{DRAM}}(t)\bigr)\,dt
 \;\approx\;\sum_{t=1}^{\lceil T/\Delta t\rceil}\bigl(P^{(t)}_{\mathrm{GPU}}+P^{(t)}_{\mathrm{CPU}}+P^{(t)}_{\mathrm{DRAM}}\bigr)\,\Delta t,
 \end{equation}
-\begin{equation}\label{eq:emissions}
+\begin{equation}
 \mathrm{Emissions}=E_{\mathrm{total}}\times\mathrm{CI}_{\mathrm{grid}}\times\mathrm{PUE},
 \end{equation}
 with $\Delta t=1$\,s, where $\mathrm{CI}_{\mathrm{grid}}$ is the operational carbon intensity of the regional grid in \gco{} per kWh and the power-usage effectiveness is 1 for a workstation. GPU power is read from NVML; CPU power came from RAPL counters for the spring-2026 runs and from a load-based estimate for the later runs; memory power is a constant estimate (Table~\ref{tab:power}). Energy is therefore the primary efficiency metric, and GPU energy, measured consistently throughout, is reported alongside the total as the component comparable without qualification. Durations come in two scopes: the \emph{tracked generation scope}, the interval wrapped by the tracker (routing and summarisation over pre-chunked documents, without PDF parsing, embedding or indexing), to which all energy figures refer; and the \emph{end-to-end preprocessing scope}, including PDF conversion, to which the conference paper's headline times (71\,min~34\,s baseline, 29\,min~09\,s fixed $k=3$) and the routed pipeline's 10\,min~30\,s measured for this article (Sect.~\ref{sec:primary}) belong.
@@ -395,7 +365,7 @@ Routed (this work) & 8:45 & 4.39 & 0.95200 & 0.79798 & 3.91062 \\
 
 \subsection{Primary benchmark: full-document baseline, static slice and routed pipeline}\label{sec:primary}
 
-Table~\ref{tab:primary} is the central result. The routed pipeline reaches \Rec{20} of 0.952 against 0.954 for the full-document baseline and 0.94533 for the static $k=3$ slice, both differences inside the single-run band, with the best \MRR{20}, \MAR{20} and \Rec{5} of the three; the recall trajectories (Fig.~\ref{fig:recall}) show it ahead at $K=5$ and $10$, 0.7 points behind at $K=15$ and 0.2 at $K=20$. The cost side (Figs.~\ref{fig:energy} and \ref{fig:runtime}) is not inside any noise band: 261 summariser calls instead of 382, 23.4\,\% of the baseline's prompt text, 8\,min~45\,s instead of 54\,min~54\,s (6.3 times faster), 13.22\,Wh instead of 106.68\,Wh ($-87.6$\,\%; GPU energy $-81.2$\,\%) and 2.83 instead of 21.78\,\gco{} ($-87.0$\,\%). \textcolor{red}{The tracked scope excludes PDF parsing; the saving survives when it is included.} End to end from the PDFs, the routed pipeline needs 10\,min~30\,s on the same machine (parsing 1\,min~41\,s, routing 1\,min~08\,s, summarising 7\,min~39\,s; 15.24\,Wh for the whole run), against the conference paper's 71\,min~34\,s and 29\,min~09\,s; its routing and summarising part, 8\,min~48\,s, reproduces the tracked 8\,min~45\,s of the September run. \textcolor{red}{Placing the earlier static slice on the same scale separates what bounding the context contributes from what routing adds.} The static $k=3$ slice of our conference paper halves the baseline's energy ($-50.8$\,\%) and time ($-56.6$\,\% tracked, $-59.3$\,\% end to end) for a 0.9-point loss of \Rec{20}; the router removes a further 63\,\% of its generation time and 75\,\% of its energy (60\,\% of GPU energy) while adding 0.7 points of recall. \textcolor{red}{Two checks guard this comparison against a lucky draw.} A second, independent generation of the same configuration also reached \Rec{20} of 0.952 (\MRR{20} 0.79791, \MAR{20} 3.92171) in 543.7\,s and 13.51\,Wh. Per-question tests on that replicate give a paired difference of mean \Rec{20} (baseline minus routed) of $+0.0020$ with a 99\,\% BCa interval of $[-0.0153,\,+0.0200]$ and McNemar discordant counts of 5 and 6 ($p=1.00$; 222 questions solved by both, 17 by neither); for the static $k=3$ slice the difference is $+0.0087$, the interval $[-0.0067,\,+0.0260]$ and the counts 3 and 6 ($p=0.51$).
+Table~\ref{tab:primary} is the central result. The routed pipeline reaches \Rec{20} of 0.952 against 0.954 for the full-document baseline and 0.94533 for the static $k=3$ slice, both differences inside the single-run band, with the best \MRR{20}, \MAR{20} and \Rec{5} of the three; the recall trajectories (Fig.~\ref{fig:recall}) show it ahead at $K=5$ and $10$, 0.7 points behind at $K=15$ and 0.2 at $K=20$. The cost side (Figs.~\ref{fig:energy} and \ref{fig:runtime}) is not inside any noise band: 261 summariser calls instead of 382, 23.4\,\% of the baseline's prompt text, 8\,min~45\,s instead of 54\,min~54\,s (6.3 times faster), 13.22\,Wh instead of 106.68\,Wh ($-87.6$\,\%; GPU energy $-81.2$\,\%) and 2.83 instead of 21.78\,\gco{} ($-87.0$\,\%). The tracked scope excludes PDF parsing; the saving survives when it is included. End to end from the PDFs, the routed pipeline needs 10\,min~30\,s on the same machine (parsing 1\,min~41\,s, routing 1\,min~08\,s, summarising 7\,min~39\,s; 15.24\,Wh for the whole run), against the conference paper's 71\,min~34\,s and 29\,min~09\,s; its routing and summarising part, 8\,min~48\,s, reproduces the tracked 8\,min~45\,s of the September run. The static $k=3$ slice of our conference paper halves the baseline's energy ($-50.8$\,\%) and time ($-56.6$\,\% tracked, $-59.3$\,\% end to end) for a 0.9-point loss of \Rec{20}; the router removes a further 63\,\% of its generation time and 75\,\% of its energy (60\,\% of GPU energy) while adding 0.7 points of recall. A second, independent generation of the same configuration also reached \Rec{20} of 0.952 (\MRR{20} 0.79791, \MAR{20} 3.92171) in 543.7\,s and 13.51\,Wh. Per-question tests on that replicate give a paired difference of mean \Rec{20} (baseline minus routed) of $+0.0020$ with a 99\,\% BCa interval of $[-0.0153,\,+0.0200]$ and McNemar discordant counts of 5 and 6 ($p=1.00$; 222 questions solved by both, 17 by neither); for the static $k=3$ slice the difference is $+0.0087$, the interval $[-0.0067,\,+0.0260]$ and the counts 3 and 6 ($p=0.51$).
 
 \begin{table}[htbp]
 \caption{Primary benchmark on 250 multi-hop questions: full-document contextualisation versus the static $k=3$ slice and the routed pipeline.}\label{tab:primary}
@@ -509,14 +479,14 @@ The slice is intra-document: a chunk whose meaning depends on another document, 
 
 \section{Conclusion}\label{sec:conclusion}
 
-Index-time contextual retrieval can be made to fit the memory, time, and energy budget of a single consumer GPU without giving up its accuracy: bounding each chunk's context to a window of neighbors makes prompt length and reserved memory independent of document length, and a one-token routing decision of the same small model removes a third of the summaries and most of the remaining cost. On 250 multi-hop questions over 25 scientific papers the routed pipeline matched full-document contextualisation within the noise of a single run (\Rec{20} 0.952 against 0.954) with better ranking metrics, at 12\,\% of its generation energy and 16\,\% of its generation time, and the fixed-radius variant transferred to European Commission policy documents with the same accuracy gap and a 72\,\% energy saving. The pipeline is precise (its metrics are reproducible per question), explainable (every routing decision is logged with its evidence) and provable (every run carries an energy and emission ledger), the PEP-AI footing we consider necessary for AI-assisted compliance auditing at the edge of the energy system.
+Index-time contextual retrieval can be made to fit the memory, time, and energy budget of a single consumer GPU without giving up its accuracy: bounding each chunk's context to a window of neighbours makes prompt length and reserved memory independent of document length, and a one-token routing decision of the same small model removes a third of the summaries and most of the remaining cost. On 250 multi-hop questions over 25 scientific papers the routed pipeline matched full-document contextualisation within the noise of a single run (\Rec{20} 0.952 against 0.954) with better ranking metrics, at 12\,\% of its generation energy and 16\,\% of its generation time, and the fixed-radius variant transferred to European Commission policy documents with the same accuracy gap and a 72\,\% energy saving. The pipeline is precise (its metrics are reproducible per question), explainable (every routing decision is logged with its evidence) and provable (every run carries an energy and emission ledger), the PEP-AI footing we consider necessary for AI-assisted compliance auditing at the edge of the energy system.
 
 \backmatter
 
 \bmhead{Acknowledgements}
 An earlier version of this work was presented at the Student Research Conference of the University of Debrecen and published as a conference paper \cite{sandor2025documentslicecontextualretrieval}. It was supported by the UD Talent Program, the Doctoral School of Informatics, and the Faculty of Informatics of the University of Debrecen.
 
-The authors acknowledge the use of generative artificial intelligence tools, namely Gemini (Google), Claude (Anthropic), ChatGPT (OpenAI), and Grammarly, in preparing this manuscript and the associated research: for language editing; Gemini for the initial literature survey and for generating the silver-standard question sets under the protocol of Section ~\ref{sec:datasets}; Gemini and ChatGPT as coding assistants; and Claude to draft and condense this journal version from the conference manuscript and the repository's experimental records, including the bibliography entries marked as machine-added in the source file, and to run the dynamic-radius routing experiments under the authors' direction. The core concepts, methodology, and scientific contributions are the authors' original work; all AI-generated outputs were produced under human supervision, validated manually, and critically reviewed and edited by the authors, who remain fully responsible for the accuracy, integrity, and originality of the content.
+The authors acknowledge the use of generative artificial intelligence tools, namely Gemini (Google), Claude (Anthropic), ChatGPT (OpenAI), and Grammarly, in preparing this manuscript and the associated research: for language editing; Gemini for the initial literature survey and for generating the silver-standard question sets under the protocol of Sect.~\ref{sec:datasets}; Gemini and ChatGPT as coding assistants; and Claude to draft and condense this journal version from the conference manuscript and the repository's experimental records, including the bibliography entries marked as machine-added in the source file, and to run the dynamic-radius routing experiments under the authors' direction. The core concepts, methodology, and scientific contributions are the authors' original work; all AI-generated outputs were produced under human supervision, validated manually, and critically reviewed and edited by the authors, who remain fully responsible for the accuracy, integrity, and originality of the content.
 
 \section{Declarations}
 

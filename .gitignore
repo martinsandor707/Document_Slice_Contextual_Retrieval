@@ -281,6 +281,8 @@ pythontex-files-*/
 # If tracking camera-ready builds, explicitly unignore: !final-paper.pdf
 *.pdf
 !RnD/smoking/**/*.pdf
+!RnD/input/*.pdf
+!RnD/input_router/*.pdf
 *.dvi
 *.ps
 

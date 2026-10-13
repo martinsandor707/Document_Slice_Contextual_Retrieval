@@ -60,6 +60,25 @@ The system implements a 10-step retrieval pipeline:
 - **Optimized for:** 8GB consumer-grade hardware
 - **After initial processing:** Minimal VRAM needed for RAG inference
 
+## Source papers excluded for licensing reasons
+
+The benchmark corpus of the article consists of 25 open-access scientific papers. A licence check of every PDF (Crossref metadata, October 2026) showed that five of them may not be redistributed, or not in derived form: four are published under licences that permit reading but not republication, and one is CC BY-NC-ND, which permits sharing the unmodified article but not derivative works such as cleaned text chunks and machine-generated summaries. On the advice of the project supervisor, every copy of those papers' text was removed from the public repository on 2026-10-14. The other 20 papers are CC BY licensed and remain in full.
+
+| Paper | Venue, year | DOI | Licence | Removed from the public repository |
+|---|---|---|---|---|
+| Machine behaviour (Rahwan et al.) | Nature, 2019 | [10.1038/s41586-019-1138-y](https://doi.org/10.1038/s41586-019-1138-y) | subscription article (Springer Nature text-and-data-mining licence only) | PDF, chunk files, generated contexts, database rows |
+| Electron Paramagnetic Resonance Study on 28Si Single Crystal for the Future Realization of the Kilogram | IEEE Transactions on Instrumentation and Measurement, 2019 | [10.1109/TIM.2018.2884044](https://doi.org/10.1109/TIM.2018.2884044) | IEEE Open Access Publishing Agreement (free to read, no redistribution) | PDF, chunk files, generated contexts, database rows |
+| Stock Market Prediction via Multi-Source Multiple Instance Learning | IEEE Access, 2018 | [10.1109/ACCESS.2018.2869735](https://doi.org/10.1109/ACCESS.2018.2869735) | IEEE Open Access Publishing Agreement (free to read, no redistribution) | PDF, chunk files, generated contexts, database rows |
+| The Graph Database: Jack of All Trades or Just Not SQL? | IT Professional, 2017 | [10.1109/MITP.2017.4241475](https://doi.org/10.1109/MITP.2017.4241475) | subscription article (© IEEE) | PDF, chunk files, generated contexts, database rows |
+| The Application of the SOFM Neural Network and Internet of Things in Rural Revitalization | IEEE Access, 2023 | [10.1109/ACCESS.2023.3327131](https://doi.org/10.1109/ACCESS.2023.3327131) | CC BY-NC-ND 4.0 (unmodified copies may be shared, derivatives may not) | chunk files, generated contexts, database rows (the unmodified PDF stays in `RnD/input/`) |
+
+What this means in practice:
+
+- `RnD/input/` holds 21 of the 25 PDFs; `RnD/split_documents/`, `RnD/split_documents/AutoTokenizer/` and `RnD/split_documents_end_to_end/` hold the chunk files of 20 papers; every file under `RnD/preprocessed_chunks/`, the run records under `RnD/dynamic_slice_length/router_experiments/real_runs/`, the gold labels in `RnD/dynamic_slice_length/slice_radius_gold.json`, the older question set `RnD/q_and_a/scientific.json`, and every LanceDB table under `RnD/db/` and `Showcase/db/` contain the records of those 20 papers only (292 of the original 382 chunks).
+- Everything that carries no article text is complete: the question sets in `RnD/q_and_a/Gemini/` (they reference chunks by content hash), the per-question retrieval results, the routing records, the energy ledger and the notebooks.
+- All numbers, tables and figures in the article were computed on the full 25-paper corpus, so the verification scripts in `RnD/verification/` reproduce the per-corpus statistics only after the missing records are restored.
+- To reproduce the experiments end to end, download the five PDFs through the DOIs above (institutional access is needed for the two subscription articles), place them in `RnD/input/` under their original file names, and run `RnD/end_to_end_dynamic_doc_slice_generation.ipynb`, which parses, routes and summarises them again; summaries will not be bit-identical to the archived run. The original chunk and context records of the five papers are available from the authors on reasonable request for verification purposes.
+
 ## 🚀 Quick Start
 
 ### RnD - Development & Benchmarking

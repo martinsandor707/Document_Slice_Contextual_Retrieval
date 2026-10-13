@@ -296,3 +296,5 @@ pythontex-files-*/
 .idea/
 .zed/
 __pycache__/
+# records of source papers whose licences do not permit redistribution (kept locally, see README)
+RnD/private_records/

@@ -6,6 +6,8 @@ read-only. Run them from the repository root with the project interpreter, e.g.
 
     .venv/bin/python RnD/verification/chunk_token_statistics.py
 
+> **Public copy of the data (since 2026-10-14).** The records of five source papers are not in the public repository for licensing reasons (see the table in the top-level README): the chunk files, generated contexts and database rows now cover 20 papers / 292 chunks. The article's numbers were computed on all 25 papers / 382 chunks, so these scripts reproduce them only after the five papers' records are restored into their original locations (available from the authors on request, or regenerated from the PDFs with `RnD/end_to_end_dynamic_doc_slice_generation.ipynb`).
+
 | Script | Verifies |
 |---|---|
 | `chunk_character_statistics.py` | Table 1 rows 1–4 and 7–11, Table 4 (chunks, characters, questions, gold references, exemplar pool), Sect. 3.1 artefact counts |

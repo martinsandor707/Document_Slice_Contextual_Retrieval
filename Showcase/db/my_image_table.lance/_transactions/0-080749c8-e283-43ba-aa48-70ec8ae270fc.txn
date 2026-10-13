@@ -1,0 +1,3 @@
+$080749c8-e283-43ba-aa48-70ec8ae270fc²©)	image_uri ÿÿÿÿÿÿÿÿÿ*string8Zdefault=vector ÿÿÿÿÿÿÿÿÿ*fixed_size_list:float:51208Zdefault-description ÿÿÿÿÿÿÿÿÿ*string8ZdefaultIdescription_vector ÿÿÿÿÿÿÿÿÿ*fixed_size_list:float:38408Zdefault*document ÿÿÿÿÿÿÿÿÿ*string8Zdefault%page ÿÿÿÿÿÿÿÿÿ*int648Zdefault$id ÿÿÿÿÿÿÿÿÿ*string8Zdefault"!
+lance.auto_cleanup.interval20"'
+lance.auto_cleanup.older_than14days

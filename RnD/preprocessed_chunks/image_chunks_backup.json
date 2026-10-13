@@ -1,5 +1,65 @@
 [
   {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page2_1.png",
+    "description": "This image is a line graph showing a declining trend in probability values over a series of dates from January 2016 to January 2017. The graph's horizontal axis represents dates, and the vertical axis indicates “Probability”.\n\nThe graph begins with a high probability value around 0.648. Over the following dates, the probability steadily decreases, reaching a low of approximately 0.532.  The graph appears to show a series of events related to securities margin trading, RMB speculation, and a commercial draft. The slope of the line suggests a consistent downward movement, indicating a decline in whatever is being measured by the probability values. The graph doesn't represent a logo or brand.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page5_6.png",
+    "description": "This is the logo of the Institute of Electrical and Electronics Engineers (IEEE).\n\nThe logo features the word \"IEEE\" in a bold, sans-serif typeface. The letters are colored in a gradient, transitioning from a deep blue at the top to a lighter blue towards the bottom. This creates a subtle depth effect. The overall design is clean, modern, and recognizable as the symbol of a major professional organization in the field of engineering and computer science.  It is commonly used to identify IEEE publications, conferences, and member resources.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page5_7.png",
+    "description": "Yes, this image is a logo/brand for the company “RBM”. The text “RBM” is centrally positioned and significantly larger than the other text elements. Below “RBM”, there’s a layered, hierarchical diagram. This diagram is a visual representation of the company’s core product: “Sentence2Vec.”\n\nThe diagram breaks down “Sentence2Vec” into a sequence of processing steps, suggesting a complex algorithm or technology. The layers start with “event representation” and progress downwards through “RBM,” “sentence2vec”, and finally “event representation.” Each layer is connected to the one below it, visually indicating a pipeline or workflow.\n\nThe design is minimalistic, focusing on clear hierarchy and a clean, modern aesthetic. The use of connected boxes suggests interconnectedness and a structured approach to data processing. It’s likely intended to convey the idea of intelligent text analysis or natural language processing.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_9.png",
+    "description": "The image displays the text \"IEEE\" in a bold, dark blue font. \"IEEE\" stands for the Institute of Electrical and Electronics Engineers. It’s a professional organization for engineers and scientists. \n\nThe font appears to be a sans-serif style. The lettering has a subtle, slightly blurred shadow effect, giving it a 3D appearance. The overall style is modern and professional, reflecting the institute's longstanding presence in the fields of electrical engineering, computer science, and related disciplines.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_10.png",
+    "description": "This image is a line graph showing the F1-score of different machine learning models (SVM, TeSIA, nMIL, O-MI, WoR-MI, WoH-MI, and M-MI) over five days of historical data. Each line represents a different model’s performance, demonstrating how the F1-score changes as the number of days increases. The X-axis represents the number of days (from 1 to 5), and the Y-axis represents the F1-score.\n\nThe data suggests a slight initial improvement in F1-score for most models during the first two days, followed by a gradual decline. The specific values and the shape of the curves indicate different levels of performance for each model. Without further context, it is hard to assess the significance of the performance changes or the models' characteristics.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_11.png",
+    "description": "The image is a line graph displaying the F1-score over five days for different machine learning models: SVM, TeSIA, nMIL, O-MI, WoR-MI, WoH-MI, and M-MI. The horizontal axis represents the number of days of history, and the vertical axis represents the F1-score. Each line corresponds to a different model, showing how their performance changes as the number of history days increases.  The graph clearly visualizes the relative performance of each model – the trend lines are somewhat similar, with all models demonstrating a slight increase in F1-score, but at different rates.\n\nThis is not a logo or brand image. It's a visualization of machine learning model performance data.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page8_12.png",
+    "description": "This image consists of two stacked bar charts, one for 2015 and one for 2016. Each bar is divided into three colored segments:\n\n*   **Black:** Represents \"Sentiment\". Both bars show approximately 80% black, suggesting a predominantly negative sentiment for both years.\n*   **Blue:** Represents \"Quantitative Data\". The 2015 bar has a higher blue segment than the 2016 bar, indicating a greater degree of quantitative data availability or reported for 2015.\n*   **White:** Represents “News”. The 2016 bar has a notable white segment, showing a higher degree of news coverage or reporting in 2016.\n\nEssentially, it’s a visual representation comparing sentiment, quantifiable data, and news coverage for two consecutive years.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_14.png",
+    "description": "This image displays the logo of the IEEE (Institute of Electrical and Electronics Engineers). It's a stylized wordmark, with \"IEEE\" rendered in a bold, dark blue typeface. The letters are slightly rounded and have a subtle shadow effect, giving them a modern and professional appearance. The shadow effect adds depth and a three-dimensional look to the text.\n\nThe blue color is a standard color used by the IEEE, representing innovation, technology, and global reach. The logo is a recognizable and widely used symbol representing the organization's commitment to advancing technology and electrical engineering. The overall design is clean, simple, and easily identifiable.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_15.png",
+    "description": "The image is a portrait of a man. He is wearing a dark grey or black suit jacket and a white shirt. The shirt collar is slightly open, revealing part of a white tie. He has dark hair, and appears to be looking straight ahead. The background is plain and out of focus, suggesting a studio portrait. It seems to be a professional headshot, likely used for identification or a business profile. There’s nothing to suggest it’s a logo or brand.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_17.png",
+    "description": "This image is a portrait of a young Asian woman. She has long, dark hair parted down the middle. She is wearing a light-colored shirt with a crisp white collar and a gray sweater or cardigan over it. Her expression is neutral, and she appears to be looking slightly upwards.\n\nThe image is in black and white and appears to be a straightforward photograph of a person. It doesn’t appear to be a logo, branding, or any kind of stylized graphic. It’s simply a headshot of an individual.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
     "image_uri": "images/A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf_page1_0.png",
     "description": "The image depicts a stylized icon consisting of a circle with the letters “CC” inside it. Below the circle is the word “BY”.\n\nThe “CC” most likely represents the Creative Commons licenses. Creative Commons is a non-profit organization that provides licenses for reusing copyrighted material. The “CC” symbol is widely used to indicate that works are available under these licenses. The “BY” indicates that if the work is reused, attribution to the original author must be given. \n\nTherefore, the image is a visual representation of a Creative Commons license and the requirement for attribution.",
     "document": "A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf",

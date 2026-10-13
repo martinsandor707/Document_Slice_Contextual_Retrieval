@@ -30,6 +30,8 @@ MANIFEST
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
+!RnD/db/**/*.manifest
+!Showcase/db/**/*.manifest
 *.spec
 
 # Installer logs
@@ -209,7 +211,6 @@ __marimo__/
 # Martin
 RnD/input/Robi_kutatasok/**
 RnD/input/Robi_kutatasok/**
-*.lance
 
 RnD/nature_article/writing-references
 
@@ -296,5 +297,3 @@ pythontex-files-*/
 .idea/
 .zed/
 __pycache__/
-# records of source papers whose licences do not permit redistribution (kept locally, see README)
-RnD/private_records/

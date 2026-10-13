@@ -1,5 +1,65 @@
 [
   {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page2_1.png",
+    "description": "This image is a line graph showing a declining trend in probability values over a series of dates from January 2016 to January 2017. The graph's horizontal axis represents dates, and the vertical axis indicates “Probability”.\n\nThe graph begins with a high probability value around 0.648. Over the following dates, the probability steadily decreases, reaching a low of approximately 0.532.  The graph appears to show a series of events related to securities margin trading, RMB speculation, and a commercial draft. The slope of the line suggests a consistent downward movement, indicating a decline in whatever is being measured by the probability values. The graph doesn't represent a logo or brand.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 2
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page5_6.png",
+    "description": "This is the logo of the Institute of Electrical and Electronics Engineers (IEEE).\n\nThe logo features the word \"IEEE\" in a bold, sans-serif typeface. The letters are colored in a gradient, transitioning from a deep blue at the top to a lighter blue towards the bottom. This creates a subtle depth effect. The overall design is clean, modern, and recognizable as the symbol of a major professional organization in the field of engineering and computer science.  It is commonly used to identify IEEE publications, conferences, and member resources.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page5_7.png",
+    "description": "Yes, this image is a logo/brand for the company “RBM”. The text “RBM” is centrally positioned and significantly larger than the other text elements. Below “RBM”, there’s a layered, hierarchical diagram. This diagram is a visual representation of the company’s core product: “Sentence2Vec.”\n\nThe diagram breaks down “Sentence2Vec” into a sequence of processing steps, suggesting a complex algorithm or technology. The layers start with “event representation” and progress downwards through “RBM,” “sentence2vec”, and finally “event representation.” Each layer is connected to the one below it, visually indicating a pipeline or workflow.\n\nThe design is minimalistic, focusing on clear hierarchy and a clean, modern aesthetic. The use of connected boxes suggests interconnectedness and a structured approach to data processing. It’s likely intended to convey the idea of intelligent text analysis or natural language processing.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_9.png",
+    "description": "The image displays the text \"IEEE\" in a bold, dark blue font. \"IEEE\" stands for the Institute of Electrical and Electronics Engineers. It’s a professional organization for engineers and scientists. \n\nThe font appears to be a sans-serif style. The lettering has a subtle, slightly blurred shadow effect, giving it a 3D appearance. The overall style is modern and professional, reflecting the institute's longstanding presence in the fields of electrical engineering, computer science, and related disciplines.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_10.png",
+    "description": "This image is a line graph showing the F1-score of different machine learning models (SVM, TeSIA, nMIL, O-MI, WoR-MI, WoH-MI, and M-MI) over five days of historical data. Each line represents a different model’s performance, demonstrating how the F1-score changes as the number of days increases. The X-axis represents the number of days (from 1 to 5), and the Y-axis represents the F1-score.\n\nThe data suggests a slight initial improvement in F1-score for most models during the first two days, followed by a gradual decline. The specific values and the shape of the curves indicate different levels of performance for each model. Without further context, it is hard to assess the significance of the performance changes or the models' characteristics.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page7_11.png",
+    "description": "The image is a line graph displaying the F1-score over five days for different machine learning models: SVM, TeSIA, nMIL, O-MI, WoR-MI, WoH-MI, and M-MI. The horizontal axis represents the number of days of history, and the vertical axis represents the F1-score. Each line corresponds to a different model, showing how their performance changes as the number of history days increases.  The graph clearly visualizes the relative performance of each model – the trend lines are somewhat similar, with all models demonstrating a slight increase in F1-score, but at different rates.\n\nThis is not a logo or brand image. It's a visualization of machine learning model performance data.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page8_12.png",
+    "description": "This image consists of two stacked bar charts, one for 2015 and one for 2016. Each bar is divided into three colored segments:\n\n*   **Black:** Represents \"Sentiment\". Both bars show approximately 80% black, suggesting a predominantly negative sentiment for both years.\n*   **Blue:** Represents \"Quantitative Data\". The 2015 bar has a higher blue segment than the 2016 bar, indicating a greater degree of quantitative data availability or reported for 2015.\n*   **White:** Represents “News”. The 2016 bar has a notable white segment, showing a higher degree of news coverage or reporting in 2016.\n\nEssentially, it’s a visual representation comparing sentiment, quantifiable data, and news coverage for two consecutive years.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 8
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_14.png",
+    "description": "This image displays the logo of the IEEE (Institute of Electrical and Electronics Engineers). It's a stylized wordmark, with \"IEEE\" rendered in a bold, dark blue typeface. The letters are slightly rounded and have a subtle shadow effect, giving them a modern and professional appearance. The shadow effect adds depth and a three-dimensional look to the text.\n\nThe blue color is a standard color used by the IEEE, representing innovation, technology, and global reach. The logo is a recognizable and widely used symbol representing the organization's commitment to advancing technology and electrical engineering. The overall design is clean, simple, and easily identifiable.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_15.png",
+    "description": "The image is a portrait of a man. He is wearing a dark grey or black suit jacket and a white shirt. The shirt collar is slightly open, revealing part of a white tie. He has dark hair, and appears to be looking straight ahead. The background is plain and out of focus, suggesting a studio portrait. It seems to be a professional headshot, likely used for identification or a business profile. There’s nothing to suggest it’s a logo or brand.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
+    "image_uri": "images/Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf_page9_17.png",
+    "description": "This image is a portrait of a young Asian woman. She has long, dark hair parted down the middle. She is wearing a light-colored shirt with a crisp white collar and a gray sweater or cardigan over it. Her expression is neutral, and she appears to be looking slightly upwards.\n\nThe image is in black and white and appears to be a straightforward photograph of a person. It doesn’t appear to be a logo, branding, or any kind of stylized graphic. It’s simply a headshot of an individual.",
+    "document": "Stock_Market_Prediction_via_Multi-Source_Multiple_Instance_Learning.pdf",
+    "page": 9
+  },
+  {
     "image_uri": "images/A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf_page1_0.png",
     "description": "The image depicts a stylized icon consisting of a circle with the letters “CC” inside it. Below the circle is the word “BY”.\n\nThe “CC” most likely represents the Creative Commons licenses. Creative Commons is a non-profit organization that provides licenses for reusing copyrighted material. The “CC” symbol is widely used to indicate that works are available under these licenses. The “BY” indicates that if the work is reused, attribution to the original author must be given. \n\nTherefore, the image is a visual representation of a Creative Commons license and the requirement for attribution.",
     "document": "A_Conceptual_Framework_and_Recommendations_for_Open_Data_and_Artifacts_in_Empirical_Software_Engineering.pdf",
@@ -696,10 +756,46 @@
     "page": 3
   },
   {
+    "image_uri": "images/s41586-019-1138-y.pdf_page3_3.png",
+    "description": "This image is a screenshot of a smartphone interface. The screen displays a simple graphic: two overlapping triangles with a small circle positioned within them. It’s reminiscent of a basic geometric diagram, possibly illustrating a conceptual design.\n\nBelow the graphic, there are standard smartphone UI elements: a microphone icon (likely for voice recording), a slider for volume control, and a user profile icon.\n\nThe overall aesthetic suggests a minimalist or tutorial-style application. The presentation looks like a simple demonstration or example – possibly related to graphic design or diagrams. The black and white color scheme contributes to the clean, straightforward appearance.",
+    "document": "s41586-019-1138-y.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/s41586-019-1138-y.pdf_page4_13.png",
+    "description": "The image depicts a network of six hexagons, resembling a mind map or a diagram for visualizing interconnected concepts. Each hexagon is labeled with a distinct phrase: \"Scientific study of behavior,\" \"Machine behavior,\" \"New scientific questions,\" \"New quantitative evidence,\" \"New scientific questions,\" and \"New quantitative evidence.\"\n\nThe hexagons are connected by arrows, suggesting a flow of information or ideas between them. The central theme appears to be related to the study and understanding of complex systems, potentially encompassing aspects of artificial intelligence, behavioral science, and data analysis. The use of \"quantitative evidence\" and \"new scientific questions\" indicates an emphasis on data-driven research and exploration of novel research avenues.\n\nIt’s unlikely to be a logo or brand as it lacks any recognizable brand identity. Instead, it’s a visual representation of a structured conceptual framework.",
+    "document": "s41586-019-1138-y.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/s41586-019-1138-y.pdf_page5_15.png",
+    "description": "This image presents a complex, multi-layered inquiry into the behavior of a machine. It’s not a logo or brand. The image is a schematic diagram outlining various perspectives for understanding how a machine develops and maintains its behavior.\n\nIt explores the origins of the behavior—how it’s elicited, whether through programming, learning (specifically, supervised and reinforcement learning), or external stimuli. It delves into the engineering considerations and constraints involved in creating the machine's actions. The image investigates the propagation and persistence of this behavior, considering factors such as institutional and programming restrictions.\n\nCrucially, it also looks at the consequences of this behavior, asking how it might affect stakeholders – users or companies – and whether it's adaptable to different environments. The diagram aims to comprehensively analyze the machine’s function, its evolutionary factors, and its impact on its context.",
+    "document": "s41586-019-1138-y.pdf",
+    "page": 5
+  },
+  {
     "image_uri": "images/s41598-020-77823-3.pdf_page4_1.png",
     "description": "This image depicts a flowchart illustrating a predictive modeling process, likely related to financial analysis or stock market prediction. It outlines a system that gathers data from various sources and transforms it into a predictive model.\n\nHere’s a breakdown of the process:\n\n1.  **Web Crawler:** Starts with a web crawler retrieving data from the internet.\n2.  **Online Securities Research & Reports:** Data is sourced from online securities research and reports.\n3.  **Preprocessor:** This component handles data cleaning and preparation. This includes Word Segmentation and Word Cleaning.\n4.  **Keyword Vector Selection & Building Dictionary:** Key concepts are identified, and a keyword vector is built.\n5.  **Report Representation & Construction of Text Network:** A representation of reports and text networks is created.\n6.  **Predictive Model (Sparse Laplace & Logistic):**  The process culminates in a predictive model utilizing Sparse Laplace and Logistic Regression techniques.\n7.  **Trading:** The prediction is ultimately used for trading decisions.\n\nThe image represents a pipeline for collecting, processing, and analyzing data to generate predictions, which are then applied for trading.",
     "document": "s41598-020-77823-3.pdf",
     "page": 4
+  },
+  {
+    "image_uri": "images/Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf_page1_0.png",
+    "description": "The image shows three distinct 3D crystal structures. Each is a representation of a crystal lattice with varying defects.\n\n**Normal Structure:** The first image displays a simple cubic crystal structure with blue spheres representing atoms arranged in a regular cubic pattern. Red lines indicate the bonds between the atoms. It represents a normal, defect-free crystal lattice.\n\n**Monovacancy Defect:** The second image illustrates a monoclinic vacancy defect. This is represented by a single missing atom in the lattice. The red sphere highlights this absence, disrupting the regular pattern.\n\n**Substitutional Impurity Defect:** The third image depicts a substitutional impurity defect. A red sphere represents an atom that has taken the place of a normal atom in the crystal lattice. This introduces a foreign element, altering the material's properties.\n\nIn essence, the image is a visual representation of different types of imperfections or defects that can occur in crystalline materials, impacting their structure and properties.",
+    "document": "Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf_page4_2.png",
+    "description": "The image depicts a stylized, slightly angled rectangular prism. The prism has dimensions approximately 10.4 mm high, 3.4 mm wide, and 1.8 mm deep. It appears to be a solid dark grey or black color. Notably, there are three sets of parallel lines etched onto the top face of the prism, representing crystallographic directions: [011], [100], and [011]. These lines are likely used to indicate the orientation of the material or object within a crystallographic context, such as in materials science or engineering. \n\nIt’s not a logo or brand. The image is a representation intended to show how a material might be oriented within a 3D space using these crystallographic axes.",
+    "document": "Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf_page8_4.png",
+    "description": "This is a portrait photograph of a man. He is wearing a black suit jacket over a white shirt. The photo is a standard headshot, with a neutral expression. He has short, dark hair and a light complexion. The background is a plain, off-white color.\n\nIt's not a logo or brand image.  The image is simply a photograph of an individual in professional attire.",
+    "document": "Electron_Paramagnetic_Resonance_Study_on_28Si_Single_Crystal_for_the_Future_Realization_of_the_Kilogram.pdf",
+    "page": 8
   },
   {
     "image_uri": "images/Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf_page4_1.png",
@@ -802,6 +898,54 @@
     "description": "This image is a portrait of a man. He is a middle-aged Caucasian male with graying brown hair, a beard, and a mustache. He’s wearing a light blue button-down shirt with a collar visible. The background is a plain, somewhat dark, neutral color, possibly a wall. The lighting is somewhat soft and diffuse.\n\nIt’s not a logo or brand image. It's a simple, straightforward photograph of a person. There are no distinctive brand elements or visual cues that would suggest it's a logo.",
     "document": "Thermal_Imagery_for_Rover_Soil_Assessment_Using_a_Multipurpose_Environmental_Chamber_Under_Simulated_Mars_Conditions.pdf",
     "page": 12
+  },
+  {
+    "image_uri": "images/The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf_page1_0.png",
+    "description": "The image is a graphic representing a database, specifically a graph database. It’s overlaid with a dense, dark blue hexagonal grid pattern, reminiscent of a circuit board or a network topology.  Central to the image is a stylized blue circular node, possibly representing a core data point or entity within the database.  Several interconnected lines or nodes extend outward from this central point, suggesting relationships between different data elements.\n\nThe text overlay reads “The Graph Database - Jack of All Trades.” This hints at the database's ability to handle a wide variety of interconnected data, aligning with the nature of graph databases which excel at visualizing and analyzing relationships. The visual style – the hexagonal grid and the network connections – is commonly used to represent data models and relationships.",
+    "document": "The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf",
+    "page": 1
+  },
+  {
+    "image_uri": "images/The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf_page5_3.png",
+    "description": "This image is not a logo or brand. It’s a digital illustration combining several elements representing connectivity and global reach. \n\nThe primary focus is a silver laptop, positioned prominently within a dashed circle. The laptop screen displays a stylized map of the world, suggesting global communication or data transfer. Surrounding the laptop are three icons: stylized figures representing people (likely indicating collaboration), a blueprint icon (representing design or development), and a globe icon (representing location or geography).\n\nThe overall composition suggests a visual representation of a technology company or service focused on connecting people and data on a worldwide scale. It's a common design trope used to evoke ideas of networking, communication, and global reach.",
+    "document": "The_Graph_Database_Jack_of_All_Trades_or_Just_Not_SQL.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page3_4.png",
+    "description": "The image is a flowchart representing a process for land remediation and revitalization, likely within a geographical or environmental context. It depicts a series of interconnected steps, suggesting a systematic approach to assessing and improving degraded land.\n\nThe process begins with a \"SOFM Neural Network\" - likely referring to Self-Organizing Feature Maps - used for identifying key attributes or features of the area. These attributes are then used to delineate the project area for land improvement.  The subsequent steps involve various techniques: ecological risk assessment, urgency determination, and suitability analysis. These contribute to defining parameters and measuring distances.\n\nThe workflow then incorporates elements such as spatial distance, neighborhood function, and learning rate. These are geared towards the analysis and potentially modelling of land characteristics. Finally, the process concludes with clustering partitioning, suggesting an attempt to divide the project area into segments for targeted interventions.\n\nWhile the specific context isn’t immediately clear, the image showcases a comprehensive, data-driven process for strategically addressing land degradation.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 3
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page4_6.png",
+    "description": "This image appears to be a stylized, schematic representation of a neural network diagram. It’s not a logo or brand. The central element is a grid-like pattern, resembling a stylized topographic map or a very abstracted representation of a circuit board.\n\nThree circles labeled “X1,” “X2,” and “Xn” are connected to this grid-like structure with lines, indicating connections or input/output pathways. The lines form a somewhat complex network, suggesting a layered architecture.\n\nThe overall aesthetic leans toward a technical or scientific visualization. It doesn’t represent a recognizable brand or logo, but rather a simplified visual metaphor for a complex processing system. The diagram’s simplicity allows for a general interpretation relating to information flow and processing within a network.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 4
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page5_9.png",
+    "description": "This image is a line graph presenting data related to risk areas. The graph shows five data points (labeled A through F) plotted along the x-axis, each representing a different area. Above each point is a colored line (dark grey, light blue, and green) representing risk scores. The y-axis represents the risk score, ranging from 0 to approximately 0.8.  \n\nThe graph appears to be used to visualize and compare the risk levels associated with different zones. Without more context, it's difficult to determine the specific nature of these zones or what constitutes the risk being measured. The different colors likely represent different risk categories or sources.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page5_11.png",
+    "description": "This image is a line graph illustrating habitat abundance across six distinct areas labeled A through F. Each line represents a different habitat type:\n\n*   **Arable land** (represented by dark gray) shows the highest initial abundance, decreasing significantly by area F.\n*   **Woodland** (represented by red) has a low initial abundance that rises slightly to a peak near area C before decreasing consistently.\n*   **Residential area** (represented by blue) begins with a low abundance and exhibits a small rise to a peak near area C before steadily decreasing.\n*   **Mining land** (represented by teal) shows the lowest initial abundance, increasing slightly to a peak near area C and then consistently decreasing.\n\nThe graph doesn't represent a logo or brand, it simply presents a comparative visualization of habitat abundance across these six areas. The scale on the y-axis is likely indicating habitat abundance, while the x-axis represents the sequential area labels.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 5
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page7_13.png",
+    "description": "This image is a line graph visualizing three categories: \"Number of administrative villages,\" \"Portion (%)\", and \"Area (hm²)\". \n\nThe graph shows a clear trend for each category.  The \"Number of administrative villages\" exhibits a dramatic decrease, starting around 20 and dropping to approximately 15. The \"Portion (%)\" also shows a significant decline, reducing from about 20% to roughly 17%. The \"Area (hm²)\" demonstrates a steady decrease, from about 20 to 17.  \n\nThe graph appears to be presenting data representing changes over time or across different scenarios. It could be illustrating the reduction of administrative areas, the decrease in a particular percentage, or some other related metric. Without additional context, it's hard to say precisely what the data represents, but the line graph clearly demonstrates a downward trend for each of the three variables.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 7
+  },
+  {
+    "image_uri": "images/The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf_page8_15.png",
+    "description": "The image shows the text “IEEE” in a bold, blue font. “IEEE” stands for the Institute of Electrical and Electronics Engineers, a professional organization for engineers and scientists. \n\nThe text is presented in a slightly shaded, almost 3D effect, suggesting it might be part of a logo or brand identity. It appears to be a digital representation, possibly a screenshot or a digital rendering of a printed logo. Without more context, it’s difficult to determine the specific application or usage of this text.",
+    "document": "The_Application_of_the_SOFM_Neural_Network_and_Internet_of_Things_in_Rural_Revitalization.pdf",
+    "page": 8
   },
   {
     "image_uri": "images/Realization_of_a_Rubidium_Atomic_Frequency_Standard_With_Short-Term_Stability_in_10141_2_Level.pdf_page2_0.png",

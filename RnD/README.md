@@ -24,6 +24,8 @@ For further reading, please consult Anthropic's excellent article on the topic.
 
 ## Source papers excluded for licensing reasons
 
+> **This private archive is complete.** Everything described below as removed from the *public* repository (the five papers' PDFs, chunk files, generated contexts and database rows) is present here in its original form, so that the archive's history stays consistent with the runs reported in the publications. Do not make this repository public without repeating the removal.
+
 The benchmark corpus of the article consists of 25 open-access scientific papers. A licence check of every PDF (Crossref metadata, October 2026) showed that five of them may not be redistributed, or not in derived form: four are published under licences that permit reading but not republication, and one is CC BY-NC-ND, which permits sharing the unmodified article but not derivative works such as cleaned text chunks and machine-generated summaries. On the advice of the project supervisor, every copy of those papers' text was removed from the public repository on 2026-10-14. The other 20 papers are CC BY licensed and remain in full.
 
 | Paper | Venue, year | DOI | Licence | Removed from the public repository |
